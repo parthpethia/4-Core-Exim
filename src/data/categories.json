@@ -1,0 +1,72 @@
+[
+  {
+    "id": "tablets",
+    "name": "Pharmaceutical Tablets",
+    "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "capsules",
+    "name": "Capsules",
+    "image": "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "injectables",
+    "name": "Injectables",
+    "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "skin-care",
+    "name": "Skin Care",
+    "image": "https://images.unsplash.com/photo-1608248597481-496100c80836?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "veterinary",
+    "name": "Veterinary",
+    "image": "https://images.unsplash.com/photo-1581888227599-779811939961?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "antibiotics",
+    "name": "Antibiotics",
+    "image": "https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "hair-care",
+    "name": "Hair Care",
+    "image": "https://images.unsplash.com/photo-1527799851257-359321b38557?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "diabetes",
+    "name": "Diabetes",
+    "image": "https://images.unsplash.com/photo-1508847154043-be12a927dfa6?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "weight-loss",
+    "name": "Weight Loss",
+    "image": "https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "psychiatry",
+    "name": "Psychiatry",
+    "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "oncology",
+    "name": "Oncology",
+    "image": "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "cardiology",
+    "name": "Cardiology",
+    "image": "https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "hormonal",
+    "name": "Hormonal",
+    "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "pain-management",
+    "name": "Pain Management",
+    "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&auto=format&fit=crop&q=80"
+  }
+]

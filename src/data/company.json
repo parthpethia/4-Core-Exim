@@ -1,0 +1,17 @@
+{
+  "name": "4Core Exim",
+  "subtitle": "By Thakkar Medico Traders",
+  "email": "exports@4coreexim.com",
+  "phone": "+91 98200 12345",
+  "whatsapp": "+91 98200 12345",
+  "address": "Thakkar Medico Traders, 102/103, Medicine Market, Princess Street, Mumbai - 400002, Maharashtra, India",
+  "businessHours": "Mon - Sat: 10:00 AM - 7:00 PM (IST)",
+  "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.805541624898!2d72.82734131538356!3d18.94101488716584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1dfab115555%3A0xe54d4f828a2ad22c!2sPrincess%20St%2C%20Kalbadevi%2C%20Mumbai%2C%20Maharashtra%20400002!5e0!3m2!1sen!2sin!4v1688530000000!5m2!1sen!2sin",
+  "aboutShort": "A trusted B2B pharmaceutical exporter and wholesale supplier of authentic brand-name, generic, specialty, and veterinary medicines to international markets.",
+  "aboutFull": {
+    "intro": "4Core Exim, backed by the long-standing legacy of Thakkar Medico Traders, is a premier global pharmaceutical exporter based in Mumbai, India. We are dedicated to providing high-quality, authentic WHO-GMP certified life-saving drugs, oncology treatments, vaccines, veterinary products, and OTC formulations to international wholesale buyers, clinics, and government supply bodies.",
+    "sourcing": "Leveraging deep relationships with India's leading manufacturers (including Cipla, Sun Pharma, Healing Pharma, Abbott, Zydus, and others), we guarantee genuine medicines procured through official and audited supply lines.",
+    "supplyChain": "Our operations feature temp-controlled warehousing and strict cold-chain maintenance for sensitive biologicals. From packaging verification to air/ocean freight booking, we maintain product integrity at every node.",
+    "compliance": "We provide comprehensive regulatory documentation including Certificates of Analysis (CoA), GMP certification copies, product dossiers, and customizable labeling to ensure smooth custom clearance in importing nations."
+  }
+}
