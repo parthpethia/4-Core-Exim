@@ -1,18 +1,8 @@
 [
   {
-    "id": "tablets",
+    "id": "pharmaceutical-tablets",
     "name": "Pharmaceutical Tablets",
     "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80"
-  },
-  {
-    "id": "capsules",
-    "name": "Capsules",
-    "image": "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80"
-  },
-  {
-    "id": "injectables",
-    "name": "Injectables",
-    "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"
   },
   {
     "id": "skin-care",
@@ -20,53 +10,108 @@
     "image": "https://images.unsplash.com/photo-1608248597481-496100c80836?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "veterinary",
-    "name": "Veterinary",
-    "image": "https://images.unsplash.com/photo-1581888227599-779811939961?w=400&auto=format&fit=crop&q=80"
+    "id": "erectile-dysfunction",
+    "name": "Erectile Dysfunction Medicines",
+    "image": "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "antibiotics",
-    "name": "Antibiotics",
-    "image": "https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80"
+    "id": "pharmaceutical-capsules",
+    "name": "Pharmaceutical Capsules",
+    "image": "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "hair-care",
-    "name": "Hair Care",
-    "image": "https://images.unsplash.com/photo-1527799851257-359321b38557?w=400&auto=format&fit=crop&q=80"
+    "id": "pharmaceutical-injections",
+    "name": "Pharmaceutical Injections",
+    "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "diabetes",
-    "name": "Diabetes",
-    "image": "https://images.unsplash.com/photo-1508847154043-be12a927dfa6?w=400&auto=format&fit=crop&q=80"
-  },
-  {
-    "id": "weight-loss",
-    "name": "Weight Loss",
-    "image": "https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=400&auto=format&fit=crop&q=80"
-  },
-  {
-    "id": "psychiatry",
-    "name": "Psychiatry",
+    "id": "anti-depressants",
+    "name": "Anti Depressant Medicines",
     "image": "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "oncology",
-    "name": "Oncology",
+    "id": "antibiotic-medicines",
+    "name": "Antibiotic Medicines",
+    "image": "https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "minoxidil-solution",
+    "name": "Minoxidil Topical Solution",
+    "image": "https://images.unsplash.com/photo-1626847037657-fd3622613ce3?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "anti-diabetic",
+    "name": "anti diabetic medicine",
+    "image": "https://images.unsplash.com/photo-1508847154043-be12a927dfa6?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "hair-loss",
+    "name": "Hair Loss Medicine",
+    "image": "https://images.unsplash.com/photo-1527799851257-359321b38557?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "pharma-tablets",
+    "name": "Pharma Tablets",
+    "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "infertility",
+    "name": "Infertility Medicine",
+    "image": "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "anti-cancer",
+    "name": "Anti Cancer Medicines",
     "image": "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "cardiology",
-    "name": "Cardiology",
-    "image": "https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80"
-  },
-  {
-    "id": "hormonal",
-    "name": "Hormonal",
+    "id": "anti-migraine",
+    "name": "Anti Migrain Medicine",
     "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&auto=format&fit=crop&q=80"
   },
   {
-    "id": "pain-management",
-    "name": "Pain Management",
-    "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&auto=format&fit=crop&q=80"
+    "id": "anti-malarial",
+    "name": "Anti Malarial Medicine",
+    "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "sofosbuvir-tablet",
+    "name": "Sofosbuvir Tablet",
+    "image": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "antibiotic-tablets",
+    "name": "Antibiotic Tablets",
+    "image": "https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "drop-shipping",
+    "name": "Drop Shipping Services",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "blood-pressure",
+    "name": "Blood Pressure Medicine",
+    "image": "https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "veterinary-medicines",
+    "name": "Veterinary Medicines",
+    "image": "https://images.unsplash.com/photo-1581888227599-779811939961?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "thyroid-medicine",
+    "name": "Thyroid Medicine",
+    "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "glutathione-injection",
+    "name": "Glutathione Injection",
+    "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "asthma-inhaler",
+    "name": "Asthma Inhaler",
+    "image": "https://images.unsplash.com/photo-1598901847919-b95dd0fabbb6?w=400&auto=format&fit=crop&q=80"
   }
 ]

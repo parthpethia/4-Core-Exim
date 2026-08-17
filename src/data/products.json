@@ -1,7 +1,7 @@
 [
   {
     "id": "pregabalin-300",
-    "category": "capsules",
+    "category": "pharmaceutical-capsules",
     "name": "Pregabalin Capsules 300mg",
     "price": "18.00",
     "currency": "USD",
@@ -17,7 +17,9 @@
     "storage": "Store below 30°C. Protect from light and moisture.",
     "treatment": "Neuropathic Pain, Epilepsy, and Generalized Anxiety Disorder",
     "description": "Pregabalin is an anticonvulsant and neuropathic pain agent used to manage chronic pain conditions, fibromyalgia, diabetic neuropathy, and postherpetic neuralgia.",
-    "images": ["https://images.unsplash.com/photo-1626847037657-fd3622613ce3?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1626847037657-fd3622613ce3?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Hard Gelatin Capsule",
       "Shelf Life": "36 Months",
@@ -27,35 +29,8 @@
     }
   },
   {
-    "id": "moxclav-625",
-    "category": "tablets",
-    "name": "Amoxicillin & Clavulanate Potassium Tablets 625mg",
-    "price": "12.50",
-    "currency": "USD",
-    "brand": "Moxclav 625",
-    "manufacturer": "Cipla Ltd",
-    "marketer": "Thakkar Medico Traders",
-    "strength": "625mg (Amoxicillin 500mg + Clavulanic Acid 125mg)",
-    "packagingSize": "10x10 Tablets",
-    "packagingType": "Alu-Alu Box",
-    "saltComposition": "Amoxicillin Trihydrate IP 500mg + Potassium Clavulanate IP 125mg",
-    "countryOfOrigin": "India",
-    "minimumOrderQuantity": "100 Boxes",
-    "storage": "Store in a cool, dry place. Keep out of reach of children.",
-    "treatment": "Bacterial Infections (Respiratory tract, Urinary tract, Skin and soft tissue)",
-    "description": "Moxclav 625 is a combined penicillin-class antibacterial medication indicated for treatment of infections caused by susceptible beta-lactamase producing organisms.",
-    "images": ["https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&auto=format&fit=crop&q=80"],
-    "specifications": {
-      "Form": "Film-Coated Tablet",
-      "Shelf Life": "24 Months",
-      "Contraindications": "History of amoxicillin-associated cholestatic jaundice or hepatic dysfunction",
-      "Regulatory Class": "Prescription Only Medicine",
-      "Active Ingredients": "Amoxicillin Trihydrate & Potassium Clavulanate"
-    }
-  },
-  {
     "id": "meroza-1g",
-    "category": "injectables",
+    "category": "pharmaceutical-injections",
     "name": "Meropenem Injection IP 1g",
     "price": "24.00",
     "currency": "USD",
@@ -71,7 +46,9 @@
     "storage": "Store below 25°C. Do not freeze.",
     "treatment": "Severe Intra-abdominal Infections, Meningitis, and Septicemia",
     "description": "Meropenem is a broad-spectrum carbapenem antibiotic administered intravenously for severe systemic bacterial infections in hospital settings.",
-    "images": ["https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Powder for Injection (I.V.)",
       "Shelf Life": "36 Months",
@@ -98,7 +75,9 @@
     "storage": "Store below 25°C. Do not freeze.",
     "treatment": "Psoriasis, Eczema, Dermatitis, and Resistant Dermatoses",
     "description": "Tenovate is a highly potent topical corticosteroid that reduces swelling, itching, and redness associated with persistent skin conditions.",
-    "images": ["https://images.unsplash.com/photo-1608248597481-496100c80836?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1608248597481-496100c80836?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Cream",
       "Shelf Life": "24 Months",
@@ -107,34 +86,8 @@
     }
   },
   {
-    "id": "neomec-vet-10",
-    "category": "veterinary",
-    "name": "Ivermectin Tablets 10mg (Vet)",
-    "price": "8.20",
-    "currency": "USD",
-    "brand": "Neomec Vet 10",
-    "manufacturer": "Intas Pharmaceuticals Ltd",
-    "marketer": "Thakkar Medico Traders",
-    "strength": "10mg",
-    "packagingSize": "10x10 Tablets",
-    "packagingType": "Strip Box",
-    "saltComposition": "Ivermectin IP 10mg",
-    "countryOfOrigin": "India",
-    "minimumOrderQuantity": "150 Boxes",
-    "storage": "Store in a dry place below 30°C.",
-    "treatment": "Ecto and Endo Parasitic Infections in Livestock & Pets",
-    "description": "Ivermectin Vet is a potent anthelmintic agent used for treating roundworms, lungworms, mites, lice, and ticks in dogs, cattle, and sheep.",
-    "images": ["https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=400&auto=format&fit=crop&q=80"],
-    "specifications": {
-      "Form": "Veterinary Oral Tablet",
-      "Target Species": "Dogs, Sheep, Goats, Cattle, Horses",
-      "Withdrawal Period": "Meat: 21 Days, Milk: 7 Days",
-      "Dosage": "As directed by the Veterinarian"
-    }
-  },
-  {
     "id": "azee-500",
-    "category": "antibiotics",
+    "category": "antibiotic-medicines",
     "name": "Azithromycin Tablets IP 500mg",
     "price": "7.50",
     "currency": "USD",
@@ -150,7 +103,9 @@
     "storage": "Store at room temperature below 30°C.",
     "treatment": "Community-Acquired Pneumonia, Strep Throat, Tonsillitis, and Skin Infections",
     "description": "Azithromycin is a macrolide antibiotic that stops the growth of bacteria, widely used for short, convenient dosing courses.",
-    "images": ["https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Film-Coated Oral Tablet",
       "Shelf Life": "36 Months",
@@ -160,7 +115,7 @@
   },
   {
     "id": "hairjoy-5",
-    "category": "hair-care",
+    "category": "minoxidil-solution",
     "name": "Minoxidil Topical Solution USP 5% w/v",
     "price": "14.50",
     "currency": "USD",
@@ -176,7 +131,9 @@
     "storage": "Store in a cool place, do not freeze. Keep away from fire.",
     "treatment": "Androgenetic Alopecia (Male Pattern Hair Loss)",
     "description": "Hairjoy 5% is a topical vasodilator formula designed to stimulate hair follicles and reverse progressive hair thinning.",
-    "images": ["https://images.unsplash.com/photo-1527799851257-359321b38557?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1527799851257-359321b38557?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Topical Liquid",
       "Shelf Life": "24 Months",
@@ -186,7 +143,7 @@
   },
   {
     "id": "glycomet-500",
-    "category": "diabetes",
+    "category": "anti-diabetic",
     "name": "Metformin Hydrochloride Sustained Release Tablets 500mg",
     "price": "4.80",
     "currency": "USD",
@@ -202,7 +159,9 @@
     "storage": "Store below 25°C. Protect from moisture.",
     "treatment": "Type 2 Diabetes Mellitus",
     "description": "Glycomet SR contains Metformin, a biguanide antihyperglycemic agent that improves glucose tolerance and lowers both basal and postprandial plasma glucose.",
-    "images": ["https://images.unsplash.com/photo-1508847154043-be12a927dfa6?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1508847154043-be12a927dfa6?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Sustained Release Oral Tablet",
       "Shelf Life": "36 Months",
@@ -212,7 +171,7 @@
   },
   {
     "id": "obelit-120",
-    "category": "weight-loss",
+    "category": "pharmaceutical-capsules",
     "name": "Orlistat Capsules USP 120mg",
     "price": "31.50",
     "currency": "USD",
@@ -228,7 +187,9 @@
     "storage": "Store below 25°C. Keep container tightly closed.",
     "treatment": "Obesity Management and Weight Maintenance",
     "description": "Orlistat is a reversible gastrointestinal lipase inhibitor that prevents absorption of dietary fats by approximately 30%, aiding weight reduction.",
-    "images": ["https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Hard Gelatin Capsule",
       "Shelf Life": "24 Months",
@@ -237,34 +198,8 @@
     }
   },
   {
-    "id": "sertafine-50",
-    "category": "psychiatry",
-    "name": "Sertraline Tablets USP 50mg",
-    "price": "10.80",
-    "currency": "USD",
-    "brand": "Sertafine 50",
-    "manufacturer": "Sun Pharmaceutical Industries Ltd",
-    "marketer": "Thakkar Medico Traders",
-    "strength": "50mg",
-    "packagingSize": "10x10 Tablets",
-    "packagingType": "Blister Box",
-    "saltComposition": "Sertraline Hydrochloride USP equivalent to Sertraline 50mg",
-    "countryOfOrigin": "India",
-    "minimumOrderQuantity": "120 Boxes",
-    "storage": "Store at 25°C (excursions permitted to 15-30°C).",
-    "treatment": "Major Depressive Disorder (MDD), OCD, Panic Disorder, and PTSD",
-    "description": "Sertraline is a Selective Serotonin Reuptake Inhibitor (SSRI) antidepressant that restores the chemical balance of serotonin in the brain.",
-    "images": ["https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=400&auto=format&fit=crop&q=80"],
-    "specifications": {
-      "Form": "Film-Coated Tablet",
-      "Shelf Life": "36 Months",
-      "Regulatory Class": "Schedule H1 (Strict Prescription)",
-      "Side Effects": "Nausea, insomnia, fatigue, dry mouth, sexual dysfunction"
-    }
-  },
-  {
     "id": "geftinat-250",
-    "category": "oncology",
+    "category": "anti-cancer",
     "name": "Gefitinib Tablets 250mg",
     "price": "85.00",
     "currency": "USD",
@@ -280,7 +215,9 @@
     "storage": "Store below 30°C. Protect from moisture.",
     "treatment": "Metastatic Non-Small Cell Lung Cancer (NSCLC)",
     "description": "Geftinat is a targeted oncology kinase inhibitor that blocks the activity of EGFR tyrosine kinase, halting cancer cell replication.",
-    "images": ["https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Film-Coated Tablet",
       "Shelf Life": "24 Months",
@@ -290,7 +227,7 @@
   },
   {
     "id": "lipvas-10",
-    "category": "cardiology",
+    "category": "blood-pressure",
     "name": "Atorvastatin Tablets IP 10mg",
     "price": "5.50",
     "currency": "USD",
@@ -306,7 +243,9 @@
     "storage": "Store in dry place, protect from direct heat.",
     "treatment": "Hypercholesterolemia and Cardiovascular Risk Prevention",
     "description": "Lipvas contains Atorvastatin, an HMG-CoA reductase inhibitor that lowers blood cholesterol levels and triglycerides, helping prevent heart attacks and strokes.",
-    "images": ["https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Tablet",
       "Shelf Life": "36 Months",
@@ -315,34 +254,8 @@
     }
   },
   {
-    "id": "thyronorm-100",
-    "category": "hormonal",
-    "name": "Thyroxine Sodium Tablets IP 100mcg",
-    "price": "6.80",
-    "currency": "USD",
-    "brand": "Thyronorm 100",
-    "manufacturer": "Abbott India Ltd",
-    "marketer": "Thakkar Medico Traders",
-    "strength": "100mcg",
-    "packagingSize": "120 Tablets",
-    "packagingType": "Bottle",
-    "saltComposition": "Thyroxine Sodium IP 100mcg",
-    "countryOfOrigin": "India",
-    "minimumOrderQuantity": "150 Bottles",
-    "storage": "Store in refrigerator (2°C to 8°C). Do not freeze.",
-    "treatment": "Hypothyroidism (Underactive Thyroid Hormone Replacement)",
-    "description": "Thyronorm 100 is a synthetic thyroid hormone replacement therapy matching the body's natural thyroxine (T4) hormone.",
-    "images": ["https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&auto=format&fit=crop&q=80"],
-    "specifications": {
-      "Form": "Tablet",
-      "Shelf Life": "24 Months",
-      "Usage Guideline": "Administer on an empty stomach in the morning, 30-60 mins before breakfast",
-      "Highlights": "Strict temperature-controlled shipping available"
-    }
-  },
-  {
     "id": "tramaflam-50",
-    "category": "pain-management",
+    "category": "pharmaceutical-capsules",
     "name": "Tramadol Hydrochloride Capsules 50mg",
     "price": "9.20",
     "currency": "USD",
@@ -358,12 +271,2608 @@
     "storage": "Store below 30°C in dry conditions.",
     "treatment": "Moderate to Moderately Severe Pain Management",
     "description": "Tramadol is a centrally acting synthetic opioid analgesic used to treat post-surgery pain, severe joint flares, and injuries.",
-    "images": ["https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&auto=format&fit=crop&q=80"],
+    "images": [
+      "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&auto=format&fit=crop&q=80"
+    ],
     "specifications": {
       "Form": "Hard Gelatin Capsule",
       "Shelf Life": "36 Months",
       "Regulatory Class": "Controlled Drug / Schedule H1",
       "Warning": "Habit forming risk. Administer strictly under clinical supervision."
+    }
+  },
+  {
+    "id": "melorise-7-5",
+    "category": "veterinary-medicines",
+    "name": "7.5mg Melorise Meloxicam Tablets BP",
+    "price": "120.00",
+    "currency": "USD",
+    "brand": "Melorise",
+    "manufacturer": "John Lee",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "7.5mg",
+    "packagingSize": "3 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Meloxicam",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "50 Boxes",
+    "storage": "Store in a dry place. Protect from direct heat.",
+    "treatment": "Used to Provide Pain Relief Associated With Inflammatory Bone Conditions Such Osteoarthrosis",
+    "description": "Melorise Meloxicam Tablets are indicated for the management of pain and inflammation associated with musculoskeletal disorders in animals.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477315511/QT/NV/JO/81929363/melorise-7-5-1-scaled-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477315510/QA/VN/HF/81929363/melorise-7-5-mg-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477315509/SG/SB/MS/81929363/7-5-mg-meloxicam-tablets-bp-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Shelf Life": "24 Months",
+      "Usage/Application": "Provides pain relief associated with inflammatory bone conditions"
+    }
+  },
+  {
+    "id": "drontal-puppy-20",
+    "category": "veterinary-medicines",
+    "name": "20ml Drontal Antiparasitario Interno Para Cachorros Oral Suspension",
+    "price": "200.00",
+    "currency": "USD",
+    "brand": "Drontal",
+    "manufacturer": "Bayer",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "1ml",
+    "packagingSize": "20ml",
+    "packagingType": "Box",
+    "saltComposition": "Pyrantel Embonate & Febantel",
+    "countryOfOrigin": "Germany",
+    "minimumOrderQuantity": "100 Bottles",
+    "storage": "Store below 25°C. Do not freeze.",
+    "treatment": "Control of Roundworm, Hookworm and Whipworms in Puppies And Small Dogs.",
+    "description": "Drontal Puppy is an oral suspension antiparasitic for the control and treatment of gastrointestinal worms in young puppies.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476522944/QR/UU/LJ/81929363/drontal-puppy-20-ml-bottle-500x500.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476522944/QR/UU/LJ/81929363/drontal-puppy-20-ml-bottle-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476173019/AW/YE/YG/81929363/drontal-puppy-20-ml-bottle-1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Syrup / Oral Suspension",
+      "Shelf Life": "36 Months",
+      "Usage/Application": "For the Control of Roundworm, Hookworm and Whipworms in Puppies And Small Dogs."
+    }
+  },
+  {
+    "id": "panacur-150",
+    "category": "veterinary-medicines",
+    "name": "150mg Panacur Fenbendazole Tablet",
+    "price": "130.00",
+    "currency": "USD",
+    "brand": "Panacur",
+    "manufacturer": "MSD",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "150mg",
+    "packagingSize": "5X10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Fenbendazole",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "50 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Infestation With Gastrointestinal Nematodes, Lungworms and Tapeworms in Animals",
+    "description": "Panacur 150mg Fenbendazole Tablets are a broad-spectrum anthelmintic for the treatment of domestic animals infested with roundworms, lungworms, and tapeworms.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511614/DK/FL/RO/81929363/panacur-150-vet-fenbendezole-tablets-500x500.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511614/DK/FL/RO/81929363/panacur-150-vet-fenbendezole-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511613/KC/WO/YD/81929363/panacur-150mg-tablet-vet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Shelf Life": "36 Months",
+      "Usage/Application": "For the Treatment of Infestation With Gastrointestinal Nematodes, Lungworms and Tapeworms in Animal"
+    }
+  },
+  {
+    "id": "flomist-nasal-spray",
+    "category": "asthma-inhaler",
+    "name": "10ml Flomist Nasal Spray",
+    "price": "180.00",
+    "currency": "₹",
+    "brand": "Flomist",
+    "manufacturer": "Cipla",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "Fluticasone Propionate IP 50 mcg",
+    "packagingSize": "10 ml",
+    "packagingType": "Bottle",
+    "saltComposition": "Fluticasone Propionate IP 50 mcg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Bottles",
+    "storage": "Store below 30°C. Do not freeze.",
+    "treatment": "FLOMIST NASAL SPRAY contains Fluticasone which belongs to the group of medicines called Corticosteroids (glucocorticoids). It is used to treat symptoms of allergic rhinitis such as stuffy, runny, or itchy nose, sneezing, itchy, red, or watery eyes in adults and children above 6 years of age.",
+    "description": "Flomist Nasal Spray is a corticosteroid nasal spray used to manage and relieve symptoms of seasonal and perennial allergic rhinitis.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220435/RA/LH/WO/81929363/flomist-nasal-spray-500x500.jpg"
+    ],
+    "specifications": {
+      "Variant": "Flomist Nasal Spray",
+      "Prescription/Non Prescription": "Prescription",
+      "Form": "Nasal Spray"
+    }
+  },
+  {
+    "id": "salbair-transhaler",
+    "category": "asthma-inhaler",
+    "name": "Salbair Transhaler Levosalbutamol Sulphate Asthma Inhaler",
+    "price": "190.00",
+    "currency": "₹",
+    "brand": "Salbair",
+    "manufacturer": "Lupin",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50mcg",
+    "packagingSize": "12 g",
+    "packagingType": "Piece",
+    "saltComposition": "Levosalbutamol Sulphate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Pieces",
+    "storage": "Store below 30°C. Protect from direct sunlight and heat. Do not freeze.",
+    "treatment": "Salbair 50mcg Transhaler belongs to a group of medicines called fast-acting bronchodilators or relievers. It is used to treat the symptoms of asthma and chronic obstructive pulmonary disease (COPD) such as coughing, wheezing, and feeling short of breath.",
+    "description": "Salbair Transhaler Levosalbutamol Sulphate Inhaler is a quick-relief inhaler used for the prevention and treatment of bronchospasm in asthma and COPD.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477505160/YK/ZG/VN/81929363/salbair-transhaler-asthama-inhaler-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Inhaler Spray",
+      "Prescription/Non prescription": "Prescription",
+      "Pack Size": "12g"
+    }
+  },
+  {
+    "id": "glutacan-600",
+    "category": "glutathione-injection",
+    "name": "600mg Glutacan Glutathione Injection",
+    "price": "900.00",
+    "currency": "₹",
+    "brand": "Glutacan 600",
+    "manufacturer": "American Remedies",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "600 mg",
+    "packagingSize": "10 ml Vials",
+    "packagingType": "Box",
+    "saltComposition": "Glutathione",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "50 Boxes",
+    "storage": "Store in a dry place. Protect from light.",
+    "treatment": "Used in the Treatment of Liver Disease",
+    "description": "Glutacan 600mg Injection is a Medicine Used in the Treatment of Liver Disease. It Also Has a Number of Other Health Benefits and Protects the Body Cells Against Damage Caused by Free Radicals.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476177656/KY/JP/BI/81929363/glutacan-600-injection-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Injection",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "glutacan-vitc",
+    "category": "glutathione-injection",
+    "name": "600mg Glutacan Glutathione And Vitamin C Injection IP",
+    "price": "1100.00",
+    "currency": "₹",
+    "brand": "Glutacan",
+    "manufacturer": "American Remedies",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "600 mg",
+    "packagingSize": "1 Box",
+    "packagingType": "Box",
+    "saltComposition": "Glutathione And Vitamin C",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "50 Boxes",
+    "storage": "Store below 25°C. Protect from light.",
+    "treatment": "Treat Skin Problems Such as Freckles, Melisma Chloasma",
+    "description": "L Glutathione + Vitamin C Belongs to the Class of Nutritional Food Supplements. It is Used as Adjuvant Therapy to Treat and Prevent Various Medical Conditions That Arise From Nutritional Deficiencies or Long Term Disorders. It is Also Used to Treat Skin Problems Such as Freckles, Melisma / Chloasma and Lentigo.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476177656/KY/JP/BI/81929363/glutacan-600-injection-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Injection",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "thyrox-50",
+    "category": "thyroid-medicine",
+    "name": "50mcg Thyrox Thyroxine Sodium Tablets",
+    "price": "130.00",
+    "currency": "Rs",
+    "brand": "Thyrox",
+    "manufacturer": "Macleods",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mcg",
+    "packagingSize": "120 Tablets",
+    "packagingType": "Bottle",
+    "saltComposition": "Thyroxine Sodium",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "10 Bottles",
+    "storage": "Store below 25°C. Protect from light and moisture.",
+    "treatment": "Thyroid (Hypothyroidism)",
+    "description": "Thyrox 50 mcg Tablet contains Thyroxine Sodium, which is a synthetic version of the thyroid hormone thyroxine. It is used to treat an underactive thyroid gland (hypothyroidism).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513706/PW/UN/HG/81929363/thyrox-50-tablet-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Product ID": "289762233"
+    }
+  },
+  {
+    "id": "thyroup-100",
+    "category": "thyroid-medicine",
+    "name": "100mcg Thyroup Thyroxin Sodium Tablets",
+    "price": "175.00",
+    "currency": "Rs",
+    "brand": "Thyroup",
+    "manufacturer": "Lupin",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100 mcg",
+    "packagingSize": "120 Tablets",
+    "packagingType": "Bottle",
+    "saltComposition": "Thyroxine Sodium",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "10 Bottles",
+    "storage": "Store below 25°C. Protect from light and moisture.",
+    "treatment": "Thyroid (Hypothyroidism)",
+    "description": "Thyroup 100 mcg Tablet contains Thyroxine Sodium, which is used to treat hypothyroidism. It replaces or provides more thyroid hormone, which is normally produced by the thyroid gland.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513555/IT/NQ/ZT/81929363/thyroup-100-mcg-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Product ID": "289762235"
+    }
+  },
+  {
+    "id": "thyronorm-25",
+    "category": "thyroid-medicine",
+    "name": "25mcg Thyronorm Thyroxine Sodium Tablet",
+    "price": "290.00",
+    "currency": "Rs",
+    "brand": "Thyronorm",
+    "manufacturer": "Abbott",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "25 mcg",
+    "packagingSize": "120 Tablets",
+    "packagingType": "Bottle",
+    "saltComposition": "Thyroxine Sodium",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "10 Bottles",
+    "storage": "Store below 25°C. Protect from light and moisture.",
+    "treatment": "Thyroid (Hypothyroidism)",
+    "description": "Thyronorm 25 mcg Tablet is a synthetic thyroid hormone used to treat thyroid hormone deficiency (hypothyroidism). It replaces the hormone that your thyroid gland cannot produce in sufficient quantity.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513670/MH/EC/VO/81929363/thyronorm-25-mcg-tablet-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Product ID": "289762234"
+    }
+  },
+  {
+    "id": "amlovas-5",
+    "category": "blood-pressure",
+    "name": "5mg Amlovas Amlodipine Besilate Tablet",
+    "price": "3.50",
+    "currency": "USD",
+    "brand": "Amlovas",
+    "manufacturer": "Macleods Pharmaceuticals Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "5mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Strip Box",
+    "saltComposition": "Amlodipine Besilate IP 5mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "150 Boxes",
+    "storage": "Store in a cool, dry place. Protect from light.",
+    "treatment": "Hypertension (High Blood Pressure)",
+    "description": "Amlovas 5 contains Amlodipine, a calcium channel blocker used to treat high blood pressure (hypertension) and chest pain (angina). It works by relaxing blood vessels for better blood flow.",
+    "images": [
+      "https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Shelf Life": "36 Months",
+      "Prescription Status": "Schedule H (Prescription Required)"
+    }
+  },
+  {
+    "id": "hipres-50",
+    "category": "blood-pressure",
+    "name": "50mg Hipres Atenolol Tablets",
+    "price": "4.20",
+    "currency": "USD",
+    "brand": "Hipres",
+    "manufacturer": "Cipla Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50mg",
+    "packagingSize": "10x14 Tablets",
+    "packagingType": "Strip Box",
+    "saltComposition": "Atenolol IP 50mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "150 Boxes",
+    "storage": "Store below 25°C. Protect from moisture.",
+    "treatment": "Hypertension (High Blood Pressure) and Angina",
+    "description": "Hipres 50 contains Atenolol, a beta-blocker medicine widely prescribed to lower high blood pressure, manage angina, and control irregular heartbeats.",
+    "images": [
+      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Shelf Life": "36 Months",
+      "Prescription Status": "Schedule H (Prescription Required)"
+    }
+  },
+  {
+    "id": "victoza-liraglutide",
+    "category": "blood-pressure",
+    "name": "Victoza Liraglutide Injection",
+    "price": "120.00",
+    "currency": "USD",
+    "brand": "Victoza",
+    "manufacturer": "Novo Nordisk",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "6mg/ml",
+    "packagingSize": "Pre-filled Pen (3ml)",
+    "packagingType": "Box containing 1 Pen",
+    "saltComposition": "Liraglutide",
+    "countryOfOrigin": "Denmark",
+    "minimumOrderQuantity": "10 Boxes",
+    "storage": "Store in a refrigerator (2°C - 8°C). Do not freeze.",
+    "treatment": "Type 2 Diabetes Mellitus",
+    "description": "Victoza (Liraglutide) is a pre-filled subcutaneous injection pen. It is a GLP-1 receptor agonist indicated as an adjunct to diet and exercise to improve glycemic control in type 2 diabetes mellitus.",
+    "images": [
+      "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80"
+    ],
+    "specifications": {
+      "Form": "Liquid Injection in Pre-filled Pen",
+      "Shelf Life": "30 Months",
+      "Prescription Status": "Schedule G (Prescription Required)"
+    }
+  },
+  {
+    "id": "50mg-daxid-sertraline-tablets-ip",
+    "category": "anti-depressants",
+    "name": "50mg Daxid Sertraline Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Daxid",
+    "manufacturer": "Pfizer",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "2 x 15 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Sertraline",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Prescribed for Depression, Anxiety Related Conditions",
+    "description": "Daxid 50mg Tablet is a Type of Antidepressant Belonging to the Selective Serotonin Reuptake Inhibitor (Ssri) Group of Medicines. It is Prescribed for Depression, Anxiety-related Conditions Like Obsessive-compulsive Disorder, and Panic Disorder.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476222844/EU/UV/FN/81929363/daxid-50mg-tablet-15-s-d81e0e8c-8f15-4e2f-a104-7ed152dd4116-11zon-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "50mg-zosert-sertraline-tablets-ip",
+    "category": "anti-depressants",
+    "name": "50mg Zosert Sertraline Tablets IP",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Zosert",
+    "manufacturer": "Sun Pharma Laboratories Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "5 x 2 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Sertraline",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Depression, Panic Disorder",
+    "description": "Zosert 50mg Tablet Contains Sertraline Which Belongs to the Group of Medicines Called Selective Serotonin Re-uptake Inhibitors. It is Used to Treat Depression, Panic Disorder, Social Anxiety Disorder, Post-traumatic Stress Disorder and Obsessive-compulsive Disorder.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476222718/OI/FE/UL/81929363/zosert-50mg-tablets-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "30mg-duvanta-duloxetine-gastro-resistant-tablets-ip",
+    "category": "anti-depressants",
+    "name": "30mg Duvanta Duloxetine Gastro Resistant Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Duvanta",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "30 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Duloxetine",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Generalized Anxiety Disorder",
+    "description": "Duvanta 30mg Tablet Contains Duloxetine Which Belongs to the Group of Medicines Called Antidepressants. It is Used in Adults to Treat Major Depressive Disorders (Persistently Depressed Mood, Feeling of Sadness and Lack of Interest) and Generalized Anxiety Disorder (Chronic Feeling of Anxiety or Nervousness).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476222248/OM/IR/SH/81929363/duvanta-30mg-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Gastro-Resistant Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "10mg-pexep-paroxetine-tablets-ip",
+    "category": "anti-depressants",
+    "name": "10mg Pexep Paroxetine Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Pexep",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Paroxetine",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Depression and Anxiety",
+    "description": "Pexep 10 Tablet is a Type of Antidepressant Belonging to the Selective Serotonin Reuptake Inhibitor (Ssri) Group of Medicines. It is Widely Prescribed to Treat Depression and Anxiety-related Conditions Like Obsessive Compulsive Disorder, and Panic Disorder.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476222032/KE/QL/AZ/81929363/pexep-10-mg-tablet-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "10mg-buspin-buspirone-hydrochloride-tablets-usp",
+    "category": "anti-depressants",
+    "name": "10mg Buspin Buspirone Hydrochloride Tablets USP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Buspin 10",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Buspirone Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Short-term Management of Anxiety Disorders",
+    "description": "Buspin 10mg Tablet Contains Buspirone Which Belongs to a Group of Medicines Called Anxiolytics. It is Used in the Short-term Management of Anxiety Disorders and Relief in the Symptoms of Anxiety. Anxiety is Defined as Excessive Worry and Fear About Everyday Situations.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221557/II/KQ/XX/81929363/buspin-10-tablet1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "50mg-qutan-sr-quetiapine-fumarate-tablets-ip",
+    "category": "anti-depressants",
+    "name": "50mg Qutan SR Quetiapine Fumarate Tablets IP",
+    "price": "110.00",
+    "currency": "₹",
+    "brand": "Qutan SR",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Quetiapine Fumarate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Bipolar Disorder, Schizophrenia",
+    "description": "Qutan SR 100mg Tablet Contains Quetiapine Which Belongs to the Group of Medicines Called Antipsychotics. It is Used to Treat Bipolar Disorder, Schizophrenia, and Depression (Major Depressive Disorder).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221423/PM/OP/AB/81929363/qutan-sr-100-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Sustained Release Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "25mg-agoprex-agomelatine-tablets",
+    "category": "anti-depressants",
+    "name": "25mg Agoprex Agomelatine Tablets",
+    "price": "110.00",
+    "currency": "₹",
+    "brand": "Agoprex",
+    "manufacturer": "Sun Pharmaceutical Industries Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "25 mg",
+    "packagingSize": "5 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Agomelatine",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Depression and Reduce and Gradually Remove the Symptoms Related to Depression",
+    "description": "Agoprex 25mg is Used in Adults to Treat Depression and Reduce and Gradually Remove the Symptoms Related to Depression Which is Characterized by Symptoms Such as Deep Sadness, Feeling Worthless, Loss of Interest, Sleep Disturbances, Feeling of Being Low, Feeling Anxious and Changes in Weight.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221321/EQ/NO/YW/81929363/agoprex-25mg-tablet-1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "50mg-voxa-fluvoxamine-tablets-ip",
+    "category": "anti-depressants",
+    "name": "50mg Voxa Fluvoxamine Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Voxa 50",
+    "manufacturer": "Boston Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Fluvoxamine",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Prescribed to Treat Depression",
+    "description": "Voxa 50 Tablet is a Type of Antidepressant Belonging to the Selective Serotonin Reuptake Inhibitor (SSRI) Group of Medicines. It is Prescribed to Treat Depression, Where It Helps to Make You Feel Better. This Medicine is Also Used to Treat People With Obsessive Compulsive Disorder.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476179621/YA/DX/ID/81929363/50mg-fluvoxamine-tablets-i-p-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "100mg-artemisinin-capsules",
+    "category": "anti-depressants",
+    "name": "100mg Artemisinin Capsules",
+    "price": "300.00",
+    "currency": "₹",
+    "brand": "Artemisinin Capsules",
+    "manufacturer": "Kachhela Medex Pvt Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100mg",
+    "packagingSize": "6 x 10 Capsules",
+    "packagingType": "Box",
+    "saltComposition": "Artemisinin",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Reduces Stress and Anxiety",
+    "description": "Artemisinin 100mg Capsule Aims to Improve Your General Health and Well Being and Also Stimulates Appetite. It is a Vegan Anti Inflammatory Capsule That Reduces Stress and Anxiety.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477317019/YQ/VI/UW/81929363/artemisinin-capsules-100-kachhela-1-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Capsule",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "150mg-bupron-sr-bupropion-hydrochloride-extended-release-tablets-usp",
+    "category": "anti-depressants",
+    "name": "150mg Bupron SR Bupropion Hydrochloride Extended Release Tablets USP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Bupron SR",
+    "manufacturer": "Sun Pharma Laboratories Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "150 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Bupropion Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used in the Treatment of Depression and Smoking Addiction",
+    "description": "Bupron Sr 150 Tablet is Used in the Treatment of Depression and Smoking Addiction. This Medicine Helps by Increasing the Level of Chemical Messengers in the Brain That Relax the Nerves and Have a Calming Effect on the Brain.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476178296/AK/DQ/YG/81929363/bupron-sr-150-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Extended-Release Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "150mg-bupron-bupropion-hydrochloride-tablet",
+    "category": "anti-depressants",
+    "name": "150mg Bupron Bupropion Hydrochloride Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Bupron",
+    "manufacturer": "Sun Pharma Laboratories Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "150 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Bupropion Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It Is Used in the Treatment of Depression and Smoking Addiction",
+    "description": "Bupron SR 150 Tablet is used in the treatment of depression and smoking addiction. This medicine helps by increasing the level of chemical messengers in the brain that relax the nerves and have a calming effect on the brain.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477302939/VB/XY/GG/81929363/bup0002-1-1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "1mg-prazopress-prazosin-tablet",
+    "category": "anti-depressants",
+    "name": "1mg Prazopress Prazosin Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Prazopress",
+    "manufacturer": "Sun Pharma Laboratories",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "1 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Prazosin",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It Reduces the Blood Pressure by Relaxing the Blood Vessels",
+    "description": "1mg Prazopress Prazosin Tablet reduces the blood pressure by relaxing the blood vessels so that blood that pass easily without any obstruction. It reduces the chances of heart failure by acting on the main blood vessel, thus allowing the heart to pump blood productively",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477231070/EI/TR/BF/81929363/prazopress-prazosin-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "150mg-bupron-sr-bupropion-hydrochloride-tablet",
+    "category": "anti-depressants",
+    "name": "150mg Bupron SR Bupropion Hydrochloride Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Bupron",
+    "manufacturer": "Sun Pharma Laboratories Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "150 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Bupropion Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It is Used in the Treatment of Depression and Smoking Addiction.",
+    "description": "Bupron SR 150 Tablet is used in the treatment of depression and smoking addiction. This medicine helps by increasing the level of chemical messengers in the brain that relax the nerves and have a calming effect on the brain.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511031/ZE/YJ/XL/81929363/bupron-sr-150-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Sustained Release Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "clonil-75-sr",
+    "category": "anti-depressants",
+    "name": "Clonil 75 Sr",
+    "price": "276.00",
+    "currency": "₹",
+    "brand": "Clonil",
+    "manufacturer": "Intas Pharmaceuticals Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "75 mg",
+    "packagingSize": "10 x 20 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomipramine (75mg)",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Obsessive-compulsive disorder (OCD), muscular weakness (cataplexy), and depression",
+    "description": "Clonil 75 SR Tablet is a tricyclic antidepressant. It is used in adults to treat obsessive-compulsive disorder (OCD). It also treats muscular weakness (cataplexy) associated with repeat attacks of sleepiness (narcolepsy) and can manage depression that is unresponsive to other medicines. Clonil 75 SR Tablet works by increasing the level of chemical messengers in the brain that stabilizes and enhances the mood.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2025/1/480009590/JQ/VQ/IO/81929363/clonil-75-sr-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Sustained Release Tablet",
+      "Pack Type": "Box"
+    }
+  },
+  {
+    "id": "clonil-25-mg-tablet",
+    "category": "anti-depressants",
+    "name": "Clonil 25 Mg Tablet",
+    "price": "105.00",
+    "currency": "₹",
+    "brand": "Clonil",
+    "manufacturer": "Intas Pharmaceuticals Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "25 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomipramine (25mg)",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Boxes",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Depression, Anxiety, Bed-wetting",
+    "description": "Clonil 25 Tablet is a tricyclic antidepressant. It is used in adults to treat obsessive-compulsive disorder (OCD). It also treats muscular weakness (cataplexy) associated with repeat attacks of sleepiness (narcolepsy) and can manage depression that is unresponsive to other medicines. Clonil 25 Tablet works by increasing the level of chemical messengers in the brain that stabilizes and enhances the mood.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2025/1/480016678/UC/VQ/JS/81929363/clonil-25-mg-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Grade Standard": "Ethical"
+    }
+  },
+  {
+    "id": "5mg-tretiva-isotretinoin-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "5mg Tretiva Isotretinoin Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Tretiva",
+    "manufacturer": "Intas",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "5 mg",
+    "packagingSize": "1*10 Capsules",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Tretiva 20 Capsule helps treat acne by reducing the production of sebum (a natural substance) that causes acne. This kills acne-causing bacteria and prevents spots or pimples from appearing. It usually takes a few weeks to have a noticeable effect so keep taking it even if it appears not to be working.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476674213/WK/VF/VF/81929363/tretiva-20-mg-tablets-1-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476674214/DM/NA/YS/81929363/tretiva-20-mg-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476674216/VE/YY/LZ/81929363/tretiva-20-mg-tablets-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required",
+      "Usages": "For the treatment of severe acne"
+    }
+  },
+  {
+    "id": "60mg-axepta-atomoxetine-hydrochloride-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "60mg Axepta Atomoxetine Hydrochloride Tablets",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Axepta",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "60 mg",
+    "packagingSize": "10*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Atomoxetine Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Attention Deficit Hyperactivity Disorder",
+    "description": "Axepta 60mg Tablet Contains Atomoxetine Which Belongs to the Group of Medicines Called Psychostimulants. It is Used to Treat Attention Deficit Hyperactivity Disorder (Adhd) in Adults, Adolescents and in Children (Aged Above 6 Years).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175757/UL/TV/EH/81929363/axepta-60-2-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175761/DX/WV/ZR/81929363/axepta-atomoxetine-60-mg-tablet2-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175767/TJ/WR/VH/81929363/axepta-atomoxetine-60-mg-tablet1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "0-5mg-rasalect-rasagiline-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "0.5mg Rasalect Rasagiline Tablets",
+    "price": "290.00",
+    "currency": "₹",
+    "brand": "Rasalect 0.5",
+    "manufacturer": "Sun Pharma Laboratories Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "0.5 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Rasagiline",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Relieves Symptoms of Parkinson's Disease Such as Tremors, Muscle Stiffness",
+    "description": "Rasalect 0.5 Tablet Relieves Symptoms of Parkinson's Disease Such as Tremors, Muscle Stiffness, and Difficulty Moving. It Increases the Amount of a Chemical Called Dopamine in the Brain Which Helps in the Coordination of Body Movements.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220949/JK/WZ/TO/81929363/rasalect-0-5-tablets-1000x1000.png",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220951/IV/MJ/NE/81929363/rasalect-tablet-rasagiline-1000x1000.png",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220952/WG/ZJ/HQ/81929363/rasalect-0-5-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220962/MA/FF/ZT/81929363/rasalect-0-5-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "super-p-force-sildenafil-citrate-and-dapoxetine-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Super P Force Sildenafil Citrate And Dapoxetine Tablets",
+    "price": "110.00",
+    "currency": "₹",
+    "brand": "Super P Force",
+    "manufacturer": "Sunrise Remedies Pvt Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "",
+    "packagingSize": "1*4 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Dapoxetine 60 mg + Sildenafil 100 mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Premature Ejaculation and Erectile Dysfunction",
+    "description": "Super P Force Tablet is a Combination of Two Medicines Used in the Treatment of Premature Ejaculation and Erectile Dysfunction in Adult Men. It Increases Blood Flow to the Penis to Help Men Get an Erection. This Medicine Should Be Used Only When Prescribed by a Doctor.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476179909/KN/SG/QT/81929363/super-p-force-tablets-sildenafil-citrate-dapoxetine-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476179901/FX/TG/DG/81929363/super-p-force-sildenafil-citrate-dapoxetine-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476179903/ZC/MX/HP/81929363/super-p-force-sildenafil-citrate-dapoxetine-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "12mg-ivervril-ivermectin-dispersible-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "12mg Ivervril Ivermectin Dispersible Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Ivervril 12",
+    "manufacturer": "Healing Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "12mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Ivermectin",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Parasitic Infections Like Intestinal Strongyloidiasis",
+    "description": "Ivervirl 12mg Tablet is Used to Treat Parasitic Infections Like Intestinal Strongyloidiasis (Infection in Gut Caused by a Type of Round Worm Called Strongyloides Stercoralis), Infection Caused by Wuchereria Bancrofti in Blood and Tissues and Human Scabies (Infectious Disease of the Skin) After Previous Treatment",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175340/CS/WY/UD/81929363/ivervril-12-mg-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175342/AO/TG/HI/81929363/ivermectin-12mg-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175346/YC/CB/GR/81929363/elder-ivermectin-12mg-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "600mg-lumenac-acetylcysteine-effervescent-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "600mg Lumenac Acetylcysteine Effervescent Tablets",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Lumenac",
+    "manufacturer": "Lupin",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "600 mg",
+    "packagingSize": "1*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Acetylcysteine",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Respiratory Disease With Excessive Mucus",
+    "description": "Lumenac Effervescent Tablet Orange is a Prescription Medicine Used in the Treatment of Respiratory Disease With Excessive Mucus. This Medicine Helps Reduces Mucus Secretion in Various Lung Diseases Such as Bronchitis, Asthma, and Emphysema.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175066/SM/EN/JT/81929363/lumenac-600-mg-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175069/RW/LO/KH/81929363/lumenac-600-mg-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175073/ON/HC/GW/81929363/lumenac-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "2-5mg-apigat-apixaban-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "2.5mg Apigat Apixaban Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Apigat",
+    "manufacturer": "Natco Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "2.5 mg",
+    "packagingSize": "30 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Apixaban",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Helps Prevent and Treat Blood Clots",
+    "description": "Apigat 2.5 Tablet is a Medicine Known as an Anticoagulant or Blood Thinner. It Helps Prevent and Treat Blood Clots. It Prevents and Treats Clot Formation in the Veins of Your Legs, Lungs, Brain, and Heart. It is Used to Reduce the Risk of Stroke and Heart Attack.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174613/TD/PW/QG/81929363/apigat-2-5mg-apixaban-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174614/KC/HG/RC/81929363/apigat-apixaban-5-mg-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174617/DO/SE/WV/81929363/apigat-apixaban-5-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "10mg-dydroboon-dydrogesterone-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "10mg Dydroboon Dydrogesterone Tablets IP",
+    "price": "210.00",
+    "currency": "₹",
+    "brand": "Dydroboon",
+    "manufacturer": "Life Star",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Dydrogesterone",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Progesterone Deficiency States",
+    "description": "Dydroboon Tablet is a Hormonal Therapy Used to Treat Progesterone Deficiency States. It Can Relieve Menstrual Pain and Can Treat Symptoms of Endometriosis and Premenstrual Syndrome. It Can Also Be Used to Treat Infertility Problems and Irregular Periods in Women.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477313711/AN/GR/TT/81929363/1654772164-133918-0-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477313712/RS/CT/CQ/81929363/dydroboon-1626760727-10069732-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477313710/FF/BH/PE/81929363/3657-0b447a5c-9e61-499e-a207-7e7081e0fdbc-0b447a5c-9e61-499e-a207-7e7081e0fdbc-1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "2mg-trinex-tizanidine-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "2mg Trinex Tizanidine Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Trinex",
+    "manufacturer": "Signature",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "2 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It Is Used to Manage Muscle Spasms",
+    "description": "Tizanidine oral tablet is used to manage muscle spasms. Symptoms can include muscle tightness, pain, or stiffness. This drug is often used for people with multiple sclerosis, spinal cord injury, or muscle spasticity. Muscle Spasticity.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476683024/GK/MX/YS/81929363/tizanidine-trinex-tablet123-1000x1000.png",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476683013/EU/DJ/TO/81929363/tizanidine-trinex-tablet1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476683017/VT/UZ/EF/81929363/tizanidine-trinex-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "6mg-defcort-deflazacort-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "6mg Defcort Deflazacort Tablets",
+    "price": "189.00",
+    "currency": "₹",
+    "brand": "Defcort",
+    "manufacturer": "Macleods",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "6 mg",
+    "packagingSize": "10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Deflazacort",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Various Diseases and Conditions Such as Inflammatory Conditions",
+    "description": "Defcort 6 Tablet Belongs to a Group of Medicines Called Steroids. It is Used for the Treatment of Various Diseases and Conditions Such as Inflammatory Conditions and Autoimmune Conditions. Defcort 6 Tablet Works by Inhibiting the Release of Substances That Cause Swelling or by Changing How the Immune System Works. It Can Be Taken on an Empty Stomach or After Food. Taking the Medicine Regularly at the Right Times Increases Its Effectiveness. It is Important to Keep Taking the Medicine Regularly Until Your Doctor Tells You It is Safe to Stop.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477373207/FG/MQ/NT/81929363/deflazacort-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477373248/VD/HO/BZ/81929363/deflazacort-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "10mg-dydroboon-dydrogesterone-tablets-ip-lifemankind",
+    "category": "pharmaceutical-tablets",
+    "name": "10mg Dydroboon Dydrogesterone Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Dydroboon",
+    "manufacturer": "Life Mankind",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Dydrogesterone",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Infertility Problems and Irregular Periods in Women",
+    "description": "Dydroboon Tablet is a Hormonal Therapy Used to Treat Progesterone Deficiency States. It Can Relieve Menstrual Pain and Can Treat Symptoms of Endometriosis and Premenstrual Syndrome. It Can Also Be Used to Treat Infertility Problems and Irregular Periods in Women.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476176667/NN/PL/DE/81929363/dydroboon-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476176669/XB/ZH/UL/81929363/dydrogesterone-10mg-tablet-dydroboon-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "rabemac-20-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Rabemac 20 Tablets",
+    "price": "105.00",
+    "currency": "₹",
+    "brand": "Macleods Pharmaceuticals Pvt Ltd",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "20 mg",
+    "packagingSize": "1*10 Tablets",
+    "packagingType": "Strips",
+    "saltComposition": "Rabeprazole (20mg)",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Rabemac 20 Tablet is a medicine that reduces the amount of acid produced in your stomach. It is used in the treatment of acid-related diseases of the stomach and intestine such as acid reflux, peptic ulcer disease, and Zollinger-Ellison syndrome. It provides relief from symptoms and promotes healing. Rabemac 20 Tablet medicine should be taken one hour before a meal, preferably in the morning. The dose will depend on your underlying condition and how you respond to the medicine. Try to take it regularly at the same time each day as advised by your doctor. You should keep on taking it as prescribed even if your symptoms disappear quickly. You may be able to help improve your symptoms by eating smaller meals more often and avoiding caffeinated drinks like tea and coffee, and spicy or fatty foods.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/494913451/VG/EK/UK/81929363/rabemac-20-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/494913509/SK/RW/FS/81929363/rabemac-20-tablets-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Strips",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "100mg-topaz-topiramate-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "100mg Topaz Topiramate Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Topaz 100",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100 mg",
+    "packagingSize": "10*15 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Topiramate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Epilepsy (Seizures)",
+    "description": "Topaz 100 Tablet is a Medicine Used to Treat Epilepsy (Seizures) and to Prevent Migraines. It is Also Used in the Treatment of Lennox-gastaut Syndrome (a Rare, but Severe Form of Epilepsy That Starts in Early Childhood).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221897/TC/ZF/WN/81929363/topiramate-tablet-topaz-100mg-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221903/VR/MB/SD/81929363/topaz-100mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221908/XL/ZO/YR/81929363/topaz-100-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "200mg-susten-progesterone-soft-gelatin-capsule",
+    "category": "pharmaceutical-tablets",
+    "name": "200mg Susten Progesterone Soft Gelatin Capsule",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Susten 200",
+    "manufacturer": "Sun Pharma Laboratories Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "200 mg",
+    "packagingSize": "10 x 10 Capsules",
+    "packagingType": "Box",
+    "saltComposition": "Progesterone",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Recurrent Miscarriage, Amenorrhoea",
+    "description": "Susten 200 Mg Tablet is a Capsule Manufactured by Oestrogens & Progesterones. It is Commonly Used for the Diagnosis or Treatment of Recurrent Miscarriage, Amenorrhoea, Abnormal Uterine Bleeding, Palliative Treatment of Advanced, Inoperable Endometrial Carcinoma.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226862/NI/VG/QX/81929363/susten-200mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226866/RE/JC/PD/81929363/susten-200mg-capsule-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226868/AW/RF/UW/81929363/susten-200mg-capsule-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Capsule",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "trustretin-25-capsule",
+    "category": "pharmaceutical-tablets",
+    "name": "Trustretin 25 Capsule",
+    "price": "653.00",
+    "currency": "₹",
+    "brand": "USV LTD",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "25 mg",
+    "packagingSize": "1*10 Capsule",
+    "packagingType": "Box",
+    "saltComposition": "Acitretin (25mg)",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Trustretin 25 Capsule is a medicine that is similar to vitamin A and is involved in the normal growth of skin cells. It is used in the treatment of psoriasis. It works by stopping the overgrowth and thickening of skin cells. Trustretin 25 Capsule is taken with food in a dose and duration as advised by the doctor. The dose you are given will depend on your condition and how you respond to the medicine. You should keep taking this medicine for as long as your doctor recommends. If you stop treatment too early your symptoms may come back and your condition may worsen. Let your doctor know about all other medications you are taking as some may affect, or be affected by this medicine.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/495013149/SK/FT/WU/81929363/trustretin-25-capsule-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/495013195/XF/OY/BA/81929363/trustretin-25-capsule-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/495013225/NJ/JE/JL/81929363/trustretin-25-capsule-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Capsule",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-nodict-naltrexone-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Nodict Naltrexone Tablets IP",
+    "price": "290.00",
+    "currency": "₹",
+    "brand": "Nodict",
+    "manufacturer": "Sun Pharma Laboratories Pvt Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "1*30 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Naltrexone",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Prevent From Opioid Dependence and Addiction",
+    "description": "Nodict 50mg Tablet Contains Naltrexone Which Belongs to the Group of Medicines Called Opiate Antagonists. Nodict 50mg Tablet is Used as a Part of Treatment Programme to Help Affected Individuals From Taking Opiates (Substances That Provide Relief From Pain) and Prevent Them From Opioid Dependence and Addiction.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174077/JF/JO/PD/81929363/nodict-naltrexone-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174068/YI/YY/BM/81929363/nodict-naltrexone-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174072/CB/MI/MO/81929363/nodict-50-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-naltima-naltrexone-hydrochloride-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Naltima Naltrexone Hydrochloride Tablets IP",
+    "price": "110.00",
+    "currency": "₹",
+    "brand": "Naltima",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "1*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Naltrexone Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Opioid Dependence and Alcohol Addiction",
+    "description": "Naltima 50 Tablet is Used in the Treatment of Opioid Dependence and Alcohol Addiction. It Works by Blocking the Euphoric Feelings (Highs) That Some People May Experience After Taking Opiates and Alcohol. This Reduces the Craving and Helps You Stay Away From Them.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220180/OD/JD/PY/81929363/naltima-50-mg-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220181/KM/ZG/KV/81929363/naltima-50-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220187/GE/FS/UR/81929363/naltima2-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "viraday-emtricitabine-tenofovir-disoproxil-fumarate-and-efavirenz-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Viraday Emtricitabine Tenofovir Disoproxil Fumarate and Efavirenz Tablets",
+    "price": "400.00",
+    "currency": "₹",
+    "brand": "Viraday",
+    "manufacturer": "Cipla Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "200mg 300mg And 600mg",
+    "packagingSize": "30 Tablets",
+    "packagingType": "Bottle",
+    "saltComposition": "Emtricitabine Tenofovir Disoproxil Fumarate and Efavirenz",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Hiv (Human Immunodeficiency Virus) Infection",
+    "description": "Viraday Tablet is a Combination of Antiretrovirals Medicines. It is Prescribed to Treat HIV (Human Immunodeficiency Virus) Infection. It Boosts Up the Immunity to Fight Against HIV to Manage or Treat Aids (Acquired Immunodeficiency Syndrome).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476237114/AZ/EB/KQ/81929363/cipla-viraday-tablets-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476237117/UM/RH/TT/81929363/viraday-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476237121/YL/RK/LW/81929363/cipla-viraday-tablets-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Bottle",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "500mg-hydroford-hydroxyurea-capsules-usp",
+    "category": "pharmaceutical-tablets",
+    "name": "500mg Hydroford Hydroxyurea Capsules USP",
+    "price": "134.00",
+    "currency": "₹",
+    "brand": "Hydroford 500",
+    "manufacturer": "John Lee",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "500 mg",
+    "packagingSize": "10 x 10 Capsules",
+    "packagingType": "Box",
+    "saltComposition": "Hydroxyurea",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treats Cancer by Slowing or Stopping the Growth of Cancer Cells",
+    "description": "Hydroxyurea is in a Class of Medications Called Antimetabolites. Hydroxyurea Treats Cancer by Slowing or Stopping the Growth of Cancer Cells in Your Body. Hydroxyurea Treats Sickle Cell Anemia by Helping to Prevent Formation of Sickle-shaped Red Blood Cells.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476233040/RZ/WD/WG/81929363/hydroxyurea-capsules-usp-500-mg-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476233044/AL/ZB/EN/81929363/hydroxyurea-capsules-usp-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476233047/GJ/DA/GV/81929363/hydroxyurea-capsules-usp-500-mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476233051/UK/QD/RI/81929363/hydroxyurea-capsules-usp-500mg-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Capsule",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "20mg-tamodex-tamoxifen-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "20mg Tamodex Tamoxifen Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Tamodex 20",
+    "manufacturer": "Zydus Celexa",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "20 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Tamoxifen",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Breast Cancer",
+    "description": "Tamodex 20 Tablet is Used to Treat Breast Cancer. It Contains Tamoxifen Which Works by Blocking the Effects of Oestrogen That is Required for the Cancer Cells to Grow. In Some Cases, This Medicine May Cause Side Effects Such as Hot Flashes, Headache, Tiredness, Nausea, and Numbness or Tingling Sensation.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476232918/WO/PZ/NF/81929363/tamoxifen-citrate-20-mg-tablets-1000x1000.png",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476232919/PG/ZD/CJ/81929363/tamoxifen-tablets-20-mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476232922/PQ/DT/QH/81929363/20-mg-tamoxifen-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "200mg-sulpitac-amisulpride-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "200mg Sulpitac Amisulpride Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Sulpitac",
+    "manufacturer": "Amisulpride",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "200 mg",
+    "packagingSize": "1 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Amisulpride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Schizophrenia",
+    "description": "Sulpitac 200 Tablet is a Prescription Medicine Used in the Treatment of Schizophrenia, a Mental Disorder That Can Result in Hallucinations or Delusions and Also Adversely Affects a Person's Ability to Think and Behave",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221796/IU/VL/WV/81929363/sulphitac200mtablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221798/CO/EU/EB/81929363/sulphitac-200-mg-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221804/IP/RQ/BF/81929363/sulphitac-200-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-qutan-quetiapine-fumarate-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Qutan Quetiapine Fumarate Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Qutan",
+    "manufacturer": "Intas Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Quetiapine Fumarate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Bipolar Disorder, Schizophrenia",
+    "description": "Qutan 50mg Tablet Contains Quetiapine Which Belongs to the Group of Medicines Called Antipsychotics. It is Used to Treat Bipolar Disorder, Schizophrenia, and Depression (Major Depressive Disorder).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221671/BA/XF/RC/81929363/qutan-sr-100-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221676/TH/WD/NZ/81929363/qutan-sr-100-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221683/SE/HB/WE/81929363/qutan-sr-100-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-flumin-fluvoxamine-maleate-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg  Flumin Fluvoxamine Maleate Tablet",
+    "price": "210.00",
+    "currency": "₹",
+    "brand": "Flumin",
+    "manufacturer": "Psycogen",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "5x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Flumin 50mg Tablet is a type of antidepressant belonging to the selective serotonin reuptake inhibitor (SSRI) group of medicines. It is prescribed to treat depression, where it helps to make you feel better. This medicine is also used to treat people with obsessive-compulsive disorder.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220820/YJ/HA/WM/81929363/flumin-50mg-tablet1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220821/GH/MW/FG/81929363/flumin-50mg-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476220824/UZ/YF/CQ/81929363/flumin-50mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "aldigesic-sp-aceclofenac-paracetamol-and-serratiopeptidase-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Aldigesic SP Aceclofenac Paracetamol And Serratiopeptidase Tablets",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Aldigesic SP",
+    "manufacturer": "Alkem",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "",
+    "packagingSize": "10*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Aceclofenac 100mg + Paracetamol 325mg + Serratiopeptidase 15mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Helps to Reduce Inflammation and Provides Relief From Pain",
+    "description": "Aldigesic SP Tablet Helps to Reduce Inflammation and Provides Relief From Pain, Where Aceclofenac and Paracetamol Reduce Pain and Fever by Blocking Certain Chemical Messengers in the Brain, and Serratiopeptidase Promotes Healing by Breaking Down Abnormal Proteins at the Site of Inflammation Thereby Healing the Infected.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199999/UT/RN/ZG/81929363/aldigesic-sp-tablets-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476200007/YX/FU/LV/81929363/aldigesic-sp-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476200012/HR/HN/PE/81929363/aldigesic-sp-tablets-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "500mg-nizonide-nitazoxanide-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "500mg Nizonide Nitazoxanide Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Nizonide",
+    "manufacturer": "Endeavour [Lupin]",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "500 mg",
+    "packagingSize": "10 x 6 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Nitazoxanide",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Diarrhoea Caused by Giardia Lamblia",
+    "description": "Nizonide 500mg Tablet Contains Nitazoxanide Which Belongs to the Group of Medicines Called Antiprotozoals. It is Used to Treat Diarrhoea Caused by Giardia Lamblia or Cryptosporidium Parvum.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199201/FJ/ZL/NM/81929363/nizonide-500mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199203/JV/VD/QZ/81929363/nizonide-500mg-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199205/VD/GG/OK/81929363/nizonide-500mg-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199219/OP/NX/ZC/81929363/nizonide-500mg-tablet-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "7-5mg-melorise-meloxicam-tablets-bp",
+    "category": "pharmaceutical-tablets",
+    "name": "7.5mg Melorise Meloxicam Tablets BP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Melorise",
+    "manufacturer": "John Lee",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "7.5mg",
+    "packagingSize": "10 x 3 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Meloxicam",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Provide Pain Relief Associated With Inflammatory Bone Conditions Such Osteoarthrosis",
+    "description": "Melorise 7.5mg is an Anti-inflammatory Medicine Used to Provide Pain Relief Associated With Inflammatory Bone Conditions Such Osteoarthrosis, Rheumatoid Arthritis, or Ankylosing Spondylitis. It is Suitable for Use in Both Adults and in Adolescents (16 Years or Older).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476176108/ZC/ON/DK/81929363/melorise-tablet-bp-7-5-mg2-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476176112/TH/JJ/HO/81929363/melorise-7-5-mg-tablets-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476176104/QL/AC/SE/81929363/melorise-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "0-5mg-caberdost-cabergoline-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "0.5mg Caberdost Cabergoline Tablets IP",
+    "price": "390.00",
+    "currency": "₹",
+    "brand": "Caberdost 0.5",
+    "manufacturer": "Signature",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "0.5 mg",
+    "packagingSize": "4 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Cabergoline",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of a High Level of Prolactin",
+    "description": "Caberdost 0.5 Tablet is a Dopamine Agonist. It is Used for the Treatment of a High Level of Prolactin. It is Also Helpful in Stopping Breast Milk Production in Cases of Stillbirth, Abortion, or Miscarriage.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175450/MG/GF/VF/81929363/caberdost-0-5-mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175448/EN/MI/BC/81929363/caberdost-0-5-mg-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476175459/IQ/OX/LA/81929363/caberdost-0-5mg-tablets-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "myhep-all-velpatasvir-and-sofosbuvir-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Myhep All Velpatasvir And Sofosbuvir Tablets",
+    "price": "800.00",
+    "currency": "₹",
+    "brand": "Myhep All",
+    "manufacturer": "Mylan",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "400 mg+ 100 mg",
+    "packagingSize": "28 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Velpatasvir And Sofosbuvir",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used in the Treatment of Chronic Hepatitis C Virus",
+    "description": "Myhep All Tablet is a Combination of Two Antiviral Medicines. This Prescription Medicine is Used in the Treatment of Chronic Hepatitis C Virus (Hcv) Infection. It Fights Against the Viruses to Resolve the Infection.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476173389/VI/US/GE/81929363/myhep-all-velpatasvir-100mg-sofosbuvir-400mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476173390/UL/WD/JL/81929363/myhep-all-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476173394/IK/FQ/NL/81929363/myhep-all-tablet-sofosbuvir-400mg-velpatasvir-100mg-storage-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "400mg-votrient-pazopanib-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "400mg Votrient Pazopanib Tablets",
+    "price": "1100.00",
+    "currency": "₹",
+    "brand": "Votrient",
+    "manufacturer": "Novartis",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "400 mg",
+    "packagingSize": "30 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Pazopanib",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used in the Treatment of Kidney Cancer",
+    "description": "Votrient 400mg Tablet Contains Pazopanib Which Belongs to the Group of Medicines Called Protein Kinase Inhibitors. It is Used in the Treatment of Kidney Cancer (That Has Advanced or Spread to Other Organs) and Soft Tissue Sarcoma. Soft Tissue Sarcoma is a Type of Cancer That Affects the Supportive Tissues of the Body.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475519166/JO/HC/YY/81929363/votrient-400mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475519167/HS/HP/UD/81929363/votrient-400-mg-pazopanib-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475519170/SB/HC/AQ/81929363/pazopanib-400mg-votrient-400-mg-pack-of-30-tablets-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "200mg-pirfenex-pirfenidone-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "200mg Pirfenex Pirfenidone Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Pirfenex 200",
+    "manufacturer": "Cipla Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "200 mg",
+    "packagingSize": "2 x 15 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Pirfenidone",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Reduces Scarring and Swelling in the Lungs and Helps to Breathe Better",
+    "description": "Pirfenex Tablet is a Prescription Medicine Used in the Treatment of Idiopathic Pulmonary Fibrosis. It Reduces Scarring and Swelling in the Lungs and Helps to Breathe Better.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476237223/VR/QN/JZ/81929363/pirfenex-200-mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476237227/RG/OX/BY/81929363/pirfenex-200-mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476237231/VG/ZJ/LA/81929363/pirfenex-200mg-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "100mg-fertomid-clomiphene-citrate-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "100mg Fertomid Clomiphene Citrate Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Fertomid 100",
+    "manufacturer": "Cipla Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100 mg",
+    "packagingSize": "10 x 5 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomiphene Citrate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used in the Treatment of Female Infertility",
+    "description": "Fertomid 100mg Tablet Contains Clomiphene Which Belongs to the Group of Medicines Called Ovulation Stimulators. It is Used in the Treatment of Female Infertility. It Can Promote Ovulation (Release of Matured Egg From the Ovaries) in Women Who Do Not Produce Eggs and in Women Undergoing Fertility Treatments.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226387/MV/TW/KF/81929363/fertomid-100-tablet-clomifene-citrate-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226388/MJ/JK/AT/81929363/fertomid-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226395/YU/NY/EE/81929363/clomiphene-citrate-tablet-fertomid-100-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226398/HL/NW/NX/81929363/clomiphene-citrate-tablet-fertomid-100-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "telmavas-h-telmisartan-hydrochlorothiazide-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "Telmavas-H Telmisartan Hydrochlorothiazide Tablet",
+    "price": "190.00",
+    "currency": "₹",
+    "brand": "Telmavas-H",
+    "manufacturer": "Zydus",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "40 mg",
+    "packagingSize": "20*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "To treat high blood pressure",
+    "description": "Telmavas H-Tablet contains two medicines, both of which help to control high blood pressure. It is generally used when one medicine alone is not controlling the blood pressure effectively. Lowering blood pressure helps to reduce your risk of having a heart attack or a stroke in the future.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514049/AP/ZD/BJ/81929363/telmavas-h-telmisartin-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514051/UA/MY/SY/81929363/telmavas-h-telmisartin-tablet2-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514052/SP/YA/BT/81929363/telmavas-h-telmisartin-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514054/CF/YS/AQ/81929363/telmavas-h-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription",
+      "Usages": "To treat high blood pressure"
+    }
+  },
+  {
+    "id": "ziverdo-zinc-acetate-doxycycine-ivermectin-kit",
+    "category": "pharmaceutical-tablets",
+    "name": "Ziverdo Zinc Acetate Doxycycine Ivermectin Kit",
+    "price": "200.00",
+    "currency": "₹",
+    "brand": "Ziverdo",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "",
+    "packagingSize": "1*6 Kits",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Kit Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It is Used to Treat Bacterial and Parasitic Infections",
+    "description": "Ziverdo Kit is a combination medicine that is used to treat bacterial and parasitic infections in the body. It kills and stops the growth of bacteria and parasites and prevents the further spread of the infection. This way it helps in speedy healing and recovery of the symptoms caused by the infection.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513430/TP/ZP/JW/81929363/ziverdo-kit-1x28-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513431/KA/MA/SC/81929363/ziverdo-kit-1x282-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513433/XV/JI/OB/81929363/ziverdo-kit-1x28-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet & Capsules",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription"
+    }
+  },
+  {
+    "id": "agefine-forte-glutathione-vitamin-c-alpha-lipoic-acid-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Agefine Forte Glutathione Vitamin C Alpha Lipoic Acid Tablets",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Agefine Forte",
+    "manufacturer": "Healing Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "",
+    "packagingSize": "10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "L Glutathione 500 mg + Vitamin C 250 mg + Alpha Lipoic Acid 50 mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Skin Whitening Treatment",
+    "description": "It is used to help growth and good health. It is used to stop or treat vitamin C deficiency. It is used to lower the urines pH.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513149/SS/LI/QY/81929363/agefine-forte-1-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513150/FB/VA/MJ/81929363/agefine-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513151/EF/PF/EZ/81929363/agefine-forte-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "10mg-lipvas-atorvastatin-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "10mg Lipvas Atorvastatin Tablet",
+    "price": "210.00",
+    "currency": "₹",
+    "brand": "Lipvas",
+    "manufacturer": "Cipla",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "3x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "To lower cholesterol and triglyceride levels in the blood",
+    "description": "Lipvas 10 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and to reduce the risk of heart diseases. Cholesterol is a fatty substance that builds up in your blood vessels and causes narrowing, which may lead to a heart attack or stroke.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475512842/MB/YW/FH/81929363/lipvas-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475512838/EN/HE/SG/81929363/lipvas10-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475512846/CA/EF/QO/81929363/lipvas-10-mg-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required",
+      "Usages": "To lower cholesterol and triglyceride levels in the blood"
+    }
+  },
+  {
+    "id": "200mg-pirfeheal-pirfenidone-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "200mg Pirfeheal Pirfenidone Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Pirfeheal",
+    "manufacturer": "Healing Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "200 mg",
+    "packagingSize": "3x10 Tablets",
+    "packagingType": "",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It is Used in the Treatment of Idiopathic Pulmonary Fibrosis",
+    "description": "Pirfeheal 200mg Tablet is a prescription medicine used in the treatment of idiopathic pulmonary fibrosis. It reduces scarring and swelling in the lungs and helps to breathe better.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475512211/FQ/YY/DM/81929363/pirfeheal-200-mg-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475512213/SA/HP/JA/81929363/pirfeheal-200-mg-tablets-2-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475512215/SW/AJ/EU/81929363/pirfeheal-200-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablets",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-voxa-fluvoxamine-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Voxa Fluvoxamine Tablet",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Voxa",
+    "manufacturer": "Elikem Pharmaceuticals",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Fluvoxamine is Used to Treat Obsessive-compulsive Disorder (Ocd)",
+    "description": "Fluvoxamine is used to treat obsessive-compulsive disorder (OCD). It helps decrease thoughts that are unwanted or that don't go away (obsessions), and it helps to reduce the urge to perform repeated tasks (compulsions such as hand-washing, counting, checking) that interfere with daily living.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511503/QV/BE/YP/81929363/50mg-fluvoxamine-tablets-i-p-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511504/ZL/ED/CN/81929363/voxa-fluvoxamine-50mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475511507/RC/EU/MT/81929363/fluvoxamine50mgtablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "250mg-cronotol-disulfiram-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "250mg Cronotol Disulfiram Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Cronotol",
+    "manufacturer": "Healing Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "250 mg",
+    "packagingSize": "20x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Is Used to Support the Treatment of Alcohol Dependence (or Alcohol Addiction).",
+    "description": "250mg Cronotol Disulfiram Tablet is used to support the treatment of alcohol dependence (or alcohol addiction). It helps to quit the habit of alcoholism in patients having a habit of drinking excessive alcohol (chronic alcoholism).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476680770/VU/GS/MO/81929363/disulfiram-250-tablet12-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476680773/IH/FE/PK/81929363/disulfiram-250-tablet1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476680776/DT/ZD/RV/81929363/disulfiram-250-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablets",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "100mg-labebet-labetalol-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "100mg Labebet Labetalol Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Labebet",
+    "manufacturer": "Neon",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100 mg",
+    "packagingSize": "5x10 Tablet",
+    "packagingType": "Strip",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treating High Blood Pressure",
+    "description": "Labebet 100mg Tablet is a medicine used for treating high blood pressure (hypertension) and heart-related chest pain (angina). It is also effective for treating high blood pressure in pregnancy. It lowers blood pressure and thus helps in preventing future stroke and heart attack.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476680512/AI/EX/IJ/81929363/labebet-labetalol-100mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476680510/FE/UM/XK/81929363/labebet-labetalol-100mg-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476680511/JP/WN/AE/81929363/labebet-100mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Strip",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "200mg-zoviclovir-acyclovir-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "200mg Zoviclovir Acyclovir Tablets",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Zoviclovir",
+    "manufacturer": "Healing Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "200 mg",
+    "packagingSize": "3x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Aciclovir Tablets are indicated for the treatment of herpes simplex virus infections of the skin and mucous membranes including initial and recurrent genital herpes (excluding neonatal HSV and severe HSV infections in immunocompromised children).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476678801/SK/NL/ZX/81929363/acyclovir-tablets-200mg-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476678802/IK/QB/RL/81929363/acyclovir-tablets-200mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476678804/YJ/PO/JC/81929363/acyclovir-tablets-200mg-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "20mg-dolonex-piroxicam-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "20mg Dolonex Piroxicam Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Dolonex",
+    "manufacturer": "Pfizer",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "20mg",
+    "packagingSize": "30 Strips x 15 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "DOLONEX DT 20MG TABLET helps to reduce pain and swelling affecting the joints. It is also used to relieve the symptoms caused by osteoarthritis (joint disease), rheumatoid arthritis, and ankylosing spondylitis (rheumatism of the spine), such as swelling, stiffness, and joint pain.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687584/JQ/GH/NU/81929363/dolonex-dt-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687587/JO/ZY/TB/81929363/dolonex-dt-20mg-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687592/UW/IN/LX/81929363/dolonex-dt-20mg-tablet123-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription"
+    }
+  },
+  {
+    "id": "6-25mg-cardivas-carvedilol-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "6.25mg Cardivas Carvedilol Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Cardivas",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "6.25 mg",
+    "packagingSize": "",
+    "packagingType": "Box",
+    "saltComposition": "Carvedilol",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It is Used to Treat High Blood Pressure (Hypertension), Chest Pain or Angina and Also Used to Treat",
+    "description": "CARDIVAS 6.25MG TABLET contains Carvedilol which belongs to a group of medicines called Beta-blockers. It is used to treat high blood pressure (hypertension), chest pain or angina and also used to treat heart failure. Hypertension is defined as persistently elevated arterial blood pressure",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514624/FX/TR/QP/81929363/cardivas6-25-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514621/EB/JG/OS/81929363/cardivas-6-25-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514625/SP/UG/MK/81929363/cardivas6-25tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "1mg-proscalpin-finasteride-tablets-usp",
+    "category": "pharmaceutical-tablets",
+    "name": "1mg Proscalpin Finasteride Tablets USP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Proscalpin",
+    "manufacturer": "Fortune Health Care",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "1 mg",
+    "packagingSize": "10*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Finasteride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Relieve Symptoms of Elarged Prostate Gland",
+    "description": "Proscalpin 1 Mg Tablet Contains Finasteride 1 Mg is Used to Relieve Symptoms of Elarged Prostate Gland (Benign Prostatic Hyperplasia or Bph). It is Also Used for Treatment of Male Pattern Hair Loss (Androgenetic Alopecia).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223170/ZT/XA/EY/81929363/proscalpin-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223172/RS/RI/AG/81929363/proscalpin-tablets-1mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223175/UY/IY/AH/81929363/proscalpin-1mg-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "trustretin-10-capsule",
+    "category": "pharmaceutical-tablets",
+    "name": "Trustretin 10 Capsule",
+    "price": "396.00",
+    "currency": "₹",
+    "brand": "USV Ltd",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "1*10",
+    "packagingType": "Strip",
+    "saltComposition": "Acitretin (10mg)",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Trustretin 10 Capsule is a medicine that is similar to vitamin A and is involved in the normal growth of skin cells. It is used in the treatment of psoriasis. It works by stopping the overgrowth and thickening of skin cells. Trustretin 10 Capsule is taken with food in a dose and duration as advised by the doctor. The dose you are given will depend on your condition and how you respond to the medicine. You should keep taking this medicine for as long as your doctor recommends. If you stop treatment too early your symptoms may come back and your condition may worsen. Let your doctor know about all other medications you are taking as some may affect, or be affected by this medicine.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/495007633/XK/HZ/MH/81929363/trustretin-10-capsule-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/495007676/TQ/LF/IO/81929363/trustretin-10-capsule-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/495007728/LU/YD/UX/81929363/trustretin-10-capsule-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Capsules",
+      "Pack Type": "Strip",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "ceftum-500-mg-tablets-cefuroxime-500mg",
+    "category": "pharmaceutical-tablets",
+    "name": "Ceftum 500 Mg Tablets Cefuroxime 500mg",
+    "price": "229.00",
+    "currency": "₹",
+    "brand": "Glaxo SmithKline Pharmaceuticals Ltd",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "500mg",
+    "packagingSize": "1*10 Tablets",
+    "packagingType": "Strips",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "To treat bacterial infections",
+    "description": "Ceftum 500mg Tablet is an antibiotic medicine used to treat bacterial infections in your body. It is effective in infections of the lungs (e.g., pneumonia), ear, throat, nasal sinus, urinary tract, skin, soft tissues, bones, and joints. It is also used to prevent infections during surgery. Ceftum 500mg Tablet should be taken with food to avoid an upset stomach. You should take it regularly at evenly spaced intervals as per the schedule prescribed by your doctor. Taking it at the same time every day will help you to remember to take it. The dose will depend on what you are being treated for, but you should always complete a full course of this antibiotic as prescribed by your doctor. Do not stop taking it until you have finished, even when you feel better. If you stop taking it early, some bacteria may survive and the infection may come back. It will not work for viral infections such as flu or the common cold. Using any antibiotic when you do not need it can make it less effective for future infections.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/494991163/IA/CW/UX/81929363/ceftum-500-mg-tablets-cefuroxime-500mg-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/494991195/RX/JS/ZU/81929363/ceftum-500-mg-tablets-cefuroxime-500mg-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2025/3/494991247/FD/SM/CL/81929363/ceftum-500-mg-tablets-cefuroxime-500mg-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Strips",
+      "Prescription Status": "Prescription Required",
+      "Usages": "To treat bacterial infections"
+    }
+  },
+  {
+    "id": "5mg-fincar-finasteride-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "5mg Fincar Finasteride Tablets IP",
+    "price": "200.00",
+    "currency": "₹",
+    "brand": "Fincar 5",
+    "manufacturer": "Cipla Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "5 mg",
+    "packagingSize": "20 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Finasteride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Shrinkage Of An Enlarged Prostate",
+    "description": "Fincar 5mg Tablet Helps in Shrinkage of an Enlarged Prostate, Where Finasteride Works by Blocking the Production of a Stress Hormone Called Dihydrotestosterone in the Body That Causes Prostate Enlargement. As a Result, It Reduces the Size of Prostate, Prevents Further Growth, and Improves Urine Flow.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223414/AL/JM/RH/81929363/fincar-5-mg-tab-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223422/VA/XV/VU/81929363/fincar-5-mg-tab-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223427/UY/QG/QL/81929363/fincar-5-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "1000mg-valclovir-valacyclovir-hydrochloride-tablets-usp",
+    "category": "pharmaceutical-tablets",
+    "name": "1000mg Valclovir Valacyclovir Hydrochloride Tablets USP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Valclovir 1000",
+    "manufacturer": "Healing Pharma India Pvt Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "1000 mg",
+    "packagingSize": "1 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Valacyclovir Hydrochloride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treat Herpes Zoster (Shingles) and Genital Herpes",
+    "description": "Valacyclovir is Used to Treat Herpes Zoster (Shingles) and Genital Herpes. It Does Not Cure Herpes Infections but Decreases Pain and Itching, Helps Sores to Heal, and Prevents New Ones From Forming. This Medication is Sometimes Prescribed for Other Uses; Ask Your Doctor or Pharmacist for More Information.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199827/UU/OH/FQ/81929363/valacyclovir-hydrochloride-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199832/ZL/KW/YX/81929363/valacyclovir-hydrochloride-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476199842/RS/PA/JW/81929363/valacyclovir-hydrochloride-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-fluvoxin-fluvoxamine-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Fluvoxin Fluvoxamine Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Fluvoxin",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "10x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It Is Used to Treat Obsessive-compulsive Disorder (Ocd)",
+    "description": "Fluvoxamine is used to treat obsessive-compulsive disorder (OCD). It helps decrease thoughts that are unwanted or that don't go away (obsessions), and it helps to reduce the urge to perform repeated tasks (compulsions such as hand-washing, counting, checking) that interfere with daily living.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477299231/CO/LB/EH/81929363/fluvoxamine-50-mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477299225/RR/LQ/RJ/81929363/71ohke6y76l-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477299276/CK/QD/EJ/81929363/flu0069-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "500mg-azicip-azithromycin-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "500mg Azicip Azithromycin Tablets",
+    "price": "190.00",
+    "currency": "₹",
+    "brand": "Azicip",
+    "manufacturer": "Cipla",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "500 mg",
+    "packagingSize": "20x3 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip of 3 Tablets",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Azithromycin is an antibiotic. It works by preventing synthesis of essential proteins required by bacteria to carry out vital functions.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476241555/HL/SV/QC/81929363/azithromycin-tablets-1000x1000.png",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476241557/LJ/CS/MY/81929363/azithromycin-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476241562/EM/GB/NS/81929363/azithromycin-tablets-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required",
+      "Usages": "To treat a variety of bacterial infections"
+    }
+  },
+  {
+    "id": "50mg-clofert-clomiphene-citrate-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Clofert Clomiphene Citrate Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Clomiphene Citrate",
+    "manufacturer": "Svizera Healthcare",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomiphene Citrate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Female Infertility",
+    "description": "Clofert 50mg Tablet Contains Clomiphene Which Belongs to the Group of Medicines Called Ovulation Stimulators. It is Used in the Treatment of Female Infertility. It Can Promote Ovulation (Release of Matured Egg From the Ovaries) in Women Who Do Not Produce Eggs and in Women Undergoing Fertility Treatments.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226251/NV/BV/AM/81929363/clofert-50-mg-clomifene-citrate-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226258/PW/CA/IX/81929363/clomiphene-citrate-tablet-clofert-50-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226263/ZX/HB/UD/81929363/clomiphene-citrate-tablet-clofert-50-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "100mg-clofi-clomiphene-citrate-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "100mg Clofi Clomiphene Citrate Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Clofi 100",
+    "manufacturer": "Sunrise Remedies Pvt Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomiphene Citrate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Female Infertility",
+    "description": "The Clofi 100 Tablet Promotes the Release of a Healthy, Mature Egg and Aids in the Correct Development of an Egg in a Woman's Ovary (the Female Reproductive Organ). This Improves the Likelihood of a Successful Pregnancy While Aiding in the Treatment of Female Infertility.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226071/DP/MQ/LE/81929363/clofi-100-medicine-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226073/PJ/MD/TL/81929363/clomiphene-citrate-tablet-clofi-100-mg-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476226075/ZQ/VX/UP/81929363/clomiphene-citrate-tablet-clofi-100-mg-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "5mg-finast-finasteride-tablets-usp",
+    "category": "pharmaceutical-tablets",
+    "name": "5mg Finast Finasteride Tablets USP",
+    "price": "190.00",
+    "currency": "₹",
+    "brand": "Finast 5",
+    "manufacturer": "Dr Reddy's",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "1 mg",
+    "packagingSize": "10 x 15 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Finasteride",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Helps in Shrinkage of an Enlarged Prostate",
+    "description": "Finast 5mg Tablet Helps in Shrinkage of an Enlarged Prostate, Where Finasteride Works by Blocking the Production of a Stress Hormone Called Dihydrotestosterone in the Body That Causes Prostate Enlargement. As a Result, It Reduces the Size of Prostate, Prevents Further Growth, and Improves Urine Flow.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223325/VP/ZY/VS/81929363/finast-5mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223339/PS/GM/CO/81929363/finast-5mg-tablet-1000x1000.png",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476223340/VF/OR/XJ/81929363/finast-5mg-tablet-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "15mg-xarelto-rivaroxaban-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "15mg Xarelto Rivaroxaban Tablets",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Xarelto 15",
+    "manufacturer": "Bayer Zydus Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "15 mg",
+    "packagingSize": "2 x 14 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Rivaroxaban",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Helps Prevent and Treat Blood Clots",
+    "description": "Xarelto 15mg Tablet is a Medicine Known as an Anticoagulant or Blood Thinner. It Helps Prevent and Treat Blood Clots. It is Used to Reduce the Risk of Stroke and Heart Attack. It Prevents and Treats Clot Formation in the Veins of Your Legs, Lungs, Brain and Heart.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174243/YY/XW/EN/81929363/xarelto-15mg-rivaroxaban-tablets-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174241/SB/LM/EI/81929363/rivaroxaban-xarelto-10-mg-14-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476174246/DM/SW/IZ/81929363/rivaroxaban-xarelto-10-mg-1000x1000.png"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-nodict-naltrexone-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Nodict Naltrexone Tablet",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Nodict",
+    "manufacturer": "Sun Pharma",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "5x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "NODICT 50MG TABLET contains Naltrexone which belongs to the group of medicines called Opiate antagonists. NODICT 50MG TABLET is used as a part of treatment programme to help affected individuals from taking opiates (substances that provide relief from pain) and prevent them from opioid dependence and addiction.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476688837/QS/YL/KI/81929363/nodict-naltrexone-tablet12-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476688838/RZ/YD/HP/81929363/nodict-naltrexone-tablet-2-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required",
+      "Usages": "In the treatment of alcohol or opioid dependence."
+    }
+  },
+  {
+    "id": "150mg-raniji-ranitidine-hydrochloride-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "150mg Raniji Ranitidine Hydrochloride Tablets",
+    "price": "140.00",
+    "currency": "₹",
+    "brand": "Raniji",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "150 mg",
+    "packagingSize": "20*30 Tablet",
+    "packagingType": "Box",
+    "saltComposition": "Ranitidine 150mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "To treat indigestion &  heartburn and acid reflux gastro-oesophageal reflux disease",
+    "description": "Ranitidine is used to treat ulcers of the stomach and intestines and prevent them from coming back after they have healed. This medication is also used to treat certain stomach and throat (esophagus) problems (such as erosive esophagitis, gastroesophageal reflux disease-GERD, Zollinger-Ellison syndrome).",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687801/WN/AN/VW/81929363/ranitidine-tablets-150-mg-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687804/HJ/AB/LA/81929363/ranitidine-tablets-150-mg12-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription",
+      "Usages": "To treat indigestion &  heartburn and acid reflux gastro-oesophageal reflux disease"
+    }
+  },
+  {
+    "id": "400mg-brufen-ibuprofen-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "400mg Brufen Ibuprofen Tablets",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Brufen",
+    "manufacturer": "Abbott",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "400 mg",
+    "packagingSize": "1*15 Tablets",
+    "packagingType": "Strips",
+    "saltComposition": "Ibuprofen 400mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "Brufen is indicated for its analgesic and anti-inflammatory effects in the treatment of rheumatoid arthritis (including juvenile rheumatoid arthritis or Still's disease), ankylosing spondylitis, osteoarthritis and other non-rheumatoid (seronegative) arthropathies.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687088/NN/PQ/HJ/81929363/brufen-400-mg-tablets1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476687090/TW/YH/PH/81929363/brufen-400-mg-tablets12-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Strips",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "1000mg-valacivir-valacyclovir-hydrochloride-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "1000mg Valacivir Valacyclovir Hydrochloride Tablet",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Valacivir",
+    "manufacturer": "Care Formulation Labs",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "1000 mg",
+    "packagingSize": "10x1x3 Tablets",
+    "packagingType": "Stripe",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strip",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It Is Used to Treat Herpes Zoster (Shingles) and Genital Herpes",
+    "description": "Valacyclovir is used to treat herpes zoster (shingles) and genital herpes. It does not cure herpes infections but decreases pain and itching, helps sores to heal, and prevents new ones from forming. This medication is sometimes prescribed for other uses; ask your doctor or pharmacist for more information.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477294916/HW/SJ/RY/81929363/product-jpeg-2-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/477295082/NO/NN/LT/81929363/valacyclovir-tablet-500mga-nd-1000mg-1000x1000.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Stripe",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "25mg-nexipride-levosulpiride-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "25mg Nexipride Levosulpiride Tablets",
+    "price": "110.00",
+    "currency": "₹",
+    "brand": "Nexipride",
+    "manufacturer": "Sun Pharmaceutical Industries Ltd",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "25 mg",
+    "packagingSize": "10*10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Levosulpiride 25 mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Nausea, Vomiting and Indigestion",
+    "description": "Nexipride 25mg Tablet Contains Levosulpiride Which Belongs to the Group of Medicines Called Prokinetic Agents. It is Used to Treat Nausea, Vomiting and Indigestion. It Can Also Be Used to Treat Diabetic Gastroparesis.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221213/WX/TQ/KJ/81929363/nexipride-25-tablet-1000x1000.jpeg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476221215/PT/NR/WL/81929363/nexipride-25-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "10mg-rosuvas-rosuvastatin-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "10mg Rosuvas Rosuvastatin Tablet",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Rosuvas",
+    "manufacturer": "Sun Pharma Laboratories",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "10 mg",
+    "packagingSize": "10x 15 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "It is Used to Lower Cholesterol and Reduce the Risk of Heart Disease",
+    "description": "Rosuvas 10 Tablet belongs to a group of medicines called statins. It is used to lower cholesterol and reduce the risk of heart disease. Cholesterol is a fatty substance that builds up in your blood vessels and causes narrowing, which may lead to a heart attack or stroke.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514484/OV/YL/GW/81929363/rosuvas-10-mg-tablet1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475514487/PL/JK/QX/81929363/rosuvas-10-mg-tablet-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "50mg-revolade-eltrombopag-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "50mg Revolade Eltrombopag Tablets",
+    "price": "0.00",
+    "currency": "₹",
+    "brand": "Revolade",
+    "manufacturer": "Novartis",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "50 mg",
+    "packagingSize": "2 x 7 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Eltrombopag",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used to Treat Low Platelet Count Due to Chronic Immune",
+    "description": "Revolade 50mg Tablet is Used to Treat Low Platelet Count Due to Chronic Immune (Idiopathic) Thrombocytopenic Purpura (Itp) or Chronic Hepatitis C Virus (Hcv) Infection. It is Also Used to Treat Severe Aplastic Anemia.Revolade 50mg Tablet is a Thrombopoietin Agonist. It Works by Stimulating the Formation of New Platelets in the Blood. The Function of Platelets is to Help Reduce Bleeding.Take It in the Exact Dose and Duration as Advised by the Doctor. You May Take It on an Empty Stomach. This Medicine is to Be Swallowed as a Whole. Do Not Chew, Crush or Break It. Inform Your Doctor if You Have Any Known Allergies to This Medication.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476236698/NB/NE/UR/81929363/50-mg-eltrombopag-tablet-1-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476236700/II/ZY/ZK/81929363/revolade-eltrombopag-50-mg-tablet-1000x1000.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476236703/BN/RG/DZ/81929363/revolade-eltrombopag-50-mg-tablet-1-1000x1000.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "venpres-h-telmisartan-hydrochlorothiazide-tablet",
+    "category": "pharmaceutical-tablets",
+    "name": "Venpres-H Telmisartan Hydrochlorothiazide Tablet",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Venpres-H",
+    "manufacturer": "",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "12.5 mg",
+    "packagingSize": "10x1x10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Telmisartan Hydrochlorothiazide",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Box",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "",
+    "description": "VENPRES H 40/12.5MG TABLET is a combination of Hydrochlorothiazide and Telmisartan which belongs to the group of medicines called Antihypertensive agents. It is used to treat hypertension (high blood pressure) when treatment with single agents is not effective.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/475513876/SD/PH/GV/81929363/venpres-h-500x500.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "100mg-clome-clomiphene-citrate-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "100mg Clome Clomiphene Citrate Tablets IP",
+    "price": "120.00",
+    "currency": "₹",
+    "brand": "Clome 100",
+    "manufacturer": "Abbott",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "100 mg",
+    "packagingSize": "10 x 10 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomiphene Citrate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Treatment of Female Infertility",
+    "description": "Clome 100mg Tablet Contains Clomiphene Which Belongs to the Group of Medicines Called Ovulation Stimulators. It is Used in the Treatment of Female Infertility. It Can Promote Ovulation (Release of Matured Egg From the Ovaries) in Women Who Do Not Produce Eggs and in Women Undergoing Fertility Treatments.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476225974/VC/GP/BF/81929363/clome-tablet-copy-2-500x500.jpeg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "25mg-fertyl-m-clomiphene-citrate-tablets-ip",
+    "category": "pharmaceutical-tablets",
+    "name": "25mg Fertyl M Clomiphene Citrate Tablets IP",
+    "price": "130.00",
+    "currency": "₹",
+    "brand": "Fertyl M",
+    "manufacturer": "ArEx Laboratories",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "25 mg",
+    "packagingSize": "10 x 30 Tablets",
+    "packagingType": "Box",
+    "saltComposition": "Clomiphene Citrate",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used in the Treatment of Female Infertility",
+    "description": "Fertyl M 25mg Tablet Contains Clomiphene Which Belongs to the Group of Medicines Called Ovulation Stimulators. It is Used in the Treatment of Female Infertility. It Can Promote Ovulation (Release of Matured Egg From the Ovaries) in Women Who Do Not Produce Eggs and in Women Undergoing Fertility Treatments.",
+    "images": [
+      "https://5.imimg.com/data5/SELLER/Default/2024/12/476225516/KD/PO/BD/81929363/clomiphene-citrate-tablet-fertyl-m-tablets-1-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Box",
+      "Prescription Status": "Prescription Required"
+    }
+  },
+  {
+    "id": "drotin-m-drotaverine-hydrochloride-and-mefenamic-acid-tablets",
+    "category": "pharmaceutical-tablets",
+    "name": "Drotin M Drotaverine Hydrochloride And Mefenamic Acid Tablets",
+    "price": "210.00",
+    "currency": "₹",
+    "brand": "Drotin M",
+    "manufacturer": "Walter Bushnell",
+    "marketer": "Thakkar Medico Traders",
+    "strength": "",
+    "packagingSize": "1 x 10 Tablets",
+    "packagingType": "Strip",
+    "saltComposition": "Drotaverine Hydrochloride 80 mg +  Mefenamic Acid 250 mg",
+    "countryOfOrigin": "India",
+    "minimumOrderQuantity": "100 Strips",
+    "storage": "Store below 30°C. Protect from light and moisture.",
+    "treatment": "Used in the Treatment of Abdominal Pain",
+    "description": "Drotin-m Tablet is a Combination Medicine Used in the Treatment of Abdominal Pain. It Works Effectively to Reduce Abdominal Pain, Bloating, Discomfort and Cramps by Relaxing the Muscles of the Stomach and Gut. It Also Blocks Certain Chemical Messengers That Cause Pain and Discomfort.",
+    "images": [
+      "https://5.imimg.com/data5/NSDMERP/Default/2022/8/RP/OI/XO/81929363/drotin-m-tablets-1661247113233-500x500.jpg"
+    ],
+    "specifications": {
+      "Form": "Tablet",
+      "Pack Type": "Strip",
+      "Prescription Status": "Prescription Required"
     }
   }
 ]

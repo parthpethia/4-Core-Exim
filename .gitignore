@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary scratch & data dump files
+tablets.txt
+search_results.html

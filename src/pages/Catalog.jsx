@@ -107,7 +107,7 @@ export default function Catalog() {
             ) : products.length > 0 ? (
               
               /* Products List container */
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {products.map((product) => {
                   const productCategory = categories.find(c => c.id === product.category);
                   return (
