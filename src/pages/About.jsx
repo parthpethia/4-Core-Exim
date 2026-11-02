@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getCompanyInfo } from '../services/productService';
-import { FiAward, FiFileText, FiShield, FiTrendingUp } from 'react-icons/fi';
-import { motion } from 'framer-motion';
+import { FiAward, FiFileText, FiGlobe, FiTruck } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   const [company, setCompany] = useState(null);
@@ -16,171 +16,174 @@ export default function About() {
 
   if (!company) {
     return (
-      <div className="min-h-screen bg-brand-gray-50 flex items-center justify-center">
-        <p className="text-sm font-semibold text-brand-gray-700">Loading exporter profile...</p>
+      <div className="min-h-screen bg-brand-gray-50 flex items-center justify-center p-8">
+        <div className="w-full max-w-xl space-y-4">
+          <div className="w-48 h-6 shimmer rounded"></div>
+          <div className="w-full h-24 shimmer rounded-lg"></div>
+          <div className="w-full h-48 shimmer rounded-lg"></div>
+        </div>
       </div>
     );
   }
 
   const corePillars = [
     {
-      icon: <FiAward className="text-2xl text-brand-red-500" />,
-      title: "WHO-GMP Sourcing",
-      desc: "All products undergo rigorous inspection. We only partner with state-of-the-art facilities carrying WHO-GMP, US-FDA, and EU-GMP certifications."
+      icon: <FiAward className="text-xl text-brand-red-600" />,
+      title: "WHO-GMP Sourcing Governance",
+      desc: "Batches are procured directly from validated manufacturing plants carrying active WHO-GMP, EU-GMP, or US-FDA certifications."
     },
     {
-      icon: <FiShield className="text-2xl text-brand-red-500" />,
-      title: "Strict Temperature Control",
-      desc: "Sensitive biologicals, injectables, and vaccines are stored and shipped under validation-monitored cold-chain (2°C to 8°C) conditions."
+      icon: <FiTruck className="text-xl text-brand-red-600" />,
+      title: "Calibrated Cold-Chain Transit",
+      desc: "Refrigerated biologicals, injectables, and vaccines are shipped in qualified thermal containers monitored by USB/NFC dataloggers (2°C - 8°C)."
     },
     {
-      icon: <FiFileText className="text-2xl text-brand-red-500" />,
-      title: "Documentation Support",
-      desc: "We supply Certificate of Analysis (CoA), Stability Studies, Product Dossiers (CTD/eCTD format), and customized labels for local imports."
+      icon: <FiFileText className="text-xl text-brand-red-600" />,
+      title: "CTD Dossier & CoA Support",
+      desc: "We supply batch-specific Certificates of Analysis (CoA), Stability Study data (Zone IVb), and Common Technical Document (CTD) registration modules."
     },
     {
-      icon: <FiTrendingUp className="text-2xl text-brand-red-500" />,
-      title: "Global Custom Clearance",
-      desc: "Our trade compliance desks supervise clearance processes at Indian ports and manage export routing to over 40+ destinations."
+      icon: <FiGlobe className="text-xl text-brand-red-600" />,
+      title: "Port Clearance & Customs Routing",
+      desc: "Our trade logistics desk oversees export clearance at Indian ports (Nhava Sheva JNPT / Mumbai Air Cargo) for seamless global delivery."
     }
   ];
 
   return (
-    <div className="bg-white">
-      
-      {/* Page Header Banner */}
-      <section className="bg-brand-gray-900 text-white py-16 lg:py-20 relative overflow-hidden">
-        {/* Subtle grid background */}
-        <div className="absolute inset-0 opacity-10 medical-grid-bg"></div>
-        <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-brand-red-500/10 rounded-full filter blur-[80px] pointer-events-none -translate-y-1/2"></div>
+    <div className="bg-brand-gray-50 min-h-screen py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-red-500">WHO WE ARE</span>
-          <h1 className="text-4xl font-extrabold tracking-tight mt-2 text-white">About 4Core Exim</h1>
-          <p className="text-sm text-brand-gray-300 mt-4 max-w-xl leading-relaxed">
-            Supplying premium brand name, generic, specialty, and veterinary pharmaceutical formulations from India to the world.
+        {/* Page Header Banner */}
+        <div className="bg-white border border-brand-gray-200 rounded-lg p-8 shadow-sm">
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-red-600 block mb-2">
+            Corporate Profile
+          </span>
+          <h1 className="text-3xl font-bold text-brand-gray-900 tracking-tight">About 4Core Exim</h1>
+          <p className="text-xs font-semibold text-brand-gray-500 uppercase tracking-wider mt-1">
+            Backed by the legacy of Thakkar Medico Traders
+          </p>
+          <p className="text-xs text-brand-gray-700 mt-4 leading-relaxed font-normal max-w-3xl">
+            Supplying premium brand-name, generic, specialty, oncology, and veterinary pharmaceutical formulations from India's WHO-GMP audited manufacturing lines to wholesale distributors globally.
           </p>
         </div>
-      </section>
 
-      {/* Main Corporate Introduction */}
-      <section className="py-20 border-b border-brand-gray-150 bg-brand-gray-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Corporate History & Sourcing Roots */}
+        <div className="bg-white border border-brand-gray-200 rounded-lg p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <div className="lg:col-span-6">
-              <span className="text-xs font-extrabold uppercase tracking-wider text-brand-red-500 block mb-2">Corporate Bio</span>
-              <h2 className="text-3xl font-extrabold text-brand-gray-900 mb-6">
-                Experienced B2B Pharmaceutical Exporter
+            <div className="lg:col-span-7 space-y-4 text-xs text-brand-gray-700 leading-relaxed">
+              <h2 className="text-xl font-bold text-brand-gray-900 tracking-tight">
+                Established B2B Pharmaceutical Exporter
               </h2>
-              <p className="text-sm text-brand-gray-700 leading-relaxed font-medium mb-4">
+              <p>
                 {company.aboutFull.intro}
               </p>
-              <p className="text-sm text-brand-gray-700 leading-relaxed font-medium mb-4">
+              <p>
                 {company.aboutFull.sourcing}
               </p>
-              <p className="text-sm text-brand-gray-700 leading-relaxed font-medium mb-6">
-                Through our parent entity, <strong className="text-brand-gray-900">Thakkar Medico Traders</strong>, we command a deep, trusted footprint in Princess Street, Mumbai—the historic heart of India's wholesale chemical and medicine markets.
+              <p>
+                Through our parent organization, <strong className="text-brand-gray-900">Thakkar Medico Traders</strong>, we command a deep, trusted footprint established in Princess Street, Mumbai, the historic center of India's wholesale chemical and pharmaceutical trade.
               </p>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-5 rounded-xl border border-brand-gray-200 shadow-premium">
-                  <span className="text-3xl font-extrabold text-brand-red-500 block">40+</span>
-                  <span className="text-xs font-bold text-brand-gray-900 block mt-1 uppercase tracking-wider">Countries Served</span>
-                  <p className="text-[10px] text-brand-gray-750 leading-relaxed mt-2">Active supply networks extending across LATAM, Southeast Asia, CIS, Middle East, and Africa.</p>
+            <div className="lg:col-span-5">
+              <div className="bg-brand-gray-50 border border-brand-gray-200 rounded-lg p-5 space-y-4 text-xs">
+                <div className="border-b border-brand-gray-200 pb-3">
+                  <span className="text-2xl font-mono font-bold text-brand-red-700 block">40+</span>
+                  <span className="font-bold text-brand-gray-900 uppercase text-[11px] block mt-0.5">Destination Countries</span>
+                  <p className="text-[11px] text-brand-gray-500 mt-1">Active supply pipelines across LATAM, Southeast Asia, CIS, Middle East, and Africa.</p>
                 </div>
-                <div className="bg-white p-5 rounded-xl border border-brand-gray-200 shadow-premium">
-                  <span className="text-3xl font-extrabold text-brand-red-500 block">100%</span>
-                  <span className="text-xs font-bold text-brand-gray-900 block mt-1 uppercase tracking-wider">Traceability</span>
-                  <p className="text-[10px] text-brand-gray-750 leading-relaxed mt-2">Batches procured directly from primary factories, carrying verifiable Certificate of Analysis (CoA).</p>
+                <div className="border-b border-brand-gray-200 pb-3">
+                  <span className="text-2xl font-mono font-bold text-brand-red-700 block">100%</span>
+                  <span className="font-bold text-brand-gray-900 uppercase text-[11px] block mt-0.5">Batch Traceability</span>
+                  <p className="text-[11px] text-brand-gray-500 mt-1">Direct procurement with verifiable lot-specific Certificates of Analysis (CoA).</p>
                 </div>
-                <div className="bg-white p-5 rounded-xl border border-brand-gray-200 shadow-premium col-span-2">
-                  <span className="text-xl font-bold text-brand-gray-900 block">Regulatory Compliance Suite</span>
-                  <p className="text-[10px] text-brand-gray-750 leading-relaxed mt-2">
-                    We manage custom shipping layouts, Certificates of Pharmaceutical Product (CoPP), local FDA registrations, and customized multilingual sticker packaging.
-                  </p>
+                <div>
+                  <span className="font-bold text-brand-gray-900 uppercase text-[11px] block">Regulatory Compliance</span>
+                  <p className="text-[11px] text-brand-gray-500 mt-1">Incoterms 2020 export handling, CoPP documentation, and multilingual export packaging.</p>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
-      </section>
 
-      {/* Operational Pillars Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-wider text-brand-red-500">How We Operate</span>
-            <h2 className="text-3xl font-extrabold text-brand-gray-900 mt-2">Our B2B Distribution Model</h2>
-            <p className="text-sm text-brand-gray-700 mt-4 leading-relaxed font-medium">
-              We orchestrate end-to-end supply chains to guarantee that life-saving therapeutic formulations reach our global partners securely and efficiently.
-            </p>
+        {/* Operational Pillars */}
+        <div className="bg-white border border-brand-gray-200 rounded-lg p-8 shadow-sm">
+          <div className="mb-6">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-red-600 block">Operating Model</span>
+            <h2 className="text-xl font-bold text-brand-gray-900 mt-1">B2B Distribution & Quality Architecture</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {corePillars.map((pillar, idx) => (
               <div 
                 key={idx}
-                className="flex gap-4 bg-brand-gray-50 border border-brand-gray-200 rounded-xl p-6 shadow-sm hover:shadow-premium hover:border-brand-red-100 transition-all duration-300"
+                className="bg-brand-gray-50 border border-brand-gray-200 rounded-lg p-5 flex gap-4"
               >
-                <div className="shrink-0 bg-white p-3 rounded-lg border border-brand-gray-200 h-fit">
+                <div className="shrink-0 bg-white p-2.5 rounded border border-brand-gray-200 h-fit">
                   {pillar.icon}
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-brand-gray-900 mb-2">{pillar.title}</h3>
-                  <p className="text-xs text-brand-gray-750 leading-relaxed font-medium">{pillar.desc}</p>
+                <div className="text-xs">
+                  <h3 className="font-bold text-brand-gray-900 text-sm mb-1">{pillar.title}</h3>
+                  <p className="text-brand-gray-600 leading-relaxed">{pillar.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Warehousing & Cold Chain Details */}
-      <section className="py-20 bg-brand-gray-900 text-white relative overflow-hidden">
-        {/* Subtle grid background */}
-        <div className="absolute inset-0 opacity-5 medical-grid-bg"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Warehousing & Cold Chain Operations */}
+        <div className="bg-white border border-brand-gray-200 rounded-lg p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-red-500">Facility Operations</span>
-              <h2 className="text-3xl font-extrabold text-white mt-2 mb-6">Cold Chain Integrity & Logistics</h2>
-              <p className="text-sm text-brand-gray-300 leading-relaxed mb-4">
+            <div className="lg:col-span-7 space-y-4 text-xs text-brand-gray-700 leading-relaxed">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-red-600 block">Logistics Integrity</span>
+              <h2 className="text-xl font-bold text-brand-gray-900">Cold Chain Storage & Air Freight Handling</h2>
+              <p>
                 {company.aboutFull.supplyChain}
               </p>
-              <p className="text-sm text-brand-gray-300 leading-relaxed mb-6">
-                From sensitive insulin vials and oncology monoclonal antibodies to high-volume veterinary tablets, our shipping crates feature calibrated temperature-logging sensors. This ensures complete thermal data transparency from the moment of dispatch in Mumbai to port arrival globally.
+              <p>
+                From sensitive insulin vials and oncology monoclonal antibodies to high-volume veterinary tablets, our thermal shipping crates feature calibrated temperature dataloggers. This ensures thermal accountability from the point of dispatch in Mumbai to destination port arrival.
               </p>
-              <div className="border-l-4 border-brand-red-500 bg-brand-gray-800 p-4 rounded-r-lg text-xs leading-relaxed text-brand-gray-300 font-medium">
-                "Product efficacy relies on stable storage. We assure that no thermal break goes unnoticed."
+              <div className="bg-brand-gray-50 border border-brand-gray-200 p-3.5 rounded text-brand-gray-800 font-medium">
+                <strong>Standard Thermal Range:</strong> Biologicals (2°C - 8°C) | Controlled Ambient (&lt;25°C) | Climatic Zone IVb Tested
               </div>
             </div>
 
-            <div className="relative">
-              <div className="w-full h-80 rounded-2xl overflow-hidden border border-brand-gray-800 shadow-2xl relative">
+            <div className="lg:col-span-5">
+              <div className="border border-brand-gray-200 rounded-lg overflow-hidden bg-brand-gray-50">
                 <img
                   src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&auto=format&fit=crop&q=80"
-                  alt="Modern cold storage warehouse container"
-                  className="w-full h-full object-cover"
+                  alt="Cold chain pharmaceutical warehousing and dispatch"
+                  className="w-full h-56 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-gray-900 to-transparent opacity-60"></div>
-              </div>
-              {/* Floating trust badge */}
-              <div className="absolute -bottom-6 -left-6 bg-brand-red-500 text-white px-5 py-4 rounded-xl shadow-lg border border-brand-red-600 text-center">
-                <span className="block text-2xl font-black">2-8°C</span>
-                <span className="block text-[8px] font-bold uppercase tracking-wider">Monitored Biologicals Cargo</span>
+                <div className="p-3 text-[11px] text-brand-gray-600 border-t border-brand-gray-200">
+                  <span className="font-semibold text-brand-gray-900">Cold-Chain Dispatch Desk:</span> Insulated shipper boxes with calibrated data loggers.
+                </div>
               </div>
             </div>
 
           </div>
         </div>
-      </section>
-      
+
+        {/* Quick CTA */}
+        <div className="bg-brand-gray-900 text-white rounded-lg p-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div>
+            <h3 className="text-lg font-bold">Partner With 4Core Exim for Global Wholesale Supplies</h3>
+            <p className="text-xs text-brand-gray-400 mt-1 max-w-xl">
+              Connect with our international sales desk to receive current batch availability, MOQ details, and proforma quotations.
+            </p>
+          </div>
+          <Link
+            to="/contact"
+            className="px-6 py-2.5 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors shrink-0"
+          >
+            Contact Exporter Desk
+          </Link>
+        </div>
+
+      </div>
     </div>
   );
 }

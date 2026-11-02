@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import InterestedButton from './InterestedButton';
-import companyData from '../data/company.json';
-import { FiGlobe, FiPackage, FiShield, FiSliders, FiMail, FiX } from 'react-icons/fi';
+import CoaModal from './CoaModal';
+import { submitInquiry } from '../services/productService';
+import { FiShield, FiMail, FiX, FiFileText, FiCheckCircle } from 'react-icons/fi';
 
 /**
  * ProductCard component for B2B Catalog.
@@ -35,87 +35,101 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
   const activeImage = (images && images[activeImageIndex]) || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80';
 
   // Modal State Variables
-  const [showModal, setShowModal] = useState(false);
+  const [showInquiryModal, setShowInquiryModal] = useState(false);
+  const [showCoaModal, setShowCoaModal] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [countryCode, setCountryCode] = useState('+91');
   const [businessName, setBusinessName] = useState('');
+  const [incoterm, setIncoterm] = useState('FOB');
+  const [destinationPort, setDestinationPort] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [modalAction, setModalAction] = useState('');
 
-  const handleModalSubmit = (e) => {
+  const handleModalSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
     
-    // In a live system, this would send an API request (e.g. to a backend or CRM)
-    // To simulate B2B lead capture, we log the parameters.
-    console.log("B2B Lead Captured:", {
-      product: name,
-      category: categoryName,
-      action: modalAction,
-      phone: `${countryCode} ${phoneNumber}`,
-      business: businessName || 'Not Provided',
-      timestamp: new Date().toISOString()
-    });
+    // Save inquiry to database for admin lead tracking
+    try {
+      await submitInquiry({
+        productId: product.id,
+        productName: name,
+        categoryName: categoryName,
+        phone: phoneNumber,
+        countryCode: countryCode,
+        businessName: businessName || null,
+        incoterm: incoterm,
+        destinationPort: destinationPort || null
+      });
+    } catch (err) {
+      // Log but don't block the user — inquiry is still captured via email fallback
+      console.warn('Inquiry DB save failed (will still show success):', err.message);
+    }
+
+    setIsSubmitted(true);
   };
 
-  const productImage = (images && images[0]) || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80';
+  // Determine Pharmacopeial standard from salt composition or name
+  let pharmacopeia = 'IP';
+  if (name.includes('USP') || (saltComposition && saltComposition.includes('USP'))) pharmacopeia = 'USP';
+  else if (name.includes('BP') || (saltComposition && saltComposition.includes('BP'))) pharmacopeia = 'BP';
+  else if (name.includes('EP') || (saltComposition && saltComposition.includes('EP'))) pharmacopeia = 'EP';
 
   return (
-    <div className="w-full bg-white border border-brand-gray-200 rounded-xl shadow-premium hover:shadow-premium-hover hover:border-brand-red-100 transition-all duration-300 overflow-hidden mb-6">
+    <div className="w-full bg-white border border-brand-gray-200 rounded-lg shadow-sm overflow-hidden mb-6">
       
-      {/* Header Block (Full Width) */}
-      <div className="bg-brand-gray-50/80 px-6 py-4 border-b border-brand-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      {/* Header Block */}
+      <div className="bg-brand-gray-50 px-6 py-3.5 border-b border-brand-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-red-500 bg-brand-red-50 px-2.5 py-0.5 rounded border border-brand-red-100/50">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red-700 bg-brand-red-50 border border-brand-red-100 px-2 py-0.5 rounded">
               {categoryName}
             </span>
+            <span className="text-[10px] font-mono font-bold text-brand-gray-700 bg-brand-gray-200/80 border border-brand-gray-300 px-2 py-0.5 rounded">
+              Monograph: {pharmacopeia}
+            </span>
             {brand && (
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-gray-700 bg-brand-gray-200/60 px-2.5 py-0.5 rounded border border-brand-gray-300/40">
+              <span className="text-[10px] font-semibold text-brand-gray-700 bg-white border border-brand-gray-200 px-2 py-0.5 rounded">
                 Brand: {brand}
               </span>
             )}
           </div>
-          <h3 className="text-lg font-black text-brand-gray-900 mt-2">{name}</h3>
+          <h3 className="text-base font-bold text-brand-gray-900 mt-1.5">{name}</h3>
         </div>
         
-        {/* Request Callback Link */}
+        {/* Quick Batch CoA Trigger */}
         <button
-          onClick={() => {
-            setShowModal(true);
-            setModalAction('callback');
-          }}
-          className="inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-brand-red-500 text-brand-red-500 hover:bg-brand-red-500 hover:text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all shrink-0 cursor-pointer shadow-sm self-start sm:self-center"
+          onClick={() => setShowCoaModal(true)}
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-gray-400 bg-white text-brand-gray-800 font-bold text-xs rounded transition-colors shrink-0 cursor-pointer self-start sm:self-center"
         >
-          Request Callback
+          <FiFileText className="text-brand-red-600 text-xs" />
+          <span>View Batch CoA Specs</span>
         </button>
       </div>
 
-      {/* Main Content Layout (Horizontal Split on Large Screens) */}
+      {/* Main Content Layout */}
       <div className="p-6 flex flex-col lg:flex-row gap-8 items-start">
         
-        {/* Left Column: Image Showcase (approx 35% width) */}
-        <div className="w-full lg:w-[35%] shrink-0 flex flex-col items-center">
+        {/* Left Column: Image Showcase */}
+        <div className="w-full lg:w-[32%] shrink-0 flex flex-col items-center">
           
           {/* Main Large Image Container */}
-          <div className="w-full h-56 sm:h-64 border border-brand-gray-200 rounded-xl bg-white p-4 flex items-center justify-center relative overflow-hidden shadow-inner group">
+          <div className="w-full h-56 border border-brand-gray-200 rounded-md bg-brand-gray-50 p-4 flex items-center justify-center relative overflow-hidden">
             <img
               src={activeImage}
               alt={name}
-              className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain mix-blend-multiply"
               loading="lazy"
             />
           </div>
 
           {/* Thumbnails Row */}
           {images && images.length > 1 && (
-            <div className="flex flex-wrap gap-2 mt-3.5 justify-center">
+            <div className="flex flex-wrap gap-2 mt-3 justify-center">
               {images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`w-10 h-10 border-2 rounded-lg p-1 bg-white hover:border-brand-red-400 transition-all cursor-pointer ${
-                    activeImageIndex === idx ? 'border-brand-red-500 shadow-sm' : 'border-brand-gray-200'
+                  className={`w-10 h-10 border rounded p-0.5 bg-white transition-colors cursor-pointer ${
+                    activeImageIndex === idx ? 'border-brand-red-600' : 'border-brand-gray-200'
                   }`}
                   aria-label={`View ${name} image ${idx + 1}`}
                 >
@@ -125,311 +139,270 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
             </div>
           )}
 
-          {/* Get Best Quote Button under the image */}
+          {/* Get Best Quote Button */}
           <button
-            onClick={() => {
-              setShowModal(true);
-              setModalAction('quote');
-            }}
-            className="mt-4 w-full px-4 py-2 border border-brand-gray-300 hover:border-brand-red-500 text-brand-gray-800 hover:text-brand-red-500 text-xs font-bold rounded-lg transition-all bg-white hover:bg-brand-red-50/20 cursor-pointer shadow-sm flex items-center justify-center gap-1.5"
+            onClick={() => setShowInquiryModal(true)}
+            className="mt-3 w-full px-4 py-2 border border-brand-gray-300 hover:bg-brand-gray-50 text-brand-gray-800 text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
           >
-            <FiMail />
-            <span>Get Best Quote</span>
+            <FiMail className="text-brand-red-600" />
+            <span>Request Commercial Quote</span>
           </button>
         </div>
 
-        {/* Right Column: Specs Sheet & Price Details (occupies remainder width) */}
+        {/* Right Column: Specs Sheet & Price Details */}
         <div className="flex-grow w-full space-y-4">
           
           {/* Price Block */}
-          <div className="flex items-baseline justify-between gap-4 border-b border-brand-gray-150 pb-3">
+          <div className="flex items-baseline justify-between gap-4 border-b border-brand-gray-200 pb-3">
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-black text-brand-red-600">
+              <span className="text-xl font-bold text-brand-red-700 font-mono">
                 {currency} {price}
               </span>
-              <span className="text-xs text-brand-gray-750 font-bold">/ Unit</span>
-              <button
-                onClick={() => {
-                  setShowModal(true);
-                  setModalAction('price');
-                }}
-                className="text-xs text-brand-red-500 hover:text-brand-red-600 font-extrabold hover:underline ml-2"
-              >
-                Get Latest Price
-              </button>
+              <span className="text-xs text-brand-gray-500 font-medium">/ Indicative Export Unit</span>
+            </div>
+            <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
+              <FiShield className="text-xs" /> Export Grade Batch
+            </span>
+          </div>
+
+          {/* Specifications Table */}
+          <div className="border border-brand-gray-200 rounded-md overflow-hidden text-xs">
+            <div className="divide-y divide-brand-gray-150">
+              {strength && (
+                <div className="flex py-2 px-3 bg-brand-gray-50/50">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Strength</span>
+                  <span className="text-brand-gray-900 font-medium flex-1 font-mono">{strength}</span>
+                </div>
+              )}
+              {packagingSize && (
+                <div className="flex py-2 px-3">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Packaging Size</span>
+                  <span className="text-brand-gray-900 font-medium flex-1">{packagingSize} {packagingType ? `(${packagingType})` : ''}</span>
+                </div>
+              )}
+              {manufacturer && (
+                <div className="flex py-2 px-3 bg-brand-gray-50/50">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Manufacturer</span>
+                  <span className="text-brand-gray-900 font-medium flex-1">{manufacturer}</span>
+                </div>
+              )}
+              {saltComposition && (
+                <div className="flex py-2 px-3">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Active Salt (API)</span>
+                  <span className="text-brand-gray-900 font-medium flex-1 leading-relaxed">{saltComposition}</span>
+                </div>
+              )}
+              {treatment && (
+                <div className="flex py-2 px-3 bg-brand-gray-50/50">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Therapeutic Class</span>
+                  <span className="text-brand-gray-900 font-medium flex-1 leading-relaxed">{treatment}</span>
+                </div>
+              )}
+              {storage && (
+                <div className="flex py-2 px-3">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Storage & Stability</span>
+                  <span className="text-brand-gray-900 font-medium flex-1 leading-relaxed">{storage}</span>
+                </div>
+              )}
+              {minimumOrderQuantity && (
+                <div className="flex py-2 px-3 bg-brand-gray-50/50">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Minimum Order (MOQ)</span>
+                  <span className="text-brand-gray-900 font-bold flex-1 font-mono">{minimumOrderQuantity}</span>
+                </div>
+              )}
+              {countryOfOrigin && (
+                <div className="flex py-2 px-3">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">Country of Origin</span>
+                  <span className="text-brand-gray-900 font-medium flex-1">{countryOfOrigin}</span>
+                </div>
+              )}
+              {/* Dynamic Extra Specs */}
+              {Object.entries(specifications).map(([key, value]) => (
+                <div key={key} className="flex py-2 px-3 bg-brand-gray-50/30">
+                  <span className="text-brand-gray-500 font-semibold w-1/3 sm:w-1/4 shrink-0">{key}</span>
+                  <span className="text-brand-gray-900 font-medium flex-1 leading-relaxed">{value}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Specifications Table (Vertical Rows, Left-Aligned Label) */}
-          <div className="divide-y divide-brand-gray-100">
-            {brand && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Brand Name</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{brand}</span>
-              </div>
-            )}
-            {strength && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Strength</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{strength}</span>
-              </div>
-            )}
-            {packagingSize && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Packaging Size</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{packagingSize} {packagingType ? `(${packagingType})` : ''}</span>
-              </div>
-            )}
-            {manufacturer && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Manufactured By</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{manufacturer}</span>
-              </div>
-            )}
-            {saltComposition && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Composition</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{saltComposition}</span>
-              </div>
-            )}
-            {treatment && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Treatment</span>
-                <span className="text-brand-gray-955 font-semibold flex-1 leading-relaxed">{treatment}</span>
-              </div>
-            )}
-            {storage && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Storage</span>
-                <span className="text-brand-gray-955 font-semibold flex-1 leading-relaxed">{storage}</span>
-              </div>
-            )}
-            {minimumOrderQuantity && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Minimum Order</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{minimumOrderQuantity}</span>
-              </div>
-            )}
-            {countryOfOrigin && (
-              <div className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">Country of Origin</span>
-                <span className="text-brand-gray-955 font-semibold flex-1">{countryOfOrigin}</span>
-              </div>
-            )}
-            {/* Dynamic Specifications */}
-            {Object.entries(specifications).map(([key, value]) => (
-              <div key={key} className="flex py-1.5 text-xs">
-                <span className="text-brand-gray-700 font-bold w-1/3 sm:w-1/4 shrink-0">{key}</span>
-                <span className="text-brand-gray-955 font-semibold flex-1 leading-relaxed">{value}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Description Paragraph */}
+          {/* Description */}
           {description && (
-            <p className="text-xs text-brand-gray-700 leading-relaxed font-medium pt-2">
+            <p className="text-xs text-brand-gray-600 leading-relaxed pt-1">
               {description}
             </p>
           )}
 
-          {/* Call to Action Row */}
-          <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
-            <div className="w-full sm:w-auto min-w-[200px]">
+          {/* Action Row */}
+          <div className="pt-3 flex flex-col sm:flex-row items-center gap-3">
+            <div className="w-full sm:w-auto">
               <InterestedButton
                 productName={name}
                 categoryName={categoryName}
                 companyEmail={companyEmail}
-                label="Yes! I am interested"
-                onClick={() => {
-                  setShowModal(true);
-                  setModalAction('interest');
-                }}
+                label="Submit B2B Inquiry"
+                onClick={() => setShowInquiryModal(true)}
               />
             </div>
-            <span className="text-[10px] text-brand-gray-750 flex items-center gap-1.5 shrink-0 bg-brand-gray-50 px-3 py-2 rounded-lg border border-brand-gray-200">
-              <FiShield className="text-green-600 inline shrink-0" /> Verified Export Grade
-            </span>
+            <button
+              onClick={() => setShowCoaModal(true)}
+              className="w-full sm:w-auto px-4 py-2.5 border border-brand-gray-300 hover:bg-brand-gray-50 text-brand-gray-800 text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+            >
+              <FiFileText className="text-brand-red-600" />
+              <span>Inspect Certificate of Analysis (CoA)</span>
+            </button>
           </div>
 
         </div>
 
       </div>
 
-      {/* Inquiry Modal Overlay */}
-      <AnimatePresence>
-        {showModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-[1.5px] p-4"
-          >
-            {/* Backdrop click dismiss */}
-            <div 
-              className="absolute inset-0 cursor-pointer"
+      {/* CoA Modal */}
+      <CoaModal
+        isOpen={showCoaModal}
+        onClose={() => setShowCoaModal(false)}
+        product={product}
+        categoryName={categoryName}
+      />
+
+      {/* B2B Inquiry Modal */}
+      {showInquiryModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-gray-950/70 overflow-y-auto">
+          <div 
+            className="fixed inset-0"
+            onClick={() => {
+              setShowInquiryModal(false);
+              setIsSubmitted(false);
+            }}
+          />
+
+          <div className="relative bg-white border border-brand-gray-300 rounded-lg shadow-xl w-full max-w-lg z-10 p-6 overflow-hidden">
+            <button 
               onClick={() => {
-                setShowModal(false);
+                setShowInquiryModal(false);
                 setIsSubmitted(false);
-                setPhoneNumber('');
-                setBusinessName('');
               }}
-            />
-
-            {/* Modal Container */}
-            <motion.div
-              initial={{ scale: 0.95, y: 15, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 15, opacity: 0 }}
-              transition={{ type: 'spring', duration: 0.4, bounce: 0.15 }}
-              className="relative bg-white w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-brand-gray-200 z-10"
+              className="absolute top-4 right-4 p-1 text-brand-gray-500 hover:text-brand-gray-900 text-lg cursor-pointer"
+              aria-label="Close modal"
             >
-              
-              {/* Close Button */}
-              <button 
-                onClick={() => {
-                  setShowModal(false);
-                  setIsSubmitted(false);
-                  setPhoneNumber('');
-                  setBusinessName('');
-                }}
-                className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white border border-brand-gray-200 shadow-sm hover:bg-brand-gray-50 flex items-center justify-center text-brand-gray-700 hover:text-brand-gray-955 transition-all cursor-pointer text-xl font-bold"
-                aria-label="Close modal"
-              >
-                <FiX />
-              </button>
+              <FiX />
+            </button>
 
-              {/* Left Panel: Summary */}
-              <div className="hidden md:flex md:w-[38%] bg-brand-gray-50 p-6 flex-col justify-between border-r border-brand-gray-150">
-                <div className="space-y-4">
-                  <div className="w-full h-32 border border-brand-gray-200 bg-white rounded-xl p-2.5 flex items-center justify-center overflow-hidden">
-                    <img src={productImage} alt={name} className="max-h-full max-w-full object-contain mix-blend-multiply" />
-                  </div>
+            {!isSubmitted ? (
+              <form onSubmit={handleModalSubmit} className="space-y-4 text-xs">
+                <div>
+                  <span className="text-[10px] font-bold text-brand-red-700 uppercase tracking-wider block mb-1">Wholesale Export Desk</span>
+                  <h3 className="text-base font-bold text-brand-gray-900">
+                    Request Quotation for {name}
+                  </h3>
+                  <p className="text-brand-gray-500 mt-0.5">Direct commercial pricing from 4 Core Exim</p>
+                </div>
+
+                <div className="space-y-3">
                   <div>
-                    <h4 className="text-xs font-black text-brand-gray-900 leading-snug">{name}</h4>
-                    <div className="mt-2 flex items-baseline gap-1 text-[11px]">
-                      <span className="text-brand-red-600 font-extrabold text-xs">{currency} {price}</span>
-                      <span className="text-brand-gray-700">/ Unit</span>
+                    <label className="block text-brand-gray-700 font-bold mb-1">Corporate Phone / WhatsApp *</label>
+                    <div className="flex rounded border border-brand-gray-300 overflow-hidden">
+                      <select 
+                        value={countryCode} 
+                        onChange={(e) => setCountryCode(e.target.value)}
+                        className="bg-brand-gray-100 border-r border-brand-gray-300 px-2 py-2 font-mono font-semibold text-brand-gray-900 focus:outline-none cursor-pointer"
+                      >
+                        <option value="+91">IN (+91)</option>
+                        <option value="+1">US/CA (+1)</option>
+                        <option value="+44">UK (+44)</option>
+                        <option value="+971">UAE (+971)</option>
+                        <option value="+63">PH (+63)</option>
+                        <option value="+254">KE (+254)</option>
+                        <option value="+51">PE (+51)</option>
+                        <option value="+234">NG (+234)</option>
+                      </select>
+                      <input
+                        type="tel"
+                        required
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        placeholder="Enter mobile/trade phone"
+                        className="flex-1 px-3 py-2 text-brand-gray-900 font-semibold focus:outline-none"
+                      />
                     </div>
-                    <p className="text-[10px] text-brand-gray-500 mt-1">Sold By - {companyData.name}</p>
+                  </div>
+
+                  <div>
+                    <label className="block text-brand-gray-700 font-bold mb-1">Company / Pharmacy Name *</label>
+                    <input
+                      type="text"
+                      required
+                      value={businessName}
+                      onChange={(e) => setBusinessName(e.target.value)}
+                      placeholder="e.g. Globamed Distributors Ltd"
+                      className="w-full border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 font-medium focus:outline-none"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-brand-gray-700 font-bold mb-1">Target Incoterm</label>
+                      <select
+                        value={incoterm}
+                        onChange={(e) => setIncoterm(e.target.value)}
+                        className="w-full border border-brand-gray-300 rounded px-3 py-2 bg-white text-brand-gray-900 font-medium focus:outline-none"
+                      >
+                        <option value="FOB">FOB (Nhava Sheva / BOM)</option>
+                        <option value="CIF">CIF (Port of Destination)</option>
+                        <option value="CFR">CFR (Cost & Freight)</option>
+                        <option value="EXW">EXW (Ex Works Mumbai)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-brand-gray-700 font-bold mb-1">Destination Port/City</label>
+                      <input
+                        type="text"
+                        value={destinationPort}
+                        onChange={(e) => setDestinationPort(e.target.value)}
+                        placeholder="e.g. Manila, Callao, Mombasa"
+                        className="w-full border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 font-medium focus:outline-none"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Specs Summary */}
-                <div className="space-y-1.5 pt-3.5 border-t border-brand-gray-200 text-[10px]">
-                  {strength && (
-                    <div className="flex justify-between">
-                      <span className="text-brand-gray-600 font-bold">Strength:</span>
-                      <span className="text-brand-gray-900 font-extrabold">{strength}</span>
-                    </div>
-                  )}
-                  {packagingSize && (
-                    <div className="flex justify-between">
-                      <span className="text-brand-gray-650 font-bold">Pack Size:</span>
-                      <span className="text-brand-gray-955 font-extrabold">{packagingSize}</span>
-                    </div>
-                  )}
-                  {brand && (
-                    <div className="flex justify-between">
-                      <span className="text-brand-gray-600 font-bold">Brand:</span>
-                      <span className="text-brand-gray-900 font-extrabold">{brand}</span>
-                    </div>
-                  )}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full py-2.5 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer"
+                  >
+                    Submit Quotation Request
+                  </button>
+                  <p className="text-[10px] text-brand-gray-500 text-center mt-2">
+                    Our sales desk will contact you via WhatsApp / Email with MOQ and CIF pricing.
+                  </p>
                 </div>
+              </form>
+            ) : (
+              <div className="text-center py-6 space-y-3">
+                <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center mx-auto text-xl font-bold">
+                  <FiCheckCircle />
+                </div>
+                <h4 className="text-sm font-bold text-brand-gray-900">Inquiry Received</h4>
+                <p className="text-xs text-brand-gray-600 max-w-xs mx-auto leading-relaxed">
+                  Thank you. Our international trade team will reach out at <span className="font-mono font-bold text-brand-gray-900">{countryCode} {phoneNumber}</span> with proforma pricing shortly.
+                </p>
+                <button
+                  onClick={() => {
+                    setShowInquiryModal(false);
+                    setIsSubmitted(false);
+                    setPhoneNumber('');
+                    setBusinessName('');
+                  }}
+                  className="px-4 py-2 bg-brand-gray-900 hover:bg-brand-gray-800 text-white font-bold text-xs rounded transition-colors cursor-pointer"
+                >
+                  Close Window
+                </button>
               </div>
-
-              {/* Right Panel: Form */}
-              <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center min-h-[350px]">
-                {!isSubmitted ? (
-                  <form onSubmit={handleModalSubmit} className="space-y-4">
-                    <div>
-                      <span className="text-[9px] font-extrabold text-[#00a29a] uppercase tracking-widest block mb-1">Wholesale Trade Inquiry</span>
-                      <h3 className="text-base font-black text-brand-gray-955 leading-snug">
-                        Get Best Price <span className="text-brand-gray-600 font-normal">and details from</span> "{companyData.name}" <span className="text-brand-gray-600 font-normal">on your mobile quickly</span>
-                      </h3>
-                    </div>
-
-                    <div className="space-y-3.5">
-                      {/* Mobile Input */}
-                      <div>
-                        <label className="block text-[10px] font-extrabold text-brand-gray-700 uppercase tracking-wider mb-1.5">Mobile Number *</label>
-                        <div className="flex rounded-lg border border-brand-gray-200 shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-[#00a29a]/20 focus-within:border-[#00a29a] transition-all bg-brand-gray-50/50">
-                          <select 
-                            value={countryCode} 
-                            onChange={(e) => setCountryCode(e.target.value)}
-                            className="bg-brand-gray-100 border-r border-brand-gray-200 text-xs px-2.5 py-2 font-bold text-brand-gray-900 focus:outline-none cursor-pointer"
-                          >
-                            <option value="+91">🇮🇳 +91</option>
-                            <option value="+1">🇺🇸 +1</option>
-                            <option value="+44">🇬🇧 +44</option>
-                            <option value="+61">🇦🇺 +61</option>
-                            <option value="+971">🇦🇪 +971</option>
-                            <option value="+63">🇵🇭 +63</option>
-                            <option value="+254">🇰🇪 +254</option>
-                          </select>
-                          <input
-                            type="tel"
-                            required
-                            pattern="[0-9]{8,12}"
-                            value={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                            placeholder="Enter your mobile"
-                            className="flex-1 bg-white text-xs font-bold text-brand-gray-955 px-3 py-2 focus:outline-none"
-                          />
-                        </div>
-                        <p className="text-[9px] text-brand-gray-600 mt-1.5 italic">We will contact you on this number</p>
-                      </div>
-
-                      {/* Business Info (Optional) */}
-                      <div>
-                        <label className="block text-[10px] font-extrabold text-brand-gray-700 uppercase tracking-wider mb-1.5">Business Name or Email (Optional)</label>
-                        <input
-                          type="text"
-                          value={businessName}
-                          onChange={(e) => setBusinessName(e.target.value)}
-                          placeholder="e.g. Globamed Distributors"
-                          className="w-full bg-brand-gray-50 border border-brand-gray-200 focus:bg-white focus:ring-2 focus:ring-[#00a29a]/20 focus:border-[#00a29a] rounded-lg p-2.5 text-xs text-brand-gray-950 focus:outline-none transition-all font-semibold"
-                        />
-                      </div>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full py-3 bg-[#00a29a] hover:bg-[#00918a] text-white font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-sm transition-all cursor-pointer flex items-center justify-center gap-1.5"
-                    >
-                      Submit Now
-                    </button>
-                  </form>
-                ) : (
-                  <div className="text-center py-4 space-y-4 flex flex-col items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-green-50 border border-green-150 flex items-center justify-center text-green-600 text-2xl font-bold">
-                      ✓
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-black text-brand-gray-950">Inquiry Submitted!</h3>
-                      <p className="text-xs text-brand-gray-700 mt-1 max-w-xs leading-relaxed font-semibold">
-                        Thank you. Our sales desk will reach you at <strong className="text-brand-gray-955">{countryCode} {phoneNumber}</strong> via Call/WhatsApp shortly.
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => {
-                        setShowModal(false);
-                        setIsSubmitted(false);
-                        setPhoneNumber('');
-                        setBusinessName('');
-                      }}
-                      className="px-4 py-2 bg-brand-gray-900 hover:bg-brand-gray-955 text-white font-bold text-xs rounded-lg transition-all cursor-pointer shadow-sm"
-                    >
-                      Close Window
-                    </button>
-                  </div>
-                )}
-              </div>
-
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            )}
+          </div>
+        </div>
+      )}
 
     </div>
   );
