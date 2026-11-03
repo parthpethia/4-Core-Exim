@@ -1,29 +1,30 @@
 import { FiMail, FiShield } from 'react-icons/fi';
+import OptimizedImage from './OptimizedImage';
+import { resolveProductThumbnail } from '../utils/imageUrl';
 
 /**
  * ProductGridCard component for B2B Grid Showcase.
  * Displays product details in a clean, vertical card format.
- * @param {Object} props
- * @param {Object} props.product - The product object
- * @param {string} props.categoryName - Human readable category name
- * @param {string} props.companyEmail - Email address for B2B enquiries
  */
 export default function ProductGridCard({ product, categoryName, companyEmail }) {
   const {
     name,
     price,
     currency,
+    displayCurrency,
+    priceInDisplay,
     brand,
     manufacturer,
     strength,
     packagingSize,
     saltComposition,
     countryOfOrigin,
-    minimumOrderQuantity,
-    images
+    minimumOrderQuantity
   } = product;
 
-  const productImage = (images && images[0]) || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80';
+  const productImage = resolveProductThumbnail(product);
+  const shownCurrency = displayCurrency || currency;
+  const shownPrice = priceInDisplay != null ? priceInDisplay : price;
 
   // Extract Pharmacopeial monograph if available
   let pharmacopeia = 'IP';
@@ -55,11 +56,12 @@ Regards`;
     <div className="flex flex-col bg-white border border-brand-gray-200 rounded-lg shadow-sm hover:border-brand-gray-300 transition-colors overflow-hidden h-full">
       {/* Product Image Section */}
       <div className="h-44 bg-brand-gray-50 flex items-center justify-center p-3 border-b border-brand-gray-200 relative shrink-0">
-        <img
+        <OptimizedImage
           src={productImage}
           alt={name}
+          width={360}
+          sizes="(max-width: 640px) 45vw, 220px"
           className="max-h-full max-w-full object-contain mix-blend-multiply"
-          loading="lazy"
         />
         <div className="absolute top-2 left-2 flex gap-1">
           <span className="bg-white border border-brand-gray-200 text-brand-gray-800 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">
@@ -98,7 +100,7 @@ Regards`;
             </span>
             <div className="flex items-baseline gap-1 mt-0.5">
               <span className="text-sm font-bold text-brand-red-700 font-mono">
-                {currency} {price}
+                {shownCurrency} {shownPrice}
               </span>
               <span className="text-[10px] text-brand-gray-500 font-medium">/ Unit</span>
             </div>

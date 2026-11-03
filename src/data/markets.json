@@ -1,0 +1,31 @@
+{
+  "defaultMarket": "AE",
+  "regionBoosts": {
+    "MENA": ["pharmaceutical-tablets", "pharmaceutical-capsules", "antibiotic-medicines", "pharmaceutical-injections"],
+    "Africa": ["antibiotic-medicines", "pharmaceutical-tablets", "pharmaceutical-injections", "anti-depressants"],
+    "Asia": ["pharmaceutical-tablets", "skin-care", "pharmaceutical-capsules", "minoxidil-solution"],
+    "Europe": ["pharmaceutical-tablets", "pharmaceutical-capsules", "anti-depressants"],
+    "Americas": ["pharmaceutical-tablets", "pharmaceutical-capsules", "erectile-dysfunction"]
+  },
+  "marketCategoryBoost": {
+    "AE": ["pharmaceutical-tablets", "pharmaceutical-capsules", "antibiotic-medicines"],
+    "SA": ["pharmaceutical-tablets", "pharmaceutical-injections", "antibiotic-medicines"],
+    "NG": ["antibiotic-medicines", "pharmaceutical-tablets", "pharmaceutical-injections"],
+    "KE": ["antibiotic-medicines", "pharmaceutical-tablets", "anti-depressants"],
+    "GH": ["antibiotic-medicines", "pharmaceutical-tablets"],
+    "EG": ["pharmaceutical-tablets", "skin-care", "antibiotic-medicines"],
+    "BD": ["pharmaceutical-tablets", "pharmaceutical-capsules", "antibiotic-medicines"],
+    "NP": ["pharmaceutical-tablets", "skin-care"],
+    "LK": ["pharmaceutical-tablets", "pharmaceutical-capsules"],
+    "GB": ["pharmaceutical-capsules", "anti-depressants", "pharmaceutical-tablets"],
+    "US": ["pharmaceutical-capsules", "erectile-dysfunction", "anti-depressants"],
+    "DE": ["pharmaceutical-tablets", "pharmaceutical-capsules"],
+    "VN": ["pharmaceutical-tablets", "antibiotic-medicines"],
+    "PH": ["pharmaceutical-tablets", "skin-care"],
+    "MY": ["pharmaceutical-tablets", "skin-care", "minoxidil-solution"],
+    "ID": ["pharmaceutical-tablets", "antibiotic-medicines"],
+    "ZA": ["antibiotic-medicines", "pharmaceutical-tablets"],
+    "BR": ["pharmaceutical-tablets", "pharmaceutical-capsules"],
+    "IN": ["pharmaceutical-tablets", "pharmaceutical-capsules", "skin-care"]
+  }
+}

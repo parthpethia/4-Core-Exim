@@ -8,4 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    // Match Supabase Auth Site URL / Google redirect (localhost:3000)
+    port: 3000,
+    strictPort: true,
+  },
 })

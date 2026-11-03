@@ -1,8 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
-import { supabase } from '../services/supabaseClient';
+import { supabase, isSupabaseConfigured } from '../services/supabaseClient';
 import { FiAlertTriangle, FiArrowRight } from 'react-icons/fi';
+
+function parseAuthParams() {
+  const query = new URLSearchParams(window.location.search);
+  const hashRaw = window.location.hash?.startsWith('#')
+    ? window.location.hash.slice(1)
+    : (window.location.hash || '');
+  const hash = new URLSearchParams(hashRaw);
+
+  return {
+    code: query.get('code'),
+    access_token: hash.get('access_token') || query.get('access_token'),
+    refresh_token: hash.get('refresh_token') || query.get('refresh_token'),
+    error: hash.get('error_description') || hash.get('error')
+      || query.get('error_description') || query.get('error')
+  };
+}
+
+function resolvePostLoginPath(sessionUser) {
+  const intendedRole = localStorage.getItem('4core_intended_role');
+  localStorage.removeItem('4core_intended_role');
+
+  const userEmail = sessionUser?.email?.toLowerCase()?.trim();
+  const adminEmails = (import.meta.env.VITE_ADMIN_EMAILS || 'admin@4coreexim.com,exports@4coreexim.com')
+    .split(',')
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+
+  const userIsAdmin =
+    (userEmail && adminEmails.includes(userEmail)) ||
+    sessionUser?.user_metadata?.role === 'admin' ||
+    sessionUser?.app_metadata?.role === 'admin' ||
+    (userEmail && localStorage.getItem('4core_dev_admin_override') === userEmail);
+
+  if (userIsAdmin || intendedRole === 'admin') return '/admin';
+  return '/dashboard';
+}
 
 export default function AuthCallback() {
   const navigate = useNavigate();
@@ -11,72 +47,81 @@ export default function AuthCallback() {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
-    // Check if error parameters exist in query or hash
-    const params = new URLSearchParams(location.search);
-    const errorDesc = params.get('error_description') || params.get('error');
-
-    if (errorDesc) {
-      setErrorMessage(errorDesc);
+    if (!isSupabaseConfigured) {
+      setErrorMessage('Supabase is not configured. Check VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
       return;
     }
 
-    // Process hash parameters if present
-    const hash = window.location.hash;
-    if (hash && hash.includes('error=')) {
-      const hashParams = new URLSearchParams(hash.substring(1));
-      const hashError = hashParams.get('error_description') || hashParams.get('error');
-      if (hashError) {
-        setErrorMessage(hashError);
-        return;
-      }
-    }
+    let cancelled = false;
 
-    // Await session resolution from Supabase
-    async function checkSession() {
+    async function finalizeOAuth() {
       try {
+        const params = parseAuthParams();
+
+        if (params.error) {
+          if (!cancelled) setErrorMessage(params.error);
+          return;
+        }
+
+        // 1) PKCE code exchange
+        if (params.code) {
+          const { error } = await supabase.auth.exchangeCodeForSession(params.code);
+          if (error) throw error;
+        }
+        // 2) Implicit / hash tokens (what you landed with on localhost:3000/#access_token=...)
+        else if (params.access_token && params.refresh_token) {
+          const { error } = await supabase.auth.setSession({
+            access_token: params.access_token,
+            refresh_token: params.refresh_token
+          });
+          if (error) throw error;
+        }
+
+        // Strip secrets from the address bar
+        if (window.location.hash || window.location.search.includes('code=')) {
+          window.history.replaceState(null, '', '/auth/callback');
+        }
+
         const { data, error } = await supabase.auth.getSession();
         if (error) throw error;
 
-        if (data?.session?.user) {
-          const intendedRole = localStorage.getItem('4core_intended_role');
-          localStorage.removeItem('4core_intended_role');
-
-          const userEmail = data.session.user.email;
-          const adminEmails = (import.meta.env.VITE_ADMIN_EMAILS || 'admin@4coreexim.com,exports@4coreexim.com')
-            .split(',')
-            .map(e => e.trim().toLowerCase());
-
-          const userIsAdmin = adminEmails.includes(userEmail?.toLowerCase()) || 
-                             data.session.user.user_metadata?.role === 'admin' ||
-                             localStorage.getItem('4core_dev_admin_override') === userEmail?.toLowerCase();
-
-          if (userIsAdmin || intendedRole === 'admin') {
-            navigate('/admin', { replace: true });
-          } else {
-            navigate('/dashboard', { replace: true });
+        if (!data?.session?.user) {
+          // Brief wait — AuthProvider / detectSessionInUrl may still be settling
+          await new Promise((r) => setTimeout(r, 400));
+          const retry = await supabase.auth.getSession();
+          if (!retry.data?.session?.user) {
+            throw new Error(
+              'No session found after OAuth redirect. Add http://localhost:3000/auth/callback to Supabase Auth → URL Configuration → Redirect URLs, then sign in again.'
+            );
           }
+          if (!cancelled) {
+            navigate(resolvePostLoginPath(retry.data.session.user), { replace: true });
+          }
+          return;
+        }
+
+        if (!cancelled) {
+          navigate(resolvePostLoginPath(data.session.user), { replace: true });
         }
       } catch (err) {
         console.error('[4Core Exim Auth Callback] Error:', err);
-        setErrorMessage(err.message || 'Failed to finalize OAuth authentication session.');
+        if (!cancelled) {
+          setErrorMessage(err.message || 'Failed to finalize OAuth authentication session.');
+        }
       }
     }
 
-    checkSession();
-  }, [location, navigate]);
+    finalizeOAuth();
+    return () => {
+      cancelled = true;
+    };
+  }, [location.key, navigate]);
 
-  // If user state is already available from AuthContext
+  // Fallback if AuthContext already has the user
   useEffect(() => {
-    if (!loading && user) {
-      const intendedRole = localStorage.getItem('4core_intended_role');
-      if (isAdmin || intendedRole === 'admin') {
-        localStorage.removeItem('4core_intended_role');
-        navigate('/admin', { replace: true });
-      } else {
-        navigate('/dashboard', { replace: true });
-      }
-    }
-  }, [user, isAdmin, loading, navigate]);
+    if (errorMessage || loading || !user) return;
+    navigate(isAdmin ? '/admin' : '/dashboard', { replace: true });
+  }, [user, isAdmin, loading, navigate, errorMessage]);
 
   if (errorMessage) {
     return (

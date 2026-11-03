@@ -1,11 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import OptimizedImage from './OptimizedImage';
 
 /**
  * CategoryGrid component for Home page.
  * Displays clean pharmaceutical category blocks with active batch counts.
- * @param {Object} props
- * @param {Array} props.categories - Array of category objects
  */
 export default function CategoryGrid({ categories }) {
   const navigate = useNavigate();
@@ -25,11 +24,12 @@ export default function CategoryGrid({ categories }) {
           >
             {/* Category Image Container */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-brand-gray-200 bg-brand-gray-50 flex items-center justify-center p-1 mb-3">
-              <img
+              <OptimizedImage
                 src={cat.image}
                 alt={cat.name}
+                width={160}
+                sizes="80px"
                 className="w-full h-full object-cover rounded-full"
-                loading="lazy"
               />
             </div>
 

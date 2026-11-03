@@ -1,21 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import InterestedButton from './InterestedButton';
 import CoaModal from './CoaModal';
-import { submitInquiry } from '../services/productService';
+import OptimizedImage from './OptimizedImage';
+import { submitInquiry, getProductById } from '../services/productService';
+import { resolveProductThumbnail } from '../utils/imageUrl';
 import { FiShield, FiMail, FiX, FiFileText, FiCheckCircle } from 'react-icons/fi';
 
 /**
  * ProductCard component for B2B Catalog.
- * @param {Object} props
- * @param {Object} props.product - The product object
- * @param {string} props.categoryName - Human readable category name
- * @param {string} props.companyEmail - Email address for enquiries
+ * Starts from a lean list payload, then hydrates full detail when scrolled into view.
  */
-export default function ProductCard({ product, categoryName, companyEmail }) {
+export default function ProductCard({ product: initialProduct, categoryName, companyEmail, marketCountry }) {
+  const [product, setProduct] = useState(initialProduct);
+  const cardRef = useRef(null);
+  const hydratedRef = useRef(false);
+
+  useEffect(() => {
+    setProduct(initialProduct);
+    hydratedRef.current = !initialProduct?.isLite;
+  }, [initialProduct]);
+
+  // Progressive detail load — only when card is near viewport
+  useEffect(() => {
+    if (!product?.isLite || !product?.id || hydratedRef.current) return undefined;
+    const node = cardRef.current;
+    if (!node || typeof IntersectionObserver === 'undefined') {
+      getProductById(product.id, { marketCountry }).then((full) => {
+        if (full) {
+          hydratedRef.current = true;
+          setProduct((prev) => ({ ...prev, ...full, isLite: false }));
+        }
+      });
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting) || hydratedRef.current) return;
+        hydratedRef.current = true;
+        observer.disconnect();
+        getProductById(product.id, { marketCountry }).then((full) => {
+          if (full) setProduct((prev) => ({ ...prev, ...full, isLite: false }));
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.01 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [product?.id, product?.isLite, marketCountry]);
+
   const {
     name,
     price,
     currency,
+    displayCurrency,
+    priceInDisplay,
+    isFeatured,
     brand,
     manufacturer,
     strength,
@@ -31,8 +71,14 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
     specifications = {}
   } = product;
 
+  const shownCurrency = displayCurrency || currency;
+  const shownPrice = priceInDisplay != null ? priceInDisplay : price;
+
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const activeImage = (images && images[activeImageIndex]) || 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80';
+  const gallery = (images && images.length)
+    ? images
+    : [resolveProductThumbnail(product)];
+  const activeImage = gallery[activeImageIndex] || resolveProductThumbnail(product);
 
   // Modal State Variables
   const [showInquiryModal, setShowInquiryModal] = useState(false);
@@ -74,7 +120,7 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
   else if (name.includes('EP') || (saltComposition && saltComposition.includes('EP'))) pharmacopeia = 'EP';
 
   return (
-    <div className="w-full bg-white border border-brand-gray-200 rounded-lg shadow-sm overflow-hidden mb-6">
+    <div ref={cardRef} className="w-full bg-white border border-brand-gray-200 rounded-lg shadow-sm overflow-hidden mb-6">
       
       {/* Header Block */}
       <div className="bg-brand-gray-50 px-6 py-3.5 border-b border-brand-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
@@ -91,13 +137,27 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
                 Brand: {brand}
               </span>
             )}
+            {isFeatured && (
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded">
+                Market focus
+              </span>
+            )}
           </div>
           <h3 className="text-base font-bold text-brand-gray-900 mt-1.5">{name}</h3>
         </div>
         
         {/* Quick Batch CoA Trigger */}
         <button
-          onClick={() => setShowCoaModal(true)}
+          onClick={async () => {
+            if (product.isLite && product.id) {
+              const full = await getProductById(product.id, { marketCountry });
+              if (full) {
+                hydratedRef.current = true;
+                setProduct((prev) => ({ ...prev, ...full, isLite: false }));
+              }
+            }
+            setShowCoaModal(true);
+          }}
           className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-gray-400 bg-white text-brand-gray-800 font-bold text-xs rounded transition-colors shrink-0 cursor-pointer self-start sm:self-center"
         >
           <FiFileText className="text-brand-red-600 text-xs" />
@@ -113,18 +173,19 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
           
           {/* Main Large Image Container */}
           <div className="w-full h-56 border border-brand-gray-200 rounded-md bg-brand-gray-50 p-4 flex items-center justify-center relative overflow-hidden">
-            <img
+            <OptimizedImage
               src={activeImage}
               alt={name}
+              width={480}
+              sizes="(max-width: 1024px) 80vw, 280px"
               className="w-full h-full object-contain mix-blend-multiply"
-              loading="lazy"
             />
           </div>
 
           {/* Thumbnails Row */}
-          {images && images.length > 1 && (
+          {gallery.length > 1 && (
             <div className="flex flex-wrap gap-2 mt-3 justify-center">
-              {images.map((img, idx) => (
+              {gallery.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
@@ -133,7 +194,13 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
                   }`}
                   aria-label={`View ${name} image ${idx + 1}`}
                 >
-                  <img src={img} alt={`${name} thumbnail ${idx + 1}`} className="w-full h-full object-contain" />
+                  <OptimizedImage
+                    src={img}
+                    alt={`${name} thumbnail ${idx + 1}`}
+                    width={80}
+                    sizes="40px"
+                    className="w-full h-full object-contain"
+                  />
                 </button>
               ))}
             </div>
@@ -156,9 +223,14 @@ export default function ProductCard({ product, categoryName, companyEmail }) {
           <div className="flex items-baseline justify-between gap-4 border-b border-brand-gray-200 pb-3">
             <div className="flex items-baseline gap-2">
               <span className="text-xl font-bold text-brand-red-700 font-mono">
-                {currency} {price}
+                {shownCurrency} {shownPrice}
               </span>
               <span className="text-xs text-brand-gray-500 font-medium">/ Indicative Export Unit</span>
+              {displayCurrency && currency && displayCurrency !== currency && price != null && (
+                <span className="text-[10px] text-brand-gray-400 font-mono">
+                  ({currency} {price})
+                </span>
+              )}
             </div>
             <span className="text-xs text-emerald-700 font-bold flex items-center gap-1">
               <FiShield className="text-xs" /> Export Grade Batch

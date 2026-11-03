@@ -4,6 +4,7 @@ import CategoryGrid from '../components/CategoryGrid';
 import ProductGridCard from '../components/ProductGridCard';
 import { getCategories, getProducts } from '../services/productService';
 import { useCompany } from '../context/CompanyContext';
+import { detectMarketCountry } from '../utils/marketLocation';
 import {
   FiTruck, FiFileText, FiAward,
   FiArrowRight, FiPhone, FiMail, FiMapPin,
@@ -28,8 +29,10 @@ export default function Home() {
 
   useEffect(() => {
     async function loadData() {
-      const cats = await getCategories();
-      const prods = await getProducts();
+      const marketCountry = detectMarketCountry();
+      const cats = await getCategories({ marketCountry });
+      // Lean payloads + capped page for fast home paint
+      const prods = await getProducts({ marketCountry, limit: 36, lean: true });
       setCategories(cats);
       setProducts(prods);
     }

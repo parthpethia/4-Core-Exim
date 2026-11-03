@@ -14,6 +14,7 @@ import Privacy from './pages/Privacy';
 import Compliance from './pages/Compliance';
 import Login from './pages/Login';
 import AuthCallback from './pages/AuthCallback';
+import OAuthRedirectBridge from './components/OAuthRedirectBridge';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 
@@ -38,6 +39,8 @@ export default function App() {
       <CompanyProvider>
         {/* Scroll manager for navigation changes */}
         <ScrollToTop />
+        {/* Recover OAuth tokens that landed on / instead of /auth/callback */}
+        <OAuthRedirectBridge />
         
         {/* Global B2B Catalog App Container */}
         <div className="flex flex-col min-h-screen bg-brand-gray-50 text-brand-gray-800">

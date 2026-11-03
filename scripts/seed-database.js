@@ -52,6 +52,24 @@ function loadJSON(relativePath) {
   return JSON.parse(raw);
 }
 
+function normalizeCurrency(currency) {
+  if (!currency) return 'USD';
+  const c = String(currency).trim();
+  if (c === '₹' || c === 'Rs' || c === 'rs' || c.toUpperCase() === 'INR') return 'INR';
+  if (c === '$' || c.toUpperCase() === 'USD') return 'USD';
+  if (c === '€' || c.toUpperCase() === 'EUR') return 'EUR';
+  if (c === '£' || c.toUpperCase() === 'GBP') return 'GBP';
+  return c.toUpperCase();
+}
+
+function originCodeFromName(name) {
+  const n = (name || 'India').toLowerCase();
+  if (n.includes('german')) return 'DE';
+  if (n.includes('denmark') || n.includes('danish')) return 'DK';
+  if (n.includes('india')) return 'IN';
+  return 'IN';
+}
+
 /**
  * Convert a product from camelCase JSON to snake_case DB row.
  */
@@ -64,12 +82,13 @@ function productToRow(product) {
     manufacturer: product.manufacturer || null,
     marketer: product.marketer || null,
     price: product.price ? parseFloat(product.price) : null,
-    currency: product.currency || 'USD',
+    currency: normalizeCurrency(product.currency),
     strength: product.strength || null,
     packaging_size: product.packagingSize || null,
     packaging_type: product.packagingType || null,
     salt_composition: product.saltComposition || null,
     country_of_origin: product.countryOfOrigin || 'India',
+    origin_country_code: originCodeFromName(product.countryOfOrigin),
     minimum_order_quantity: product.minimumOrderQuantity || null,
     storage: product.storage || null,
     treatment: product.treatment || null,
@@ -189,6 +208,68 @@ async function seedCompanySettings(company) {
   return data[0];
 }
 
+/**
+ * Link every product to target markets with category-based priority boosts.
+ * Requires migration 002 (countries + product_markets).
+ */
+async function seedProductMarkets(products, marketsConfig) {
+  console.log('\n🌍 Seeding product ↔ market links...');
+
+  const { data: countries, error: cErr } = await supabase
+    .from('countries')
+    .select('code, currency_code, is_target_market')
+    .eq('is_active', true)
+    .eq('is_target_market', true);
+
+  if (cErr) {
+    console.warn('   ⚠️  Skipping product_markets (run migration 002 first):', cErr.message);
+    return 0;
+  }
+
+  if (!countries || countries.length === 0) {
+    console.warn('   ⚠️  No target countries found — skip product_markets.');
+    return 0;
+  }
+
+  const boostMap = marketsConfig.marketCategoryBoost || {};
+  const rows = [];
+
+  for (const country of countries) {
+    const boostCats = boostMap[country.code] || [];
+    for (const product of products) {
+      const idx = boostCats.indexOf(product.category);
+      const priority = idx >= 0 ? 100 - idx * 15 : 20;
+      const isFeatured = idx >= 0 && idx < 2;
+      rows.push({
+        product_id: product.id,
+        country_code: country.code,
+        priority,
+        is_featured: isFeatured,
+        preferred_currency: country.currency_code || null
+      });
+    }
+  }
+
+  const BATCH_SIZE = 200;
+  let total = 0;
+  for (let i = 0; i < rows.length; i += BATCH_SIZE) {
+    const batch = rows.slice(i, i + BATCH_SIZE);
+    const { data, error } = await supabase
+      .from('product_markets')
+      .upsert(batch, { onConflict: 'product_id,country_code' })
+      .select('product_id');
+
+    if (error) {
+      console.error('   ❌ product_markets batch failed:', error.message);
+      throw error;
+    }
+    total += data.length;
+  }
+
+  console.log(`   ✅ ${total} product-market links seeded across ${countries.length} markets.`);
+  return total;
+}
+
 // ---------------------------------------------------------------------------
 // Verification
 // ---------------------------------------------------------------------------
@@ -199,10 +280,20 @@ async function verifyData() {
   const { count: catCount } = await supabase.from('categories').select('*', { count: 'exact', head: true });
   const { count: prodCount } = await supabase.from('products').select('*', { count: 'exact', head: true });
   const { count: compCount } = await supabase.from('company_settings').select('*', { count: 'exact', head: true });
+  let marketLinkCount = null;
+  let countryCount = null;
+  try {
+    ({ count: marketLinkCount } = await supabase.from('product_markets').select('*', { count: 'exact', head: true }));
+    ({ count: countryCount } = await supabase.from('countries').select('*', { count: 'exact', head: true }));
+  } catch {
+    /* migration 002 may not be applied yet */
+  }
 
-  console.log(`   📊 Categories: ${catCount}`);
-  console.log(`   📊 Products:   ${prodCount}`);
-  console.log(`   📊 Company:    ${compCount}`);
+  console.log(`   📊 Categories:      ${catCount}`);
+  console.log(`   📊 Products:        ${prodCount}`);
+  console.log(`   📊 Company:         ${compCount}`);
+  console.log(`   📊 Countries:       ${countryCount ?? 'n/a (run migration 002)'}`);
+  console.log(`   📊 Product markets: ${marketLinkCount ?? 'n/a'}`);
 
   // Spot check a few products
   const { data: sampleProducts } = await supabase
@@ -250,16 +341,19 @@ async function main() {
     const categories = loadJSON('src/data/categories.json');
     const products = loadJSON('src/data/products.json');
     const company = loadJSON('src/data/company.json');
+    const marketsConfig = loadJSON('src/data/markets.json');
 
     console.log(`\n📂 Loaded source data:`);
     console.log(`   • ${categories.length} categories from categories.json`);
     console.log(`   • ${products.length} products from products.json`);
     console.log(`   • 1 company record from company.json`);
+    console.log(`   • market boosts from markets.json`);
 
     // Seed in order: categories first (products reference them via FK)
     await seedCategories(categories);
     await seedProducts(products);
     await seedCompanySettings(company);
+    await seedProductMarkets(products, marketsConfig);
 
     // Verify everything
     await verifyData();

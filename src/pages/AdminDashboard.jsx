@@ -51,7 +51,7 @@ export default function AdminDashboard() {
     async function loadData() {
       try {
         const [prodList, catList] = await Promise.all([
-          getProducts(),
+          getProducts({ lean: false, limit: 500 }),
           getCategories()
         ]);
         setProducts(prodList);

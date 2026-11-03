@@ -1,0 +1,24 @@
+﻿id,name,image,sort_order,is_active
+pharmaceutical-tablets,Pharmaceutical Tablets,https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80,0,true
+skin-care,Skin Care,https://images.unsplash.com/photo-1608248597481-496100c80836?w=400&auto=format&fit=crop&q=80,1,true
+erectile-dysfunction,Erectile Dysfunction Medicines,https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=400&auto=format&fit=crop&q=80,2,true
+pharmaceutical-capsules,Pharmaceutical Capsules,https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80,3,true
+pharmaceutical-injections,Pharmaceutical Injections,https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80,4,true
+anti-depressants,Anti Depressant Medicines,https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=400&auto=format&fit=crop&q=80,5,true
+antibiotic-medicines,Antibiotic Medicines,https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80,6,true
+minoxidil-solution,Minoxidil Topical Solution,https://images.unsplash.com/photo-1626847037657-fd3622613ce3?w=400&auto=format&fit=crop&q=80,7,true
+anti-diabetic,anti diabetic medicine,https://images.unsplash.com/photo-1508847154043-be12a927dfa6?w=400&auto=format&fit=crop&q=80,8,true
+hair-loss,Hair Loss Medicine,https://images.unsplash.com/photo-1527799851257-359321b38557?w=400&auto=format&fit=crop&q=80,9,true
+pharma-tablets,Pharma Tablets,https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&auto=format&fit=crop&q=80,10,true
+infertility,Infertility Medicine,https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400&auto=format&fit=crop&q=80,11,true
+anti-cancer,Anti Cancer Medicines,https://images.unsplash.com/photo-1579684389782-64d84b5e901a?w=400&auto=format&fit=crop&q=80,12,true
+anti-migraine,Anti Migrain Medicine,https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&auto=format&fit=crop&q=80,13,true
+anti-malarial,Anti Malarial Medicine,https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&auto=format&fit=crop&q=80,14,true
+sofosbuvir-tablet,Sofosbuvir Tablet,https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&auto=format&fit=crop&q=80,15,true
+antibiotic-tablets,Antibiotic Tablets,https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?w=400&auto=format&fit=crop&q=80,16,true
+drop-shipping,Drop Shipping Services,https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&auto=format&fit=crop&q=80,17,true
+blood-pressure,Blood Pressure Medicine,https://images.unsplash.com/photo-1628135081061-3461093f59e4?w=400&auto=format&fit=crop&q=80,18,true
+veterinary-medicines,Veterinary Medicines,https://images.unsplash.com/photo-1581888227599-779811939961?w=400&auto=format&fit=crop&q=80,19,true
+thyroid-medicine,Thyroid Medicine,https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&auto=format&fit=crop&q=80,20,true
+glutathione-injection,Glutathione Injection,https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=400&auto=format&fit=crop&q=80,21,true
+asthma-inhaler,Asthma Inhaler,https://images.unsplash.com/photo-1598901847919-b95dd0fabbb6?w=400&auto=format&fit=crop&q=80,22,true
