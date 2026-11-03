@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import { supabase, isSupabaseConfigured } from '../services/supabaseClient';
 import { FiAlertTriangle, FiArrowRight } from 'react-icons/fi';
@@ -40,9 +40,12 @@ function resolvePostLoginPath(sessionUser) {
   return '/dashboard';
 }
 
+function cleanAuthUrl() {
+  window.history.replaceState(null, '', '/auth/callback');
+}
+
 export default function AuthCallback() {
   const navigate = useNavigate();
-  const location = useLocation();
   const { user, isAdmin, loading } = useAuth();
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -59,52 +62,69 @@ export default function AuthCallback() {
         const params = parseAuthParams();
 
         if (params.error) {
+          cleanAuthUrl();
           if (!cancelled) setErrorMessage(params.error);
           return;
         }
 
-        // 1) PKCE code exchange
-        if (params.code) {
-          const { error } = await supabase.auth.exchangeCodeForSession(params.code);
-          if (error) throw error;
-        }
-        // 2) Implicit / hash tokens (what you landed with on localhost:3000/#access_token=...)
-        else if (params.access_token && params.refresh_token) {
-          const { error } = await supabase.auth.setSession({
-            access_token: params.access_token,
-            refresh_token: params.refresh_token
-          });
-          if (error) throw error;
-        }
-
-        // Strip secrets from the address bar
-        if (window.location.hash || window.location.search.includes('code=')) {
-          window.history.replaceState(null, '', '/auth/callback');
-        }
-
-        const { data, error } = await supabase.auth.getSession();
-        if (error) throw error;
-
-        if (!data?.session?.user) {
-          // Brief wait — AuthProvider / detectSessionInUrl may still be settling
-          await new Promise((r) => setTimeout(r, 400));
-          const retry = await supabase.auth.getSession();
-          if (!retry.data?.session?.user) {
-            throw new Error(
-              'No session found after OAuth redirect. Add http://localhost:3000/auth/callback to Supabase Auth → URL Configuration → Redirect URLs, then sign in again.'
-            );
-          }
+        // Already signed in (e.g. refresh on /auth/callback)
+        const existing = await supabase.auth.getSession();
+        if (existing.data?.session?.user && !params.code && !params.access_token) {
           if (!cancelled) {
-            navigate(resolvePostLoginPath(retry.data.session.user), { replace: true });
+            navigate(resolvePostLoginPath(existing.data.session.user), { replace: true });
           }
           return;
         }
 
-        if (!cancelled) {
-          navigate(resolvePostLoginPath(data.session.user), { replace: true });
+        // 1) PKCE — only exchange once, on this page (detectSessionInUrl is false)
+        if (params.code) {
+          const { data, error } = await supabase.auth.exchangeCodeForSession(params.code);
+          cleanAuthUrl();
+          if (error) {
+            const msg = error.message || '';
+            if (/code verifier|pkce/i.test(msg)) {
+              throw new Error(
+                'Login session expired or was started in another tab. Close this page and sign in again from /login (do not reuse the old callback URL).'
+              );
+            }
+            throw error;
+          }
+          if (!cancelled) {
+            navigate(resolvePostLoginPath(data.session?.user), { replace: true });
+          }
+          return;
         }
+
+        // 2) Legacy hash tokens
+        if (params.access_token && params.refresh_token) {
+          const { data, error } = await supabase.auth.setSession({
+            access_token: params.access_token,
+            refresh_token: params.refresh_token
+          });
+          cleanAuthUrl();
+          if (error) throw error;
+          if (!cancelled) {
+            navigate(resolvePostLoginPath(data.session?.user), { replace: true });
+          }
+          return;
+        }
+
+        // 3) Session may already exist from a prior successful exchange
+        const { data, error } = await supabase.auth.getSession();
+        if (error) throw error;
+        if (data?.session?.user) {
+          if (!cancelled) {
+            navigate(resolvePostLoginPath(data.session.user), { replace: true });
+          }
+          return;
+        }
+
+        throw new Error(
+          'No session found after OAuth redirect. In Supabase → Authentication → URL Configuration, set Site URL to http://localhost:3000 and add Redirect URL http://localhost:3000/auth/callback, then sign in again from /login.'
+        );
       } catch (err) {
         console.error('[4Core Exim Auth Callback] Error:', err);
+        cleanAuthUrl();
         if (!cancelled) {
           setErrorMessage(err.message || 'Failed to finalize OAuth authentication session.');
         }
@@ -115,9 +135,8 @@ export default function AuthCallback() {
     return () => {
       cancelled = true;
     };
-  }, [location.key, navigate]);
+  }, [navigate]);
 
-  // Fallback if AuthContext already has the user
   useEffect(() => {
     if (errorMessage || loading || !user) return;
     navigate(isAdmin ? '/admin' : '/dashboard', { replace: true });

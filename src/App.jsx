@@ -35,12 +35,12 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
+      {/* Must run before AuthProvider so ?code= on / is moved to /auth/callback
+          without consuming the PKCE verifier twice */}
+      <OAuthRedirectBridge />
       <AuthProvider>
       <CompanyProvider>
-        {/* Scroll manager for navigation changes */}
         <ScrollToTop />
-        {/* Recover OAuth tokens that landed on / instead of /auth/callback */}
-        <OAuthRedirectBridge />
         
         {/* Global B2B Catalog App Container */}
         <div className="flex flex-col min-h-screen bg-brand-gray-50 text-brand-gray-800">

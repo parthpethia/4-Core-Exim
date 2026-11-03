@@ -1,37 +1,36 @@
-import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+function hasOAuthPayload(search, hash) {
+  const q = search || '';
+  const h = hash || '';
+  return (
+    /[?&]code=/.test(q) ||
+    h.includes('access_token=') ||
+    h.includes('refresh_token=') ||
+    /[?&]error=/.test(q) ||
+    h.includes('error=')
+  );
+}
 
 /**
- * Supabase sometimes returns OAuth tokens on the Site URL (/)
- * instead of /auth/callback when the callback isn't in the allow-list.
- * Bridge any auth hash/?code= payload into the real callback route.
+ * If Supabase redirects to Site URL (/) with ?code= or #access_token=,
+ * bounce to /auth/callback before AuthProvider tries to use the session.
+ * Uses a full navigation so the callback is the only place that runs PKCE exchange.
  */
 export default function OAuthRedirectBridge() {
   const location = useLocation();
-  const navigate = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (location.pathname === '/auth/callback') return;
+    if (!hasOAuthPayload(location.search, window.location.hash || '')) return;
 
-    const hash = window.location.hash || '';
     const search = location.search || '';
-    const hasHashToken =
-      hash.includes('access_token=') ||
-      hash.includes('refresh_token=') ||
-      hash.includes('error=');
-    const hasCode = /[?&]code=/.test(search);
-
-    if (!hasHashToken && !hasCode) return;
-
-    navigate(
-      {
-        pathname: '/auth/callback',
-        search: hasCode ? search : '',
-        hash: hasHashToken ? hash.replace(/^#/, '') : ''
-      },
-      { replace: true }
+    const hash = window.location.hash || '';
+    window.location.replace(
+      `${window.location.origin}/auth/callback${search}${hash}`
     );
-  }, [location.pathname, location.search, navigate]);
+  }, [location.pathname, location.search]);
 
   return null;
 }

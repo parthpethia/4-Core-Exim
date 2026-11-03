@@ -28,7 +28,9 @@ export const supabase = isSupabaseConfigured
       auth: {
         persistSession: true,
         autoRefreshToken: true,
-        detectSessionInUrl: true,
+        // false: only /auth/callback exchanges the PKCE code (avoids
+        // "code verifier not found" when Supabase returns ?code= on /)
+        detectSessionInUrl: false,
         flowType: 'pkce',
       },
     })
