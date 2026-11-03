@@ -13,6 +13,11 @@ import {
   getMarketCategoryBoost,
   normalizeCurrencyCode
 } from '../utils/marketLocation';
+import {
+  diversifyRankProducts,
+  rememberSeenProductIds,
+  summarizeCountryInterest
+} from '../utils/countryInterestRank';
 import { cacheGetOrSet, cacheInvalidate } from '../utils/queryCache';
 
 /** Default page size for public catalog lists */
@@ -74,6 +79,7 @@ function productRowToFrontend(row) {
     priceInUsd: row.price_in_usd != null ? Number(row.price_in_usd) : null,
     priceInDisplay: row.price_in_display != null ? Number(row.price_in_display) : null,
     searchRank: row.search_rank != null ? Number(row.search_rank) : 0,
+    interestScore: row.interest_score != null ? Number(row.interest_score) : undefined,
     totalCount: row.total_count != null ? Number(row.total_count) : undefined,
     /** true when row came from lite RPC (full images/specs/description may be missing) */
     isLite: !!(row.thumbnail_url != null && row.images == null && row.specifications == null && row.description == null)
@@ -340,17 +346,18 @@ function filterProductsFallback(filters = {}) {
     );
   }
 
-  filtered.sort((a, b) => {
-    if (b.isFeatured !== a.isFeatured) return Number(b.isFeatured) - Number(a.isFeatured);
-    if (b.marketPriority !== a.marketPriority) return b.marketPriority - a.marketPriority;
-    if (b.searchRank !== a.searchRank) return b.searchRank - a.searchRank;
-    return (a.name || '').localeCompare(b.name || '');
+  // Country-interest + diversity (avoids same brand/salt/category flooding the list)
+  const ranked = diversifyRankProducts(filtered, {
+    marketCountry: filters.marketCountry || null
   });
 
-  const totalCount = filtered.length;
+  const totalCount = ranked.length;
   const offset = Math.max(filters.offset || 0, 0);
-  const limit = filters.limit != null ? filters.limit : filtered.length;
-  const page = filtered.slice(offset, offset + limit).map(p => ({ ...p, totalCount }));
+  const limit = filters.limit != null ? filters.limit : ranked.length;
+  const page = ranked.slice(offset, offset + limit).map(p => ({ ...p, totalCount }));
+  if (offset === 0) {
+    rememberSeenProductIds(page.slice(0, 12).map((p) => p.id).filter(Boolean));
+  }
   return page;
 }
 
@@ -395,12 +402,21 @@ export const getProducts = async (filters = {}) => {
     return filterProductsFallback({ ...filters, limit, offset });
   }
 
+  const noteSeen = (rows) => {
+    if (!rpcArgs.p_offset) {
+      rememberSeenProductIds(rows.slice(0, 12).map((p) => p.id).filter(Boolean));
+    }
+    return rows;
+  };
+
   // Prefer lean RPC for scale; fall back to full search_catalog, then table select
   if (lean) {
     try {
       const { data, error } = await supabase.rpc('search_catalog_lite', rpcArgs);
       if (error) throw error;
-      return (data || []).map((row) => productRowToFrontend({ ...row, __lite: true }));
+      return noteSeen(
+        (data || []).map((row) => productRowToFrontend({ ...row, __lite: true }))
+      );
     } catch (err) {
       console.warn('[4Core Exim] search_catalog_lite unavailable, trying full RPC:', err.message);
     }
@@ -409,7 +425,7 @@ export const getProducts = async (filters = {}) => {
   try {
     const { data, error } = await supabase.rpc('search_catalog', rpcArgs);
     if (error) throw error;
-    return (data || []).map(productRowToFrontend);
+    return noteSeen((data || []).map(productRowToFrontend));
   } catch (err) {
     console.warn('[4Core Exim] search_catalog RPC failed, using table query:', err.message);
     try {
@@ -814,24 +830,93 @@ export const updateCompanySettings = async (companyData) => {
  * @returns {Promise<Object>}
  */
 export const submitInquiry = async (inquiryData) => {
+  const visitorTz = (() => {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || null;
+    } catch {
+      return null;
+    }
+  })();
+  const visitorLocale = typeof navigator !== 'undefined'
+    ? (navigator.language || null)
+    : null;
+
+  const row = {
+    product_id: inquiryData.productId || null,
+    product_name: inquiryData.productName || null,
+    category_name: inquiryData.categoryName || null,
+    category_id: inquiryData.categoryId || null,
+    phone: inquiryData.phone || null,
+    country_code: inquiryData.countryCode || null,
+    market_country: inquiryData.marketCountry
+      ? String(inquiryData.marketCountry).toUpperCase()
+      : null,
+    timezone: inquiryData.timezone || visitorTz,
+    locale: inquiryData.locale || visitorLocale,
+    business_name: inquiryData.businessName || null,
+    incoterm: inquiryData.incoterm || null,
+    destination_port: inquiryData.destinationPort || null,
+    status: 'new'
+  };
+
   const { data, error } = await supabase
     .from('inquiries')
-    .insert([{
-      product_id: inquiryData.productId || null,
-      product_name: inquiryData.productName || null,
-      category_name: inquiryData.categoryName || null,
-      phone: inquiryData.phone || null,
-      country_code: inquiryData.countryCode || null,
-      business_name: inquiryData.businessName || null,
-      incoterm: inquiryData.incoterm || null,
-      destination_port: inquiryData.destinationPort || null,
-      status: 'new'
-    }])
+    .insert([row])
     .select()
     .single();
 
+  // Migration / FK soft-fail: drop enrichment columns and retry core lead capture
+  if (
+    error &&
+    /market_country|timezone|locale|category_id|foreign key|violates/i.test(error.message || '')
+  ) {
+    const legacy = {
+      product_id: row.product_id,
+      product_name: row.product_name,
+      category_name: row.category_name,
+      phone: row.phone,
+      country_code: row.country_code,
+      business_name: row.business_name,
+      incoterm: row.incoterm,
+      destination_port: row.destination_port,
+      status: 'new'
+    };
+    const retry = await supabase.from('inquiries').insert([legacy]).select().single();
+    if (retry.error) throw retry.error;
+    return retry.data;
+  }
+
   if (error) throw error;
   return data;
+};
+
+/**
+ * Country-interest summary for admin (what each market usually looks for).
+ * Prefers DB RPC; falls back to aggregating inquiry rows client-side.
+ */
+export const getCountryInterestSummary = async (limit = 20) => {
+  if (!isSupabaseConfigured) return [];
+
+  try {
+    const { data, error } = await supabase.rpc('get_country_interest_summary', {
+      p_limit: limit
+    });
+    if (error) throw error;
+    return (data || []).map((row) => ({
+      country: row.country_code,
+      countryName: row.country_name,
+      inquiryWeight: Number(row.inquiry_weight) || 0,
+      inquiryCount: Number(row.inquiry_count) || 0,
+      topProductId: row.top_product_id,
+      topProductName: row.top_product_name,
+      topCategoryId: row.top_category_id,
+      topCategoryName: row.top_category_name
+    }));
+  } catch (err) {
+    console.warn('[4Core Exim] interest summary RPC unavailable, using inquiries:', err.message);
+    const inquiries = await getInquiries({ status: 'all' });
+    return summarizeCountryInterest(inquiries).slice(0, limit);
+  }
 };
 
 /**

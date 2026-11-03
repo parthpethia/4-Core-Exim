@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FiLoader, FiInbox } from 'react-icons/fi';
-import { getInquiries, updateInquiryStatus } from '../../services/productService';
+import { FiLoader, FiInbox, FiGlobe } from 'react-icons/fi';
+import {
+  getInquiries,
+  updateInquiryStatus,
+  getCountryInterestSummary
+} from '../../services/productService';
 
 const STATUS_COLORS = {
   new: { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-200', label: 'New' },
@@ -19,12 +23,17 @@ export default function AdminInquiries() {
   const [loading, setLoading] = useState(true);
   const [statusFilter, setStatusFilter] = useState('all');
   const [updating, setUpdating] = useState(null); // inquiry ID being updated
+  const [countryInterest, setCountryInterest] = useState([]);
 
   const loadInquiries = async () => {
     setLoading(true);
     try {
-      const data = await getInquiries({ status: statusFilter });
+      const [data, interest] = await Promise.all([
+        getInquiries({ status: statusFilter }),
+        getCountryInterestSummary(12).catch(() => [])
+      ]);
       setInquiries(data);
+      setCountryInterest(interest);
     } catch (err) {
       console.error('Failed to load inquiries:', err);
     } finally {
@@ -78,6 +87,39 @@ export default function AdminInquiries() {
         </div>
       </div>
 
+      {/* Country interest — learned from inquiries (what each market looks for) */}
+      {countryInterest.length > 0 && (
+        <div className="bg-white border border-brand-gray-200 rounded-xl p-3 shadow-sm">
+          <div className="flex items-center gap-1.5 mb-2">
+            <FiGlobe className="text-brand-red-600 text-sm" />
+            <h4 className="text-[10px] font-bold uppercase tracking-wider text-brand-gray-700">
+              Market interest (learned)
+            </h4>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {countryInterest.slice(0, 6).map((row) => (
+              <div
+                key={row.country}
+                className="rounded-lg border border-brand-gray-100 bg-brand-gray-50 px-2.5 py-2"
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="text-xs font-bold text-brand-gray-900">
+                    {row.countryName || row.country}
+                  </span>
+                  <span className="font-mono text-[10px] text-brand-gray-500">
+                    {row.inquiryCount ?? '—'} leads
+                  </span>
+                </div>
+                <p className="text-[10px] text-brand-gray-600 mt-1 line-clamp-2">
+                  {row.topCategoryName || row.topCategories?.[0]?.id || 'Categories learning…'}
+                  {row.topProductName ? ` · ${row.topProductName}` : ''}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Status Filter Tabs */}
       <div className="flex items-center gap-1.5 flex-wrap">
         <button
@@ -119,6 +161,7 @@ export default function AdminInquiries() {
                 <th className="py-2.5 px-3">Product</th>
                 <th className="py-2.5 px-3 hidden md:table-cell">Business</th>
                 <th className="py-2.5 px-3 hidden sm:table-cell">Phone</th>
+                <th className="py-2.5 px-3 hidden md:table-cell">Market</th>
                 <th className="py-2.5 px-3 hidden lg:table-cell">Incoterm</th>
                 <th className="py-2.5 px-3 hidden lg:table-cell">Destination</th>
                 <th className="py-2.5 px-3">Status</th>
@@ -128,14 +171,14 @@ export default function AdminInquiries() {
               {loading ? (
                 Array.from({ length: 5 }).map((_, i) => (
                   <tr key={i}>
-                    <td colSpan={7} className="py-3 px-3">
+                    <td colSpan={8} className="py-3 px-3">
                       <div className="h-4 bg-brand-gray-100 rounded animate-pulse" />
                     </td>
                   </tr>
                 ))
               ) : inquiries.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center">
+                  <td colSpan={8} className="py-12 text-center">
                     <div className="flex flex-col items-center gap-2 text-brand-gray-400">
                       <FiInbox className="text-2xl" />
                       <span className="text-xs">No inquiries found</span>
@@ -162,6 +205,9 @@ export default function AdminInquiries() {
                     </td>
                     <td className="py-2.5 px-3 font-mono text-brand-gray-700 hidden sm:table-cell whitespace-nowrap">
                       {inq.country_code} {inq.phone || '—'}
+                    </td>
+                    <td className="py-2.5 px-3 font-mono text-brand-gray-800 hidden md:table-cell">
+                      {inq.market_country || '—'}
                     </td>
                     <td className="py-2.5 px-3 text-brand-gray-700 font-mono hidden lg:table-cell">
                       {inq.incoterm || '—'}

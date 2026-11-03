@@ -4,6 +4,7 @@ import { FiPhone, FiMenu, FiX, FiShield, FiUser, FiLogOut, FiChevronDown } from 
 import { FaWhatsapp } from 'react-icons/fa';
 import { useCompany } from '../context/CompanyContext';
 import { useAuth } from '../context/useAuth';
+import VisitorLocalClock from './VisitorLocalClock';
 
 export default function Header() {
   const { company: companyData } = useCompany();
@@ -66,7 +67,9 @@ export default function Header() {
             <span>WHO-GMP Sourced Batch Export from Mumbai & Nagpur, India</span>
           </div>
           <div className="flex items-center gap-4">
-            <span>Hours: {companyData?.businessHours || 'Mon - Sat: 11:00 AM - 8:00 PM (IST)'}</span>
+            <VisitorLocalClock />
+            <span className="text-brand-gray-500">|</span>
+            <span>Desk: {companyData?.businessHours || 'Mon - Sat: 11:00 AM - 8:00 PM (IST)'}</span>
             <span className="text-brand-gray-500">|</span>
             <span className="text-emerald-400 font-semibold flex items-center gap-1">
               <FiShield className="text-xs" /> CDSCO Export Compliant

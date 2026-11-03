@@ -4,7 +4,18 @@ import CoaModal from './CoaModal';
 import OptimizedImage from './OptimizedImage';
 import { submitInquiry, getProductById } from '../services/productService';
 import { resolveProductThumbnail } from '../utils/imageUrl';
+import { dialToMarket, DIAL_TO_ISO } from '../utils/countryInterestRank';
+import { detectMarketCountry } from '../utils/marketLocation';
 import { FiShield, FiMail, FiX, FiFileText, FiCheckCircle } from 'react-icons/fi';
+
+const ISO_TO_DIAL = Object.fromEntries(
+  Object.entries(DIAL_TO_ISO).map(([dial, iso]) => [iso, dial])
+);
+
+function dialForMarket(code) {
+  const iso = (code || detectMarketCountry() || 'AE').toUpperCase();
+  return ISO_TO_DIAL[iso] || '+971';
+}
 
 /**
  * ProductCard component for B2B Catalog.
@@ -84,23 +95,34 @@ export default function ProductCard({ product: initialProduct, categoryName, com
   const [showInquiryModal, setShowInquiryModal] = useState(false);
   const [showCoaModal, setShowCoaModal] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [countryCode, setCountryCode] = useState('+91');
+  const [countryCode, setCountryCode] = useState(() => dialForMarket(marketCountry));
   const [businessName, setBusinessName] = useState('');
   const [incoterm, setIncoterm] = useState('FOB');
   const [destinationPort, setDestinationPort] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  useEffect(() => {
+    setCountryCode(dialForMarket(marketCountry));
+  }, [marketCountry]);
+
   const handleModalSubmit = async (e) => {
     e.preventDefault();
-    
-    // Save inquiry to database for admin lead tracking
+
+    const resolvedMarket =
+      (marketCountry || '').toUpperCase() ||
+      dialToMarket(countryCode) ||
+      detectMarketCountry();
+
+    // Save inquiry — feeds country-interest learning for that market
     try {
       await submitInquiry({
         productId: product.id,
         productName: name,
         categoryName: categoryName,
+        categoryId: product.category || null,
         phone: phoneNumber,
         countryCode: countryCode,
+        marketCountry: resolvedMarket,
         businessName: businessName || null,
         incoterm: incoterm,
         destinationPort: destinationPort || null
