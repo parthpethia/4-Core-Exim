@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCompanyInfo } from '../services/productService';
 import { FiAward, FiFileText, FiGlobe, FiTruck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import PageSEO from '../components/PageSEO';
 
 export default function About() {
   const [company, setCompany] = useState(null);
@@ -51,6 +52,11 @@ export default function About() {
 
   return (
     <div className="bg-brand-gray-50 min-h-screen py-12">
+      <PageSEO
+        title="About 4Core Exim — India's Trusted B2B Pharmaceutical Exporter"
+        description="B2B pharmaceutical exporter backed by Thakkar Medico Traders. Exporting WHO-GMP certified generic and branded medicines from Mumbai & Nagpur to Africa, MENA, LATAM, Southeast Asia."
+        path="/about"
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Page Header Banner */}

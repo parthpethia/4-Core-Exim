@@ -1,4 +1,5 @@
 import { FiCheckCircle, FiShield } from 'react-icons/fi';
+import PageSEO from '../components/PageSEO';
 
 export default function Compliance() {
   const compliancePillars = [
@@ -50,6 +51,11 @@ export default function Compliance() {
 
   return (
     <div className="bg-brand-gray-50 min-h-screen py-12">
+      <PageSEO
+        title="WHO-GMP Export Compliance — Pharmaceutical Quality Standards"
+        description="4Core Exim quality management system: WHO-GMP, EU-GMP, US-FDA compliance. Certificate of Analysis (CoA), CoPP, CTD dossier support for pharmaceutical imports from India."
+        path="/compliance"
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Block */}

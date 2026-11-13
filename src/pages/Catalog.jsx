@@ -5,6 +5,7 @@ import SearchBar from '../components/SearchBar';
 import ProductCard from '../components/ProductCard';
 import ProductSkeleton from '../components/ProductSkeleton';
 import MarketSelector from '../components/MarketSelector';
+import PageSEO from '../components/PageSEO';
 import {
   getCategories,
   getProducts,
@@ -153,6 +154,11 @@ export default function Catalog() {
 
   return (
     <div className="bg-brand-gray-50 min-h-screen py-10">
+      <PageSEO
+        title="Pharmaceutical Export Catalog — Generic & Branded Medicines from India"
+        description="Browse 500+ WHO-GMP certified medicines for export: tablets, capsules, injections, antibiotics, oncology drugs, veterinary products. FOB Mumbai pricing for wholesale buyers."
+        path="/catalog"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="mb-6 border-b border-brand-gray-200 pb-4">

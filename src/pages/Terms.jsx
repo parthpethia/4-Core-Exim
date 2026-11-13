@@ -1,8 +1,14 @@
 import { FiFileText, FiAlertCircle } from 'react-icons/fi';
+import PageSEO from '../components/PageSEO';
 
 export default function Terms() {
   return (
     <div className="bg-brand-gray-50 min-h-screen py-12">
+      <PageSEO
+        title="Terms of Export Service & Commercial Supply"
+        description="4Core Exim terms of export service: wholesale pharmaceutical supply, Incoterms, payment terms, shipping, and B2B commercial conditions for international buyers."
+        path="/terms"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Block */}

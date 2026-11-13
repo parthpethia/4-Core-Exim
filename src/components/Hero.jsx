@@ -1,126 +1,137 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiShield, FiCheckCircle } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiArrowRight } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 
-export default function Hero() {
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+export default function Hero({ company }) {
+  const whatsappNumber = (company?.whatsapp || '+919325303018').replace(/[^0-9]/g, '');
+  const waMessage = encodeURIComponent(
+    'Hello 4Core Exim Trade Desk — I would like to request a wholesale export quotation and MOQ details.'
+  );
+  const whatsappHref = `https://wa.me/${whatsappNumber}?text=${waMessage}`;
+
   return (
-    <section className="bg-white border-b border-brand-gray-200 py-12 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          {/* Hero Left Content */}
-          <div className="lg:col-span-7 text-left space-y-6">
-            
-            {/* Live Indicator Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-gray-100 border border-brand-gray-200 rounded text-xs font-bold text-brand-gray-800">
-              <span className="w-2 h-2 bg-brand-red-600 rounded-full inline-block"></span>
-              <span>WHO-GMP Batch Sourcing & Global Port Logistics</span>
-            </div>
+    <section className="relative overflow-hidden border-b border-brand-gray-200">
+      {/* Full-bleed atmosphere */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-brand-gray-900 via-brand-gray-900 to-brand-gray-800"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 opacity-90"
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 60% at 70% 20%, rgba(185, 28, 28, 0.35) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 15% 80%, rgba(248, 250, 252, 0.06) 0%, transparent 50%)',
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+        aria-hidden="true"
+      />
 
-            {/* Main Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-gray-900 leading-tight tracking-tight">
-              International Pharmaceutical <br />
-              <span className="text-brand-red-600">Exporter & Wholesale Supplier</span>
-            </h1>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div className="max-w-3xl">
+          <motion.div
+            custom={0}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="flex items-center gap-2.5 mb-6"
+          >
+            <span className="bg-brand-red-600 text-white font-bold text-sm px-2.5 py-1 rounded tracking-wide">
+              4CORE
+            </span>
+            <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Exim
+            </span>
+          </motion.div>
 
-            {/* Sub-heading */}
-            <p className="text-sm sm:text-base text-brand-gray-600 font-normal leading-relaxed max-w-2xl">
-              Reliable B2B trade desk supplying authentic branded, generic, oncology, and veterinary pharmaceutical formulations from India's leading WHO-GMP manufacturers to over 40+ countries.
-            </p>
+          <motion.p
+            custom={1}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red-100/80 mb-3"
+          >
+            By Thakkar Medico Traders
+          </motion.p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link
-                to="/catalog"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors shadow-sm"
-              >
-                <span>Browse Products & RFQ</span>
-                <FiArrowRight className="text-sm" />
-              </Link>
-              <Link
-                to="/compliance"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-brand-gray-300 bg-white hover:bg-brand-gray-50 text-brand-gray-800 font-bold text-xs uppercase tracking-wider rounded transition-colors"
-              >
-                <FiShield className="text-sm text-brand-red-600" />
-                <span>Quality & Compliance</span>
-              </Link>
-            </div>
+          <motion.h1
+            custom={2}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight"
+          >
+            Wholesale pharmaceutical export supply from India
+          </motion.h1>
 
-            {/* Industrial Logistics Metrics */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-brand-gray-200 max-w-xl text-xs">
-              <div>
-                <p className="font-mono font-bold text-brand-gray-900 text-base">40+ Markets</p>
-                <p className="text-brand-gray-500 mt-0.5">LATAM, CIS, SEA, Africa</p>
-              </div>
-              <div>
-                <p className="font-mono font-bold text-brand-gray-900 text-base">Incoterms 2020</p>
-                <p className="text-brand-gray-500 mt-0.5">FOB / CIF / CFR Ready</p>
-              </div>
-              <div>
-                <p className="font-mono font-bold text-brand-gray-900 text-base">Cold-Chain</p>
-                <p className="text-brand-gray-500 mt-0.5">2°C - 8°C Monitored</p>
-              </div>
-            </div>
+          <motion.p
+            custom={3}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="mt-4 text-sm sm:text-base text-brand-gray-300 leading-relaxed max-w-xl"
+          >
+            WHO-GMP sourced branded and generic formulations for licensed distributors —
+            quote MOQ, CoA, and FOB/CIF pricing with our trade desk in minutes.
+          </motion.p>
 
-          </div>
+          <motion.div
+            custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3"
+          >
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors shadow-sm"
+            >
+              <FaWhatsapp className="text-base" />
+              <span>WhatsApp Trade Desk</span>
+            </a>
+            <Link
+              to="/catalog"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white hover:bg-brand-gray-100 text-brand-gray-900 font-bold text-xs uppercase tracking-wider rounded transition-colors"
+            >
+              <span>Browse Catalog</span>
+              <FiArrowRight className="text-sm" />
+            </Link>
+          </motion.div>
 
-          {/* Hero Right Visual: Technical Specification & Dispatch Summary */}
-          <div className="lg:col-span-5">
-            <div className="bg-brand-gray-50 border border-brand-gray-200 rounded-lg p-6 space-y-4">
-              
-              <div className="flex items-center justify-between border-b border-brand-gray-200 pb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-gray-900">
-                  Export Protocol Specifications
-                </span>
-                <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
-                  CDSCO Verified
-                </span>
-              </div>
-
-              <div className="space-y-3 text-xs">
-                <div className="flex items-start gap-2.5">
-                  <FiCheckCircle className="text-emerald-600 shrink-0 text-sm mt-0.5" />
-                  <div>
-                    <strong className="text-brand-gray-900">Pharmacopeial Monographs:</strong>
-                    <p className="text-brand-gray-600">IP, BP, USP, and EP certified formulation batches.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
-                  <FiCheckCircle className="text-emerald-600 shrink-0 text-sm mt-0.5" />
-                  <div>
-                    <strong className="text-brand-gray-900">Regulatory Dossier Modules:</strong>
-                    <p className="text-brand-gray-600">CTD/eCTD formats, Certificate of Pharmaceutical Product (CoPP), and CoA.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
-                  <FiCheckCircle className="text-emerald-600 shrink-0 text-sm mt-0.5" />
-                  <div>
-                    <strong className="text-brand-gray-900">Dispatch Hubs:</strong>
-                    <p className="text-brand-gray-600">Nhava Sheva Port (JNPT) & Chhatrapati Shivaji Maharaj Air Cargo (BOM).</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
-                  <FiCheckCircle className="text-emerald-600 shrink-0 text-sm mt-0.5" />
-                  <div>
-                    <strong className="text-brand-gray-900">Temperature Loggers:</strong>
-                    <p className="text-brand-gray-600">Calibrated USB/NFC dataloggers for sensitive cold-chain cargo.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-brand-gray-200 flex items-center justify-between text-xs text-brand-gray-500 font-mono">
-                <span>Origin: Mumbai, India</span>
-                <Link to="/contact" className="text-brand-red-600 font-bold hover:underline">
-                  Contact Trade Desk &rarr;
-                </Link>
-              </div>
-
-            </div>
-          </div>
-
+          <motion.div
+            custom={5}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="mt-4"
+          >
+            <a
+              href="#inquiry-form"
+              className="text-xs font-semibold text-brand-gray-400 hover:text-white transition-colors underline-offset-4 hover:underline"
+            >
+              Prefer email? Request a quote →
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

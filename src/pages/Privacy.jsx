@@ -1,8 +1,14 @@
 import { FiLock } from 'react-icons/fi';
+import PageSEO from '../components/PageSEO';
 
 export default function Privacy() {
   return (
     <div className="bg-brand-gray-50 min-h-screen py-12">
+      <PageSEO
+        title="B2B Privacy Policy & Data Protection"
+        description="4Core Exim B2B privacy policy: how we handle corporate buyer data, trade inquiries, and commercial information for pharmaceutical export operations."
+        path="/privacy"
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Block */}

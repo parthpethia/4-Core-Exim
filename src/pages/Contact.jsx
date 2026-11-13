@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCompanyInfo } from '../services/productService';
 import { FiPhone, FiMail, FiMapPin, FiClock, FiSend } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
+import PageSEO from '../components/PageSEO';
 
 export default function Contact() {
   const [company, setCompany] = useState(null);
@@ -72,6 +73,11 @@ Regards`;
 
   return (
     <div className="bg-brand-gray-50 min-h-screen py-12">
+      <PageSEO
+        title="Contact 4Core Exim — Pharmaceutical Export Inquiry & RFQ"
+        description="Submit wholesale medicine export inquiries to 4Core Exim. Direct trade desk for quotations, MOQ, proforma invoices, batch CoA verification. WhatsApp: +91 93253 03018."
+        path="/contact"
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Page Header */}

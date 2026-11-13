@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CategoryGrid from '../components/CategoryGrid';
 import ProductGridCard from '../components/ProductGridCard';
+import PageSEO from '../components/PageSEO';
 import { getCategories, getProducts } from '../services/productService';
 import { useCompany } from '../context/CompanyContext';
 import { detectMarketCountry } from '../utils/marketLocation';
@@ -104,6 +105,12 @@ Regards`;
 
   return (
     <div className="bg-brand-gray-50">
+
+      <PageSEO
+        title="4Core Exim — Pharmaceutical Exporter from India | WHO-GMP Medicines"
+        description="Premier B2B pharmaceutical exporter from India. WHO-GMP certified generic, oncology, veterinary, and specialty medicines exported to 40+ countries. FOB Mumbai pricing."
+        path="/"
+      />
 
       {/* Category Quick Index Bar */}
       <section className="bg-white border-b border-brand-gray-200 py-8">
