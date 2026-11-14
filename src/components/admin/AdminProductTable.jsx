@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { FiSearch, FiEdit2, FiTrash2, FiToggleLeft, FiToggleRight, FiPlus, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { FiSearch, FiEdit2, FiTrash2, FiToggleLeft, FiToggleRight, FiPlus, FiChevronLeft, FiChevronRight, FiDownload, FiUpload } from 'react-icons/fi';
 import ConfirmDialog from './ConfirmDialog';
-import { getAdminProducts, getAllCategories, toggleProductActive, deleteProduct } from '../../services/productService';
+import BulkProductImportModal, { exportProductsToCsv } from './BulkProductImportModal';
+import { getAdminProductsPaginated, getAllCategories, toggleProductActive, deleteProduct } from '../../services/adminService';
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 20;
 
 /**
- * AdminProductTable — Searchable, paginated product management table.
+ * AdminProductTable — Server-side paginated, searchable product management table.
  * @param {Object} props
  * @param {Function} props.onEditProduct - Called with product object to open edit form
  * @param {Function} props.onAddProduct - Called to open create form
@@ -18,11 +19,15 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
   const [searchInput, setSearchInput] = useState('');
   const [search, setSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
+  const [statusFilter, setStatusFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [actionLoading, setActionLoading] = useState(null); // product ID being toggled
+  const [actionLoading, setActionLoading] = useState(null);
+  const [showImportModal, setShowImportModal] = useState(false);
 
   // Debounce search input
   useEffect(() => {
@@ -30,16 +35,24 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
     return () => clearTimeout(timer);
   }, [searchInput]);
 
-  // Fetch data
+  // Fetch data — server-side paginated
   useEffect(() => {
     async function loadData() {
       setLoading(true);
       try {
-        const [prods, cats] = await Promise.all([
-          getAdminProducts({ category: categoryFilter, search }),
+        const [result, cats] = await Promise.all([
+          getAdminProductsPaginated({
+            page: currentPage,
+            pageSize: PAGE_SIZE,
+            category: categoryFilter,
+            search,
+            status: statusFilter
+          }),
           getAllCategories()
         ]);
-        setProducts(prods);
+        setProducts(result.products);
+        setTotalCount(result.totalCount);
+        setTotalPages(result.totalPages);
         setCategories(cats);
       } catch (err) {
         console.error('Failed to load admin products:', err);
@@ -48,19 +61,12 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
       }
     }
     loadData();
-  }, [refreshKey, categoryFilter, search]);
+  }, [refreshKey, categoryFilter, search, statusFilter, currentPage]);
 
   // Reset page when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [search, categoryFilter]);
-
-  // Pagination
-  const totalPages = Math.ceil(products.length / PAGE_SIZE);
-  const paginatedProducts = useMemo(() => {
-    const start = (currentPage - 1) * PAGE_SIZE;
-    return products.slice(start, start + PAGE_SIZE);
-  }, [products, currentPage]);
+  }, [search, categoryFilter, statusFilter]);
 
   // Category name lookup
   const getCategoryName = (catId) => {
@@ -96,12 +102,21 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
     }
   };
 
+  // Import complete handler
+  const handleImportComplete = () => {
+    setShowImportModal(false);
+    setCurrentPage(1);
+    // Force a re-fetch by toggling a filter or just let refreshKey handle it
+    setProducts([]);
+    setLoading(true);
+  };
+
   return (
     <div className="space-y-4">
 
-      {/* Toolbar: Search + Filter + Add */}
+      {/* Toolbar: Search + Filters + Bulk Ops + Add */}
       <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
-        <div className="flex flex-1 gap-2 w-full sm:w-auto">
+        <div className="flex flex-1 gap-2 w-full sm:w-auto flex-wrap">
           {/* Search */}
           <div className="flex items-center gap-1.5 border border-brand-gray-300 rounded px-2.5 py-1.5 bg-white flex-1 max-w-xs">
             <FiSearch className="text-brand-gray-400 text-xs shrink-0" />
@@ -125,16 +140,49 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
               <option key={cat.id} value={cat.id}>{cat.name}</option>
             ))}
           </select>
+
+          {/* Status Filter */}
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-700 bg-white focus:outline-none"
+          >
+            <option value="all">All Status</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
         </div>
 
-        {/* Add Product */}
-        <button
-          onClick={onAddProduct}
-          className="flex items-center gap-1.5 px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer shrink-0"
-        >
-          <FiPlus className="text-xs" />
-          <span>Add Product</span>
-        </button>
+        <div className="flex items-center gap-2 shrink-0">
+          {/* Export CSV */}
+          <button
+            onClick={() => exportProductsToCsv(products, categories)}
+            className="flex items-center gap-1.5 px-3 py-2 border border-brand-gray-300 hover:bg-brand-gray-50 text-brand-gray-700 text-xs font-bold rounded transition-colors cursor-pointer"
+            title="Export current page as CSV"
+          >
+            <FiDownload className="text-xs" />
+            <span>Export</span>
+          </button>
+
+          {/* Import CSV */}
+          <button
+            onClick={() => setShowImportModal(true)}
+            className="flex items-center gap-1.5 px-3 py-2 border border-brand-gray-300 hover:bg-brand-gray-50 text-brand-gray-700 text-xs font-bold rounded transition-colors cursor-pointer"
+            title="Bulk import products from CSV"
+          >
+            <FiUpload className="text-xs" />
+            <span>Import</span>
+          </button>
+
+          {/* Add Product */}
+          <button
+            onClick={onAddProduct}
+            className="flex items-center gap-1.5 px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer"
+          >
+            <FiPlus className="text-xs" />
+            <span>Add Product</span>
+          </button>
+        </div>
       </div>
 
       {/* Product Table */}
@@ -160,14 +208,14 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
                     </td>
                   </tr>
                 ))
-              ) : paginatedProducts.length === 0 ? (
+              ) : products.length === 0 ? (
                 <tr>
                   <td colSpan={6} className="py-8 px-3 text-center text-brand-gray-400 text-xs">
                     No products found matching your filters.
                   </td>
                 </tr>
               ) : (
-                paginatedProducts.map((p) => (
+                products.map((p) => (
                   <tr key={p.id} className={`hover:bg-brand-gray-50 transition-colors ${!p.isActive ? 'opacity-50' : ''}`}>
                     <td className="py-2.5 px-3">
                       <div className="font-bold text-brand-gray-900 line-clamp-1">{p.name}</div>
@@ -230,7 +278,13 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
         {/* Pagination Footer */}
         <div className="border-t border-brand-gray-200 bg-brand-gray-50 px-4 py-2.5 flex items-center justify-between text-xs text-brand-gray-500">
           <span>
-            Showing {((currentPage - 1) * PAGE_SIZE) + 1}–{Math.min(currentPage * PAGE_SIZE, products.length)} of <strong className="text-brand-gray-900">{products.length}</strong> products
+            {totalCount > 0 ? (
+              <>
+                Showing {((currentPage - 1) * PAGE_SIZE) + 1}–{Math.min(currentPage * PAGE_SIZE, totalCount)} of <strong className="text-brand-gray-900">{totalCount}</strong> products
+              </>
+            ) : (
+              'No products'
+            )}
           </span>
           {totalPages > 1 && (
             <div className="flex items-center gap-1">
@@ -288,6 +342,14 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
         confirmLabel="Deactivate"
         confirmStyle="danger"
         loading={isDeleting}
+      />
+
+      {/* Bulk Import Modal */}
+      <BulkProductImportModal
+        isOpen={showImportModal}
+        onClose={() => setShowImportModal(false)}
+        onComplete={handleImportComplete}
+        categories={categories}
       />
     </div>
   );

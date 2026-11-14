@@ -3,6 +3,8 @@ import { FiX, FiSave, FiLoader } from 'react-icons/fi';
 import SpecificationsEditor from './SpecificationsEditor';
 import ImageManager from './ImageManager';
 import { createProduct, updateProduct } from '../../services/productService';
+import { mapSupabaseError } from '../../services/adminService';
+import { supabase } from '../../services/supabaseClient';
 
 /**
  * Generate URL-friendly slug from product name.
@@ -119,6 +121,19 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
         throw new Error('Price must be a valid non-negative number.');
       }
 
+      // Pre-flight: Check for slug conflict (create mode only)
+      if (!isEditMode) {
+        const { data: existing } = await supabase
+          .from('products')
+          .select('id')
+          .eq('id', form.id)
+          .maybeSingle();
+
+        if (existing) {
+          throw new Error('A product with the slug ID "' + form.id + '" already exists. Please customize the slug or change the product name.');
+        }
+      }
+
       if (isEditMode) {
         await updateProduct(form.id, form);
       } else {
@@ -128,7 +143,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
       onSave();
     } catch (err) {
       console.error('Product save failed:', err);
-      setError(err.message || 'Failed to save product. Please try again.');
+      setError(err.code ? mapSupabaseError(err) : (err.message || 'Failed to save product. Please try again.'));
     } finally {
       setSaving(false);
     }
