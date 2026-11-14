@@ -5,7 +5,7 @@ import { FiShield, FiUser, FiBriefcase, FiAlertCircle, FiArrowRight } from 'reac
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 export default function Login() {
-  const { user, isAdmin, signInWithOAuth, loginAsDevAdmin, isSupabaseConfigured } = useAuth();
+  const { user, isAdmin, signInWithOAuth, isSupabaseConfigured } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -175,28 +175,6 @@ export default function Login() {
               <span>Continue with GitHub</span>
             </button>
           </div>
-
-          {/* Dev Fast Login for Trade Desk Admin */}
-          {activeTab === 'admin' && (
-            <div className="mt-4 pt-4 border-t border-brand-gray-200">
-              <div className="text-center mb-2">
-                <span className="text-[10px] uppercase font-bold text-brand-gray-500 tracking-wider">
-                  Developer & Local Environment Access
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  loginAsDevAdmin('admin@4coreexim.com');
-                  navigate('/admin', { replace: true });
-                }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-3 bg-brand-gray-900 hover:bg-black text-white rounded-lg text-xs font-bold transition-colors shadow-sm cursor-pointer"
-              >
-                <FiShield className="text-brand-red-500 text-xs" />
-                <span>Instant Admin Sign-In (admin@4coreexim.com)</span>
-              </button>
-            </div>
-          )}
 
           <div className="mt-6 pt-5 border-t border-brand-gray-200">
             <div className="flex items-center justify-between text-[11px] text-brand-gray-500">

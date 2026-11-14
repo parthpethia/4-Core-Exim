@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/useAuth';
 import { getProducts, getCategories, getInquiries, getAllCategories } from '../services/productService';
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
     async function loadData() {
       try {
         const [prodList, catList] = await Promise.all([
-          getProducts({ lean: false, limit: 500 }),
+          getProducts({ lean: true, limit: 50 }),
           getCategories()
         ]);
         setProducts(prodList);
@@ -85,10 +85,18 @@ export default function AdminDashboard() {
   const adminEmail = user?.email || 'admin@4coreexim.com';
   const provider = user?.app_metadata?.provider || 'oauth';
 
-  // Count monograph standards
-  const ipCount = products.filter(p => `${p.name} ${p.saltComposition || ''}`.toUpperCase().includes('IP')).length;
-  const bpCount = products.filter(p => `${p.name} ${p.saltComposition || ''}`.toUpperCase().includes('BP')).length;
-  const uspCount = products.filter(p => `${p.name} ${p.saltComposition || ''}`.toUpperCase().includes('USP')).length;
+  // Count monograph standards (word-boundary match to avoid false positives)
+  const pharmaRegex = (standard) => new RegExp(`\\b${standard}\\b`, 'i');
+  const ipCount = products.filter(p => pharmaRegex('IP').test(`${p.name} ${p.saltComposition || ''}`)).length;
+  const bpCount = products.filter(p => pharmaRegex('BP').test(`${p.name} ${p.saltComposition || ''}`)).length;
+  const uspCount = products.filter(p => pharmaRegex('USP').test(`${p.name} ${p.saltComposition || ''}`)).length;
+
+  // O(1) category lookup map
+  const categoryMap = useMemo(() => {
+    const map = {};
+    categories.forEach(c => { map[c.id] = c.name; });
+    return map;
+  }, [categories]);
 
   // New inquiry count
   const newInquiryCount = inquiries.filter(i => i.status === 'new').length;
@@ -291,15 +299,21 @@ export default function AdminDashboard() {
                         <tr key={p.id} className="hover:bg-brand-gray-50 transition-colors">
                           <td className="py-2.5 px-3 font-bold text-brand-gray-900">{p.name}</td>
                           <td className="py-2.5 px-3 capitalize text-brand-gray-700 text-[11px]">
-                            {categories.find(c => c.id === p.category)?.name || p.category}
+                            {categoryMap[p.category] || p.category}
                           </td>
                           <td className="py-2.5 px-3 font-mono text-brand-gray-800">
                             {p.currency} {p.price}
                           </td>
                           <td className="py-2.5 px-3">
-                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                              <FiCheckCircle className="text-[10px]" /> Active
-                            </span>
+                            {p.isActive !== false ? (
+                              <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                                <FiCheckCircle className="text-[10px]" /> Active
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-[10px] font-bold text-brand-gray-500 bg-brand-gray-100 px-2 py-0.5 rounded">
+                                Inactive
+                              </span>
+                            )}
                           </td>
                         </tr>
                       ))}

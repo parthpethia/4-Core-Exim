@@ -36,12 +36,6 @@ export function AuthProvider({ children }) {
 
     const email = currentUser.email.toLowerCase().trim();
 
-    // Check dev override
-    if (localStorage.getItem('4core_dev_admin_override') === email) {
-      setIsDbAdmin(true);
-      return true;
-    }
-
     // Fast check: static admin list or JWT metadata
     if (checkIsAdminEmail(email)) {
       setIsDbAdmin(true);
@@ -91,9 +85,7 @@ export function AuthProvider({ children }) {
     const email = user.email?.toLowerCase().trim();
     const isEmailAdmin = checkIsAdminEmail(email);
     const isMetaAdmin = user.user_metadata?.role === 'admin' || user.app_metadata?.role === 'admin';
-    const isOverride = localStorage.getItem('4core_dev_admin_override') === email;
-
-    return (isEmailAdmin || isMetaAdmin || isDbAdmin || isOverride) ? 'admin' : 'user';
+    return (isEmailAdmin || isMetaAdmin || isDbAdmin) ? 'admin' : 'user';
   }, [user, isDbAdmin]);
 
   const isAdmin = role === 'admin';
@@ -115,15 +107,7 @@ export function AuthProvider({ children }) {
             setUser(currentUser);
             await verifyAdminStatus(currentUser);
           } else {
-            // Check for saved local dev admin session
-            const savedDevUser = localStorage.getItem('4core_dev_admin_user');
-            if (savedDevUser) {
-              try {
-                const parsed = JSON.parse(savedDevUser);
-                setUser(parsed);
-                setIsDbAdmin(true);
-              } catch (e) {}
-            }
+            // No active session
           }
         }
       } catch (err) {
@@ -142,7 +126,6 @@ export function AuthProvider({ children }) {
         setSession(newSession);
         setUser(currentUser);
         if (currentUser) {
-          localStorage.removeItem('4core_dev_admin_user');
           await verifyAdminStatus(currentUser);
         } else {
           setIsDbAdmin(false);
@@ -156,43 +139,6 @@ export function AuthProvider({ children }) {
       authListener?.subscription?.unsubscribe();
     };
   }, [verifyAdminStatus]);
-
-  /**
-   * Fast dev sign-in as Trade Desk Admin (for local testing without OAuth redirect).
-   */
-  const loginAsDevAdmin = useCallback((email = 'admin@4coreexim.com') => {
-    const devUser = {
-      id: 'dev-admin-id',
-      email: email.toLowerCase().trim(),
-      user_metadata: { full_name: 'Trade Desk Officer', role: 'admin' },
-      app_metadata: { provider: 'dev', role: 'admin' },
-    };
-    localStorage.setItem('4core_dev_admin_user', JSON.stringify(devUser));
-    localStorage.setItem('4core_dev_admin_override', devUser.email);
-    setUser(devUser);
-    setIsDbAdmin(true);
-    return devUser;
-  }, []);
-
-  /**
-   * One-click Dev mode admin toggle (persists in localStorage for local testing).
-   */
-  const grantDevAdmin = useCallback((targetEmail) => {
-    const email = (targetEmail || user?.email)?.toLowerCase().trim();
-    if (email) {
-      localStorage.setItem('4core_dev_admin_override', email);
-      setIsDbAdmin(true);
-    }
-  }, [user]);
-
-  const revokeDevAdmin = useCallback(() => {
-    localStorage.removeItem('4core_dev_admin_user');
-    localStorage.removeItem('4core_dev_admin_override');
-    setIsDbAdmin(false);
-    if (user) {
-      verifyAdminStatus(user);
-    }
-  }, [user, verifyAdminStatus]);
 
   /**
    * Initiate OAuth sign-in with provider (e.g. google, github).
@@ -257,12 +203,9 @@ export function AuthProvider({ children }) {
     isAdmin,
     isSupabaseConfigured,
     verifyAdminStatus: () => verifyAdminStatus(user),
-    grantDevAdmin,
-    revokeDevAdmin,
-    loginAsDevAdmin,
     signInWithOAuth,
     signOut,
-  }), [user, session, loading, adminCheckLoading, role, isAdmin, verifyAdminStatus, grantDevAdmin, revokeDevAdmin, loginAsDevAdmin, signInWithOAuth, signOut]);
+  }), [user, session, loading, adminCheckLoading, role, isAdmin, verifyAdminStatus, signInWithOAuth, signOut]);
 
   return (
     <AuthContext.Provider value={value}>

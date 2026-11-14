@@ -10,6 +10,9 @@ import { uploadProductImage } from '../../services/productService';
  * @param {Function} props.onChange - Callback with updated images array
  * @param {string} [props.productId] - Product ID for storage path organization
  */
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+
 export default function ImageManager({ images = [], onChange, productId }) {
   const [urlInput, setUrlInput] = useState('');
   const [isUploading, setIsUploading] = useState(false);
@@ -17,8 +20,14 @@ export default function ImageManager({ images = [], onChange, productId }) {
   const fileInputRef = useRef(null);
 
   const handleAddUrl = () => {
-    if (!urlInput.trim()) return;
-    onChange([...images, urlInput.trim()]);
+    const url = urlInput.trim();
+    if (!url) return;
+    if (!url.startsWith('https://')) {
+      setUploadError('Image URL must start with https://');
+      return;
+    }
+    setUploadError(null);
+    onChange([...images, url]);
     setUrlInput('');
   };
 
@@ -31,8 +40,21 @@ export default function ImageManager({ images = [], onChange, productId }) {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    setIsUploading(true);
     setUploadError(null);
+
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      setUploadError('Only JPG, PNG, WebP, and GIF images are allowed.');
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      setUploadError(`File too large (${(file.size / 1024 / 1024).toFixed(1)}MB). Maximum is 5MB.`);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
+    setIsUploading(true);
 
     try {
       const publicUrl = await uploadProductImage(file, productId);

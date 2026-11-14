@@ -52,6 +52,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
   const [form, setForm] = useState(EMPTY_FORM);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
+  const [isDirty, setIsDirty] = useState(false);
 
   // Populate form when product changes (edit mode)
   useEffect(() => {
@@ -81,6 +82,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
       setForm(EMPTY_FORM);
     }
     setError(null);
+    setIsDirty(false);
   }, [product, isOpen]);
 
   // Auto-generate slug ID from name (only in create mode)
@@ -90,10 +92,17 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
       name,
       ...(isEditMode ? {} : { id: generateSlug(name) })
     }));
+    setIsDirty(true);
   };
 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
+    setIsDirty(true);
+  };
+
+  const handleSafeClose = () => {
+    if (isDirty && !window.confirm('You have unsaved changes. Discard them?')) return;
+    onClose();
   };
 
   const handleSubmit = async (e) => {
@@ -104,7 +113,11 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
     try {
       if (!form.name.trim()) throw new Error('Product name is required.');
       if (!form.id.trim()) throw new Error('Product ID (slug) is required.');
+      if (!/^[a-z0-9-]+$/.test(form.id)) throw new Error('Product ID can only contain lowercase letters, numbers, and hyphens.');
       if (!form.category) throw new Error('Please select a category.');
+      if (form.price && (isNaN(parseFloat(form.price)) || parseFloat(form.price) < 0)) {
+        throw new Error('Price must be a valid non-negative number.');
+      }
 
       if (isEditMode) {
         await updateProduct(form.id, form);
@@ -125,7 +138,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-brand-gray-950/70 overflow-y-auto">
-      <div className="fixed inset-0" onClick={onClose} />
+      <div className="fixed inset-0" onClick={handleSafeClose} />
 
       <div className="relative bg-white border border-brand-gray-300 rounded-xl shadow-xl w-full max-w-3xl z-10 my-8 overflow-hidden">
 
@@ -140,7 +153,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
             </p>
           </div>
           <button
-            onClick={onClose}
+            onClick={handleSafeClose}
             className="p-1.5 rounded hover:bg-brand-gray-800 text-brand-gray-300 hover:text-white transition-colors cursor-pointer"
             aria-label="Close"
           >
@@ -409,7 +422,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
           <div className="flex gap-2">
             <button
               type="button"
-              onClick={onClose}
+              onClick={handleSafeClose}
               disabled={saving}
               className="px-4 py-2 border border-brand-gray-300 hover:bg-white text-brand-gray-700 text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50"
             >

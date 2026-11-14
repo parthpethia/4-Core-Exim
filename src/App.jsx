@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { CompanyProvider } from './context/CompanyContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import ErrorBoundary from './components/ErrorBoundary';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -13,10 +14,12 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Compliance from './pages/Compliance';
 import Login from './pages/Login';
-import AuthCallback from './pages/AuthCallback';
 import OAuthRedirectBridge from './components/OAuthRedirectBridge';
-import Dashboard from './pages/Dashboard';
-import AdminDashboard from './pages/AdminDashboard';
+
+// Lazy-loaded heavy pages (code splitting)
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const AuthCallback = lazy(() => import('./pages/AuthCallback'));
 
 /**
  * ScrollToTop utility component.
@@ -43,6 +46,7 @@ export default function App() {
         <ScrollToTop />
         
         {/* Global B2B Catalog App Container */}
+        <ErrorBoundary>
         <div className="flex flex-col min-h-screen bg-brand-gray-50 text-brand-gray-800">
           
           {/* Sticky Header Navigation */}
@@ -50,6 +54,11 @@ export default function App() {
           
           {/* Page Render Viewport */}
           <main className="flex-grow">
+            <Suspense fallback={
+              <div className="min-h-[60vh] flex flex-col items-center justify-center">
+                <div className="w-8 h-8 border-4 border-brand-red-200 border-t-brand-red-600 rounded-full animate-spin" />
+              </div>
+            }>
             <Routes>
               {/* Public Marketing & Catalog Pages */}
               <Route path="/" element={<Home />} />
@@ -87,12 +96,14 @@ export default function App() {
               {/* Fallback path redirects to Home */}
               <Route path="*" element={<Home />} />
             </Routes>
+            </Suspense>
           </main>
           
           {/* Corporate footer */}
           <Footer />
           
         </div>
+        </ErrorBoundary>
       </CompanyProvider>
       </AuthProvider>
     </BrowserRouter>

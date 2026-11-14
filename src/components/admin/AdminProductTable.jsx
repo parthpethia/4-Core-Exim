@@ -15,6 +15,7 @@ const PAGE_SIZE = 15;
 export default function AdminProductTable({ onEditProduct, onAddProduct, refreshKey = 0 }) {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const [search, setSearch] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,6 +23,12 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [isDeleting, setIsDeleting] = useState(false);
   const [actionLoading, setActionLoading] = useState(null); // product ID being toggled
+
+  // Debounce search input
+  useEffect(() => {
+    const timer = setTimeout(() => setSearch(searchInput), 400);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   // Fetch data
   useEffect(() => {
@@ -100,8 +107,8 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
             <FiSearch className="text-brand-gray-400 text-xs shrink-0" />
             <input
               type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Search by name, brand, salt..."
               className="flex-1 text-xs text-brand-gray-900 focus:outline-none"
             />

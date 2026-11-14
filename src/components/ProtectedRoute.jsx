@@ -10,7 +10,7 @@ import { FiShield, FiArrowRight, FiLogOut } from 'react-icons/fi';
  * @param {boolean} [props.requireAdmin=false]
  */
 export default function ProtectedRoute({ children, requireAdmin = false }) {
-  const { user, loading, isAdmin, signOut, grantDevAdmin, verifyAdminStatus } = useAuth();
+  const { user, loading, isAdmin, signOut, verifyAdminStatus } = useAuth();
   const location = useLocation();
 
   if (loading) {
@@ -30,7 +30,6 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
 
   if (requireAdmin && !isAdmin) {
     const userEmail = user.email || 'your-email@example.com';
-    const sqlCommand = `INSERT INTO admin_users (email) VALUES ('${userEmail}');`;
 
     return (
       <div className="min-h-[75vh] flex items-center justify-center bg-brand-gray-50 px-4 py-12">
@@ -53,39 +52,19 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
             </p>
           </div>
 
-          {/* Quick Unlock Action Box */}
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-5 text-left">
-            <span className="text-xs font-bold text-amber-900 block mb-1">
-              ⚡ Instant Administrator Authorization
-            </span>
-            <p className="text-[11px] text-amber-800 leading-relaxed mb-3">
-              Grant this authenticated browser session instant Trade Desk Administrator clearance:
-            </p>
-            <button
-              onClick={() => grantDevAdmin(userEmail)}
-              className="w-full py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white rounded text-xs font-bold transition-colors shadow-sm cursor-pointer flex items-center justify-center gap-1.5"
-            >
-              <FiShield className="text-sm" />
-              <span>Authorize Admin Access for {userEmail}</span>
-            </button>
-          </div>
-
-          {/* Permanent Database Option */}
-          <div className="bg-brand-gray-50 border border-brand-gray-200 rounded-lg p-3.5 mb-5 text-left text-xs">
+          {/* Database Whitelist Notice */}
+          <div className="bg-brand-gray-50 border border-brand-gray-200 rounded-lg p-4 mb-5 text-left text-xs">
             <span className="font-bold text-brand-gray-800 block mb-1">
-              Database Whitelist (Supabase SQL Editor)
+              Admin Access Authorization
             </span>
             <p className="text-[11px] text-brand-gray-600 mb-2">
-              To permanently whitelist in Supabase, run:
+              If your administrator just added this email to the database, click below to refresh your credentials:
             </p>
-            <pre className="p-2 bg-brand-gray-900 text-brand-gray-200 rounded text-[11px] font-mono overflow-x-auto select-all">
-              {sqlCommand}
-            </pre>
             <button
               onClick={() => verifyAdminStatus && verifyAdminStatus()}
-              className="mt-2 text-[11px] text-brand-red-600 hover:underline font-bold cursor-pointer"
+              className="w-full py-2 px-3 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5"
             >
-              🔄 Re-check Database Clearance
+              <span>🔄 Re-check Database Clearance</span>
             </button>
           </div>
 

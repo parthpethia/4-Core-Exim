@@ -46,4 +46,29 @@ export const supabase = isSupabaseConfigured
         },
         signOut: async () => ({ error: null }),
       },
+      from: () => {
+        const chain = {
+          select: () => chain,
+          insert: () => chain,
+          update: () => chain,
+          delete: () => chain,
+          eq: () => chain,
+          ilike: () => chain,
+          or: () => chain,
+          order: () => chain,
+          range: () => chain,
+          maybeSingle: async () => ({ data: null, error: null }),
+          single: async () => ({ data: null, error: null }),
+          then: (resolve) => resolve({ data: [], error: null }),
+        };
+        return chain;
+      },
+      rpc: async () => ({ data: null, error: null }),
+      storage: {
+        from: () => ({
+          upload: async () => ({ data: null, error: new Error('Supabase Storage not configured') }),
+          getPublicUrl: () => ({ data: { publicUrl: '' } }),
+          remove: async () => ({ error: null }),
+        }),
+      },
     };
