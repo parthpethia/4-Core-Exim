@@ -83,18 +83,20 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           
           {/* Brand Logo */}
-          <Link to="/" className="flex flex-col select-none" onClick={() => setIsOpen(false)}>
-            <div className="flex items-center gap-2">
-              <div className="bg-brand-red-600 text-white font-bold text-sm px-2 py-0.5 rounded">
-                4CORE
-              </div>
-              <span className="text-xl font-extrabold text-brand-gray-900 tracking-tight">
-                Exim
+          <Link to="/" className="flex items-center gap-3 select-none group py-1" onClick={() => setIsOpen(false)}>
+            <img
+              src="/logo.png"
+              alt="4Core Exim"
+              className="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-102"
+            />
+            <div className="flex flex-col border-l border-brand-gray-200 pl-3 hidden md:flex">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-brand-green-700 leading-none">
+                Export Supply Desk
+              </span>
+              <span className="text-[9px] text-brand-gray-500 font-medium tracking-wide mt-0.5">
+                Wholesale Pharmaceutical Exporter
               </span>
             </div>
-            <span className="text-[10px] uppercase font-semibold tracking-wider text-brand-gray-500 mt-0.5">
-              By Thakkar Medico Traders
-            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -106,7 +108,7 @@ export default function Header() {
                 className={({ isActive }) =>
                   `px-3 py-2 rounded text-xs font-bold transition-colors cursor-pointer ${
                     isActive
-                      ? 'text-brand-red-600 bg-brand-red-50'
+                      ? 'text-brand-green-700 bg-brand-green-50 shadow-xs'
                       : 'text-brand-gray-700 hover:text-brand-gray-950 hover:bg-brand-gray-100'
                   }`
                 }
@@ -119,19 +121,19 @@ export default function Header() {
           {/* Desktop Direct Contact & Auth CTAs */}
           <div className="hidden sm:flex items-center gap-2">
             <a
-              href={`tel:${(companyData?.phone || '+91 93253 03018').replace(/\s+/g, '')}`}
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-gray-400 text-brand-gray-800 rounded text-xs font-semibold transition-colors bg-white"
+              href={`tel:${(companyData?.phone || '+91 91460 65002').replace(/\s+/g, '')}`}
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-green-600 text-brand-gray-800 rounded text-xs font-semibold transition-colors bg-white group"
               title="Call Trade Desk"
             >
-              <FiPhone className="text-brand-red-600 text-xs" />
-              <span>{companyData?.phone || '+91 93253 03018'}</span>
+              <FiPhone className="text-brand-green-600 text-xs transition-transform group-hover:scale-110" />
+              <span>{companyData?.phone || '+91 91460 65002'}</span>
             </a>
             
             <a
-              href={`https://wa.me/${(companyData?.whatsapp || '+919325303018').replace(/[^0-9]/g, '')}`}
+              href={`https://wa.me/${(companyData?.whatsapp || '+919146065002').replace(/[^0-9]/g, '')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded text-xs font-semibold transition-colors shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-semibold transition-colors shadow-sm"
               title="WhatsApp Trade Desk"
             >
               <FaWhatsapp className="text-xs" />
@@ -140,7 +142,7 @@ export default function Header() {
 
             <Link
               to="/catalog"
-              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors shadow-sm"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors shadow-sm"
             >
               RFQ Catalog
             </Link>
@@ -151,7 +153,7 @@ export default function Header() {
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-brand-gray-900 hover:bg-black text-white rounded text-xs font-bold transition-colors shadow-sm border border-brand-gray-700"
                 title="Trade Desk Admin Console"
               >
-                <FiShield className="text-brand-red-500 text-xs" />
+                <FiShield className="text-brand-green-500 text-xs" />
                 <span>Admin Console</span>
               </Link>
             )}
@@ -164,10 +166,10 @@ export default function Header() {
                   className="flex items-center gap-1.5 px-2.5 py-1.5 bg-brand-gray-100 hover:bg-brand-gray-200 text-brand-gray-900 rounded text-xs font-bold transition-colors cursor-pointer border border-brand-gray-300"
                   aria-label="User menu"
                 >
-                  <span className={`w-2 h-2 rounded-full ${isAdmin ? 'bg-brand-red-600' : 'bg-blue-600'}`} />
+                  <span className={`w-2 h-2 rounded-full ${isAdmin ? 'bg-brand-green-600' : 'bg-blue-600'}`} />
                   <span className="max-w-[100px] truncate">{userDisplayName}</span>
                   <span className={`text-[10px] px-1.5 py-0.2 rounded font-bold uppercase ${
-                    isAdmin ? 'bg-brand-red-100 text-brand-red-700' : 'bg-blue-100 text-blue-700'
+                    isAdmin ? 'bg-brand-green-100 text-brand-green-800' : 'bg-blue-100 text-blue-700'
                   }`}>
                     {isAdmin ? 'Admin' : 'Client'}
                   </span>
@@ -190,7 +192,7 @@ export default function Header() {
                         onClick={() => setIsUserMenuOpen(false)}
                         className="flex items-center gap-2 px-4 py-2 text-xs text-brand-gray-800 hover:bg-brand-gray-50 font-bold"
                       >
-                        <FiShield className="text-brand-red-600" />
+                        <FiShield className="text-brand-green-600" />
                         <span>Trade Desk Admin Console</span>
                       </Link>
                     ) : null}
@@ -219,9 +221,9 @@ export default function Header() {
             ) : (
               <Link
                 to="/login"
-                className="flex items-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-gray-400 text-brand-gray-900 rounded text-xs font-bold transition-colors bg-brand-gray-50 hover:bg-brand-gray-100"
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-green-600 text-brand-gray-900 rounded text-xs font-bold transition-colors bg-brand-gray-50 hover:bg-brand-gray-100"
               >
-                <FiUser className="text-brand-red-600 text-xs" />
+                <FiUser className="text-brand-green-600 text-xs" />
                 <span>Sign In</span>
               </Link>
             )}
@@ -233,7 +235,7 @@ export default function Header() {
             {!user ? (
               <Link
                 to="/login"
-                className="flex items-center gap-1 px-2.5 py-1 text-xs font-bold text-brand-red-600 border border-brand-red-200 bg-brand-red-50 rounded"
+                className="flex items-center gap-1 px-2.5 py-1 text-xs font-bold text-brand-green-700 border border-brand-green-200 bg-brand-green-50 rounded"
               >
                 <FiUser className="text-xs" />
                 <span>Sign In</span>
@@ -242,7 +244,7 @@ export default function Header() {
               <Link
                 to={isAdmin ? "/admin" : "/dashboard"}
                 className={`flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded ${
-                  isAdmin ? 'bg-brand-red-100 text-brand-red-700' : 'bg-blue-100 text-blue-700'
+                  isAdmin ? 'bg-brand-green-100 text-brand-green-800' : 'bg-blue-100 text-blue-700'
                 }`}
               >
                 <span>{isAdmin ? 'Admin' : 'Portal'}</span>
@@ -274,7 +276,7 @@ export default function Header() {
                     {user.email}
                   </span>
                   <span className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase ${
-                    isAdmin ? 'bg-brand-red-100 text-brand-red-700' : 'bg-blue-100 text-blue-700'
+                    isAdmin ? 'bg-brand-green-100 text-brand-green-800' : 'bg-blue-100 text-blue-700'
                   }`}>
                     {isAdmin ? 'Admin' : 'Client'}
                   </span>
@@ -283,7 +285,7 @@ export default function Header() {
                   <Link
                     to={isAdmin ? "/admin" : "/dashboard"}
                     onClick={() => setIsOpen(false)}
-                    className="flex-1 text-center py-1.5 bg-brand-red-600 text-white rounded text-xs font-bold"
+                    className="flex-1 text-center py-1.5 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold"
                   >
                     {isAdmin ? "Admin Console" : "Client Portal"}
                   </Link>
@@ -305,7 +307,7 @@ export default function Header() {
                 className={({ isActive }) =>
                   `block px-3 py-2.5 rounded text-sm font-semibold ${
                     isActive
-                      ? 'text-brand-red-600 bg-brand-red-50'
+                      ? 'text-brand-green-700 bg-brand-green-50 font-bold'
                       : 'text-brand-gray-700 hover:text-brand-gray-950 hover:bg-brand-gray-50'
                   }`
                 }
@@ -316,17 +318,17 @@ export default function Header() {
             
             <div className="pt-4 border-t border-brand-gray-200 grid grid-cols-2 gap-2">
               <a
-                href={`tel:${(companyData?.phone || '+91 93253 03018').replace(/\s+/g, '')}`}
+                href={`tel:${(companyData?.phone || '+91 91460 65002').replace(/\s+/g, '')}`}
                 className="flex items-center justify-center gap-2 py-2 border border-brand-gray-300 text-brand-gray-800 rounded text-xs font-bold"
               >
-                <FiPhone className="text-brand-red-600" />
+                <FiPhone className="text-brand-green-600" />
                 <span>Call Trade Office</span>
               </a>
               <a
-                href={`https://wa.me/${(companyData?.whatsapp || '+919325303018').replace(/[^0-9]/g, '')}`}
+                href={`https://wa.me/${(companyData?.whatsapp || '+919146065002').replace(/[^0-9]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2 bg-emerald-700 text-white rounded text-xs font-bold"
+                className="flex items-center justify-center gap-2 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold"
               >
                 <FaWhatsapp />
                 <span>WhatsApp</span>
@@ -338,7 +340,7 @@ export default function Header() {
                 <Link
                   to="/login"
                   onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 bg-brand-red-600 text-white rounded text-xs font-bold"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold shadow-sm"
                 >
                   <FiUser />
                   <span>Sign In / Importer & Admin Portal</span>

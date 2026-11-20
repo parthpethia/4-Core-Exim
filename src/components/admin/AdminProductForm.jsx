@@ -24,7 +24,7 @@ const EMPTY_FORM = {
   category: '',
   brand: '',
   manufacturer: '',
-  marketer: 'Thakkar Medico Traders',
+  marketer: '4Core Exim',
   price: '',
   currency: 'USD',
   strength: '',
@@ -65,7 +65,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
         category: product.category || '',
         brand: product.brand || '',
         manufacturer: product.manufacturer || '',
-        marketer: product.marketer || 'Thakkar Medico Traders',
+        marketer: product.marketer || '4Core Exim',
         price: product.price || '',
         currency: product.currency || 'USD',
         strength: product.strength || '',
@@ -198,7 +198,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 onChange={(e) => handleChange('id', e.target.value)}
                 disabled={isEditMode}
                 placeholder="auto-generated"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-red-400 disabled:bg-brand-gray-100 disabled:text-brand-gray-500"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 disabled:bg-brand-gray-100 disabled:text-brand-gray-500"
               />
             </div>
             <div className="sm:col-span-2">
@@ -210,7 +210,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.name}
                 onChange={(e) => handleNameChange(e.target.value)}
                 placeholder="e.g. Azithromycin Tablets IP 500mg"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-semibold focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-semibold focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
                 required
               />
             </div>
@@ -225,7 +225,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               <select
                 value={form.category}
                 onChange={(e) => handleChange('category', e.target.value)}
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 bg-white focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 bg-white focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
                 required
               >
                 <option value="">Select category...</option>
@@ -241,7 +241,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.brand}
                 onChange={(e) => handleChange('brand', e.target.value)}
                 placeholder="e.g. Azee 500"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -251,7 +251,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.manufacturer}
                 onChange={(e) => handleChange('manufacturer', e.target.value)}
                 placeholder="e.g. Cipla Ltd"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
           </div>
@@ -264,8 +264,8 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 type="text"
                 value={form.marketer}
                 onChange={(e) => handleChange('marketer', e.target.value)}
-                placeholder="e.g. Thakkar Medico Traders"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                placeholder="e.g. 4Core Exim"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -275,7 +275,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.countryOfOrigin}
                 onChange={(e) => handleChange('countryOfOrigin', e.target.value)}
                 placeholder="e.g. India"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
           </div>
@@ -291,7 +291,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.price}
                 onChange={(e) => handleChange('price', e.target.value)}
                 placeholder="0.00"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -299,7 +299,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               <select
                 value={form.currency}
                 onChange={(e) => handleChange('currency', e.target.value)}
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 bg-white focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 bg-white focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               >
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
@@ -314,7 +314,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.strength}
                 onChange={(e) => handleChange('strength', e.target.value)}
                 placeholder="e.g. 500mg"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -324,7 +324,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.minimumOrderQuantity}
                 onChange={(e) => handleChange('minimumOrderQuantity', e.target.value)}
                 placeholder="e.g. 50 Boxes"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
           </div>
@@ -338,7 +338,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.packagingSize}
                 onChange={(e) => handleChange('packagingSize', e.target.value)}
                 placeholder="e.g. 10x10 Capsules"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -348,7 +348,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
                 value={form.packagingType}
                 onChange={(e) => handleChange('packagingType', e.target.value)}
                 placeholder="e.g. Blister Box"
-                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
           </div>
@@ -363,7 +363,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               onChange={(e) => handleChange('saltComposition', e.target.value)}
               placeholder="e.g. Azithromycin Dihydrate IP equivalent to Anhydrous Azithromycin 500mg"
               rows={2}
-              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
             />
           </div>
 
@@ -377,7 +377,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               value={form.treatment}
               onChange={(e) => handleChange('treatment', e.target.value)}
               placeholder="e.g. Community-Acquired Pneumonia, Strep Throat"
-              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
 
@@ -391,7 +391,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               value={form.storage}
               onChange={(e) => handleChange('storage', e.target.value)}
               placeholder="e.g. Store below 30°C. Protect from light and moisture."
-              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
 
@@ -405,7 +405,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               onChange={(e) => handleChange('description', e.target.value)}
               placeholder="Detailed product description for the catalog..."
               rows={3}
-              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+              className="w-full border border-brand-gray-300 rounded px-3 py-2 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
             />
           </div>
 
@@ -447,7 +447,7 @@ export default function AdminProductForm({ isOpen, onClose, onSave, product, cat
               type="submit"
               onClick={handleSubmit}
               disabled={saving}
-              className="px-5 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-1.5"
+              className="px-5 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-1.5 shadow-sm"
             >
               {saving ? (
                 <>

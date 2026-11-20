@@ -1,7 +1,8 @@
 -- =============================================================================
 -- 4Core Exim — Markets, FX, Search & Scale
 -- =============================================================================
--- Extends the catalog for multi-country export targeting:
+.0
+z-- Extends the catalog for multi-country export targeting:
 --   1. countries          — ISO markets (origin + destination)
 --   2. product_markets    — product ↔ market boost / preferred currency
 --   3. fx_rates           — convert catalog prices for display

@@ -34,7 +34,7 @@ export default class ErrorBoundary extends React.Component {
                 this.setState({ hasError: false, error: null });
                 window.location.reload();
               }}
-              className="px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer inline-flex items-center gap-1.5"
+              className="px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-sm"
             >
               <FiRefreshCw className="text-xs" />
               <span>Reload Page</span>

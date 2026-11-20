@@ -75,14 +75,14 @@ Regards`;
     <div className="bg-brand-gray-50 min-h-screen py-12">
       <PageSEO
         title="Contact 4Core Exim — Pharmaceutical Export Inquiry & RFQ"
-        description="Submit wholesale medicine export inquiries to 4Core Exim. Direct trade desk for quotations, MOQ, proforma invoices, batch CoA verification. WhatsApp: +91 93253 03018."
+        description="Submit wholesale medicine export inquiries to 4Core Exim. Direct trade desk for quotations, MOQ, proforma invoices, batch CoA verification. WhatsApp: +91 91460 65002."
         path="/contact"
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Page Header */}
         <div className="bg-white border border-brand-gray-200 rounded-lg p-8 shadow-sm">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-red-600 block mb-2">
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-600 block mb-2">
             Direct Trade Contacts
           </span>
           <h1 className="text-3xl font-bold text-brand-gray-900 tracking-tight">Export Desk & Trade Offices</h1>
@@ -105,7 +105,7 @@ Regards`;
               <div className="space-y-4 text-xs">
                 {/* Address Card */}
                 <div className="flex gap-3">
-                  <FiMapPin className="text-brand-red-600 text-sm shrink-0 mt-0.5" />
+                  <FiMapPin className="text-brand-green-600 text-sm shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-brand-gray-500 uppercase text-[10px]">Registered Office Address</h4>
                     <p className="text-brand-gray-900 mt-0.5 font-medium leading-relaxed">{company.address}</p>
@@ -114,10 +114,10 @@ Regards`;
 
                 {/* Phone Card */}
                 <div className="flex gap-3">
-                  <FiPhone className="text-brand-red-600 text-sm shrink-0 mt-0.5" />
+                  <FiPhone className="text-brand-green-600 text-sm shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-brand-gray-500 uppercase text-[10px]">Trade Telephone</h4>
-                    <a href={`tel:${company.phone.replace(/\s+/g, '')}`} className="text-brand-gray-900 hover:text-brand-red-600 mt-0.5 font-mono font-bold block">
+                    <a href={`tel:${company.phone.replace(/\s+/g, '')}`} className="text-brand-gray-900 hover:text-brand-green-600 mt-0.5 font-mono font-bold block">
                       {company.phone}
                     </a>
                   </div>
@@ -125,10 +125,10 @@ Regards`;
 
                 {/* Email Card */}
                 <div className="flex gap-3">
-                  <FiMail className="text-brand-red-600 text-sm shrink-0 mt-0.5" />
+                  <FiMail className="text-brand-green-600 text-sm shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-brand-gray-500 uppercase text-[10px]">Corporate Export Email</h4>
-                    <a href={`mailto:${company.email}`} className="text-brand-gray-900 hover:text-brand-red-600 mt-0.5 font-medium block">
+                    <a href={`mailto:${company.email}`} className="text-brand-gray-900 hover:text-brand-green-600 mt-0.5 font-medium block">
                       {company.email}
                     </a>
                   </div>
@@ -164,7 +164,7 @@ Regards`;
 
             {/* Notice */}
             <div className="bg-brand-gray-900 text-white rounded-lg p-5 border border-brand-gray-800 text-xs">
-              <span className="text-[10px] uppercase font-bold text-brand-red-500 block mb-1">Corporate Notice</span>
+              <span className="text-[10px] uppercase font-bold text-brand-green-400 block mb-1">Corporate Notice</span>
               <h4 className="font-bold mb-1">B2B Wholesale Operations Only</h4>
               <p className="text-brand-gray-300 leading-relaxed">
                 4Core Exim operates exclusively in wholesale distribution and export consignment supply. We do not service retail inquiries, personal prescriptions, or consumer walk-ins.
@@ -191,7 +191,7 @@ Regards`;
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. John Doe"
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     />
                   </div>
                   <div>
@@ -203,7 +203,7 @@ Regards`;
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="e.g. buyer@distributor.com"
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     />
                   </div>
                 </div>
@@ -217,7 +217,7 @@ Regards`;
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="e.g. +1 555 123 4567"
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     />
                   </div>
                   <div>
@@ -229,7 +229,7 @@ Regards`;
                       value={formData.organization}
                       onChange={handleChange}
                       placeholder="e.g. Globamed Distributors Ltd"
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     />
                   </div>
                 </div>
@@ -244,7 +244,7 @@ Regards`;
                       value={formData.country}
                       onChange={handleChange}
                       placeholder="e.g. Philippines, Peru"
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     />
                   </div>
                   <div>
@@ -253,7 +253,7 @@ Regards`;
                       name="incoterm"
                       value={formData.incoterm}
                       onChange={handleChange}
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     >
                       <option value="FOB">FOB (Mumbai / JNPT)</option>
                       <option value="CIF">CIF (Destination Port)</option>
@@ -269,7 +269,7 @@ Regards`;
                       value={formData.destinationPort}
                       onChange={handleChange}
                       placeholder="e.g. Manila, Callao"
-                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium"
+                      className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium"
                     />
                   </div>
                 </div>
@@ -283,14 +283,14 @@ Regards`;
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="List required formulations, strength, target volume (MOQ), packaging preferences, stability data requirements, etc."
-                    className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-red-600 font-medium resize-y"
+                    className="w-full bg-brand-gray-50 border border-brand-gray-300 rounded px-3 py-2 text-brand-gray-900 focus:outline-none focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium resize-y"
                   ></textarea>
                 </div>
 
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-brand-green-600 hover:bg-brand-green-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer shadow-sm"
                   >
                     <FiSend className="text-xs" />
                     <span>Send Commercial Inquiry</span>
@@ -308,7 +308,7 @@ Regards`;
           <div className="w-full bg-white border border-brand-gray-200 rounded-lg overflow-hidden shadow-sm">
             <div className="p-3 border-b border-brand-gray-200 flex items-center justify-between text-xs font-bold text-brand-gray-900">
               <span className="flex items-center gap-1.5">
-                <FiMapPin className="text-brand-red-600" /> Geographic Location
+                <FiMapPin className="text-brand-green-600" /> Geographic Location
               </span>
               <span className="text-brand-gray-500 font-mono text-[11px]">
                 4Core Exim, Nagpur / Mumbai, India

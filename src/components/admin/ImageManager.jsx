@@ -146,7 +146,7 @@ export default function ImageManager({ images = [], onChange, productId }) {
           type="button"
           onClick={() => fileInputRef.current?.click()}
           disabled={isUploading}
-          className="flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-brand-gray-300 hover:border-brand-red-400 bg-white text-brand-gray-600 hover:text-brand-red-600 text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50"
+          className="flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-brand-gray-300 hover:border-brand-green-500 bg-white text-brand-gray-600 hover:text-brand-green-700 hover:bg-brand-green-50/50 text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50"
         >
           <FiUpload className="text-xs" />
           <span>{isUploading ? 'Uploading...' : 'Upload from device'}</span>

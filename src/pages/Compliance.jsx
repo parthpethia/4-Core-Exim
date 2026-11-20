@@ -60,7 +60,7 @@ export default function Compliance() {
         
         {/* Header Block */}
         <div className="bg-white border border-brand-gray-200 rounded-lg p-8 mb-8 shadow-sm">
-          <div className="flex items-center gap-2 text-brand-red-600 font-bold text-xs uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-brand-green-600 font-bold text-xs uppercase tracking-wider mb-2">
             <FiShield />
             <span>Quality Assurance & Regulatory Governance</span>
           </div>
@@ -137,7 +137,7 @@ export default function Compliance() {
         {/* Regulatory Inquiry CTA */}
         <div className="bg-brand-gray-900 text-white rounded-lg p-8 border border-brand-gray-800 flex flex-col sm:flex-row justify-between items-center gap-6">
           <div>
-            <span className="text-[10px] font-bold text-brand-red-500 uppercase tracking-widest block mb-1">Regulatory Inquiries</span>
+            <span className="text-[10px] font-bold text-brand-green-400 uppercase tracking-widest block mb-1">Regulatory Inquiries</span>
             <h3 className="text-lg font-bold">Require Dossier Files for Product Registration?</h3>
             <p className="text-xs text-brand-gray-300 mt-1 max-w-xl">
               Our regulatory affairs desk coordinates CTD dossiers, GMP inspection certificates, and sample packs for ministry registration dossiers globally.
@@ -145,7 +145,7 @@ export default function Compliance() {
           </div>
           <a
             href="mailto:exports@4coreexim.com?subject=Regulatory%20Dossier%20%26%20Compliance%20Inquiry"
-            className="px-6 py-3 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors shrink-0 text-center cursor-pointer"
+            className="px-6 py-3 bg-brand-green-600 hover:bg-brand-green-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors shrink-0 text-center cursor-pointer shadow-sm"
           >
             Contact Regulatory Desk
           </a>

@@ -14,7 +14,7 @@ export default function MarketSelector({
     <div
       className={`flex items-center gap-2 bg-white border border-brand-gray-200 rounded-lg px-3 py-2 shadow-sm ${className}`}
     >
-      <FiGlobe className="text-brand-red-600 shrink-0" aria-hidden />
+      <FiGlobe className="text-brand-green-600 shrink-0" aria-hidden />
       <label htmlFor="market-country" className="text-[10px] font-bold uppercase tracking-wider text-brand-gray-500 whitespace-nowrap">
         Your market
       </label>

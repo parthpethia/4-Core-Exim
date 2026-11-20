@@ -153,7 +153,7 @@ export default function AuthCallback() {
           <p className="text-xs text-brand-gray-600 mb-6 leading-relaxed">{errorMessage}</p>
           <Link
             to="/login"
-            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors shadow-sm"
           >
             <span>Return to Login</span>
             <FiArrowRight />
@@ -165,7 +165,7 @@ export default function AuthCallback() {
 
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center bg-brand-gray-50 px-4">
-      <div className="w-12 h-12 border-4 border-brand-red-200 border-t-brand-red-600 rounded-full animate-spin mb-4" />
+      <div className="w-12 h-12 border-4 border-brand-green-200 border-t-brand-green-600 rounded-full animate-spin mb-4" />
       <h2 className="text-sm font-bold text-brand-gray-900 uppercase tracking-wide">
         Finalizing OAuth Authentication...
       </h2>

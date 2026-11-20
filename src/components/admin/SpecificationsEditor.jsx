@@ -62,7 +62,7 @@ export default function SpecificationsEditor({ specifications = {}, onChange }) 
         <button
           type="button"
           onClick={handleAdd}
-          className="flex items-center gap-1 px-2 py-1 text-[11px] font-bold text-brand-red-600 hover:text-brand-red-700 bg-brand-red-50 hover:bg-brand-red-100 rounded transition-colors cursor-pointer"
+          className="flex items-center gap-1 px-2 py-1 text-[11px] font-bold text-brand-green-700 hover:text-brand-green-800 bg-brand-green-50 hover:bg-brand-green-100 rounded transition-colors cursor-pointer border border-brand-green-200"
         >
           <FiPlus className="text-xs" />
           <span>Add Row</span>
@@ -84,7 +84,7 @@ export default function SpecificationsEditor({ specifications = {}, onChange }) 
               onChange={(e) => handleKeyChange(key, e.target.value)}
               placeholder="Spec name (e.g., Form)"
               list="spec-key-suggestions"
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 font-semibold focus:outline-none focus:border-brand-red-400 bg-brand-gray-50"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 font-semibold focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 bg-brand-gray-50"
             />
           </div>
           <div className="flex-[2]">
@@ -93,7 +93,7 @@ export default function SpecificationsEditor({ specifications = {}, onChange }) 
               value={value}
               onChange={(e) => handleValueChange(key, e.target.value)}
               placeholder="Value (e.g., Hard Gelatin Capsule)"
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
           <button

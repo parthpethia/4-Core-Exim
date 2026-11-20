@@ -18,36 +18,45 @@ export default function Footer() {
           
           {/* Column 1: Brand & Contact Info */}
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="bg-brand-red-600 text-white font-bold text-xs px-2 py-0.5 rounded">
-                4CORE
+            <div className="flex items-center gap-3 mb-3">
+              <div className="bg-white/95 p-1 rounded-md shadow-xs">
+                <img
+                  src="/logo.png"
+                  alt="4Core Exim Logo"
+                  className="h-9 w-auto object-contain"
+                />
               </div>
-              <span className="text-lg font-bold text-white tracking-tight">
-                Exim
-              </span>
+              <div>
+                <span className="text-base font-extrabold text-white tracking-tight block leading-tight">
+                  4CORE EXIM
+                </span>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-brand-green-400">
+                  Wholesale Pharmaceutical Exporter
+                </span>
+              </div>
             </div>
             <p className="text-xs text-brand-gray-400 mb-4 leading-relaxed">
-              Wholesale Pharmaceutical Exporter & B2B Supply Desk. Backed by the legacy of <strong>Thakkar Medico Traders</strong>, Mumbai & Nagpur, India.
+              Wholesale Pharmaceutical Exporter & B2B Supply Desk. Based in Mumbai & Nagpur, India.
             </p>
             <div className="space-y-2 text-xs">
               <div className="flex items-start gap-2">
-                <FiMapPin className="text-brand-red-500 mt-0.5 shrink-0 text-sm" />
+                <FiMapPin className="text-brand-green-400 mt-0.5 shrink-0 text-sm" />
                 <span className="text-brand-gray-300">{companyData.address}</span>
               </div>
               <div className="flex items-center gap-2">
-                <FiPhone className="text-brand-red-500 shrink-0 text-sm" />
+                <FiPhone className="text-brand-green-400 shrink-0 text-sm" />
                 <a href={`tel:${companyData.phone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">
                   {companyData.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <FiMail className="text-brand-red-500 shrink-0 text-sm" />
+                <FiMail className="text-brand-green-400 shrink-0 text-sm" />
                 <a href={`mailto:${companyData.email}`} className="hover:text-white transition-colors">
                   {companyData.email}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <FiClock className="text-brand-red-500 shrink-0 text-sm" />
+                <FiClock className="text-brand-green-400 shrink-0 text-sm" />
                 <span className="text-brand-gray-400">{companyData.businessHours}</span>
               </div>
             </div>
@@ -103,7 +112,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/about" className="hover:text-white transition-colors block">
-                  About Thakkar Medico Traders
+                  About 4Core Exim
                 </Link>
               </li>
               <li>
@@ -122,19 +131,19 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-brand-gray-400 mb-4">
               <li>
                 <Link to="/terms" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <FiFileText className="text-brand-red-500" />
+                  <FiFileText className="text-brand-green-400" />
                   <span>Terms of Export Service</span>
                 </Link>
               </li>
               <li>
                 <Link to="/privacy" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <FiShield className="text-brand-red-500" />
+                  <FiShield className="text-brand-green-400" />
                   <span>B2B Privacy & Data Policy</span>
                 </Link>
               </li>
               <li>
                 <Link to="/compliance" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <FiFileText className="text-brand-red-500" />
+                  <FiFileText className="text-brand-green-400" />
                   <span>WHO-GMP & Dossier Specifications</span>
                 </Link>
               </li>
@@ -156,7 +165,7 @@ export default function Footer() {
 
           <div className="shrink-0 text-xs text-brand-gray-400">
             <p>© {currentYear} 4Core Exim. All rights reserved.</p>
-            <p className="text-[10px] text-brand-gray-500 mt-0.5">Operated under Thakkar Medico Traders, India.</p>
+            <p className="text-[10px] text-brand-gray-500 mt-0.5">Pharmaceutical Exporter, India.</p>
           </div>
 
         </div>

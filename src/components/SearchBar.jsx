@@ -30,7 +30,7 @@ export default function SearchBar({ searchQuery, onSearchChange }) {
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search e.g. Pregabalin, Injection, Cipla, 500mg..."
-            className="w-full pl-9 pr-9 py-2 bg-brand-gray-50 border border-brand-gray-200 rounded text-xs text-brand-gray-900 placeholder-brand-gray-400 focus:outline-none focus:bg-white focus:border-brand-red-600 font-medium transition-colors"
+            className="w-full pl-9 pr-9 py-2 bg-brand-gray-50 border border-brand-gray-200 rounded text-xs text-brand-gray-900 placeholder-brand-gray-400 focus:outline-none focus:bg-white focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 font-medium transition-colors"
           />
           {searchQuery && (
             <button

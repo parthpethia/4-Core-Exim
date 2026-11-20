@@ -91,7 +91,7 @@ export default function AdminInquiries() {
       {countryInterest.length > 0 && (
         <div className="bg-white border border-brand-gray-200 rounded-xl p-3 shadow-sm">
           <div className="flex items-center gap-1.5 mb-2">
-            <FiGlobe className="text-brand-red-600 text-sm" />
+            <FiGlobe className="text-brand-green-600 text-sm" />
             <h4 className="text-[10px] font-bold uppercase tracking-wider text-brand-gray-700">
               Market interest (learned)
             </h4>

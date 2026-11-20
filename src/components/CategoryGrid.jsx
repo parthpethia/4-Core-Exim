@@ -22,7 +22,7 @@ export default function CategoryGrid({ categories }) {
             onClick={() => handleCategoryClick(cat.id)}
             className="flex flex-col items-center text-center cursor-pointer p-3 bg-transparent hover:bg-brand-gray-50 rounded-md transition-colors duration-150 group select-none border border-transparent hover:border-brand-gray-200"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-brand-gray-100 flex items-center justify-center mb-2.5 ring-1 ring-brand-gray-200/80 group-hover:ring-brand-red-200 transition-shadow">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-brand-gray-100 flex items-center justify-center mb-2.5 ring-1 ring-brand-gray-200/80 group-hover:ring-brand-green-300 transition-shadow">
               <OptimizedImage
                 src={cat.image}
                 alt={cat.name}
@@ -32,7 +32,7 @@ export default function CategoryGrid({ categories }) {
               />
             </div>
 
-            <h4 className="text-xs font-semibold text-brand-gray-800 group-hover:text-brand-red-700 transition-colors line-clamp-2 leading-snug">
+            <h4 className="text-xs font-semibold text-brand-gray-800 group-hover:text-brand-green-700 transition-colors line-clamp-2 leading-snug">
               {cat.name}
             </h4>
 

@@ -3,13 +3,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-red-50: #FEF2F2;
-  --color-brand-red-100: #FEE2E2;
-  --color-brand-red-500: #DC2626;
-  --color-brand-red-600: #B91C1C;
-  --color-brand-red-700: #991B1B;
-  --color-brand-red-800: #7F1D1D;
-  --color-brand-red-900: #450A0A;
+  /* 4CORE EXIM Signature Brand Green Palette (Extracted directly from 4Core Exim logo: #038B49 / #028A48) */
+  --color-brand-green-50: #F0FDF4;
+  --color-brand-green-100: #DCFCE7;
+  --color-brand-green-200: #BBF7D0;
+  --color-brand-green-300: #86EFAC;
+  --color-brand-green-400: #34D399;
+  --color-brand-green-500: #10B981;
+  --color-brand-green-600: #038B49; /* 4Core Signature Logo Green */
+  --color-brand-green-700: #02733C; /* Logo Active/Hover Deep Green */
+  --color-brand-green-800: #055B30; /* Forest Green */
+  --color-brand-green-900: #064525; /* Dark Trade Green */
+  --color-brand-green-950: #022614;
+
+  /* Legacy brand-red alias mapped to 4Core Brand Green for backward compatibility across components */
+  --color-brand-red-50: #F0FDF4;
+  --color-brand-red-100: #DCFCE7;
+  --color-brand-red-500: #10B981;
+  --color-brand-red-600: #038B49;
+  --color-brand-red-700: #02733C;
+  --color-brand-red-800: #055B30;
+  --color-brand-red-900: #064525;
 
   --color-brand-gray-50: #F8FAFC;
   --color-brand-gray-100: #F1F5F9;
@@ -24,9 +38,9 @@
   --color-brand-gray-900: #0F172A;
   --color-brand-gray-950: #020617;
 
-  --color-emerald-50: #ECFDF5;
-  --color-emerald-600: #059669;
-  --color-emerald-700: #047857;
+  --color-emerald-50: #F0FDF4;
+  --color-emerald-600: #038B49;
+  --color-emerald-700: #02733C;
 
   --font-sans: 'Plus Jakarta Sans', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -73,7 +87,7 @@
     color: #1E293B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    selection-background-color: #B91C1C;
+    selection-background-color: #038B49;
     selection-color: #FFFFFF;
   }
 

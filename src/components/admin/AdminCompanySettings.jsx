@@ -109,7 +109,7 @@ export default function AdminCompanySettings() {
         <button
           type="submit"
           disabled={saving}
-          className="flex items-center gap-1.5 px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50"
+          className="flex items-center gap-1.5 px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50 shadow-sm"
         >
           {saving ? (
             <>
@@ -153,7 +153,7 @@ export default function AdminCompanySettings() {
               type="text"
               value={form.name}
               onChange={(e) => handleChange('name', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 font-semibold focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 font-semibold focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
           <div>
@@ -162,7 +162,7 @@ export default function AdminCompanySettings() {
               type="text"
               value={form.subtitle}
               onChange={(e) => handleChange('subtitle', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function AdminCompanySettings() {
               type="email"
               value={form.email}
               onChange={(e) => handleChange('email', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
           <div>
@@ -183,7 +183,7 @@ export default function AdminCompanySettings() {
               type="tel"
               value={form.phone}
               onChange={(e) => handleChange('phone', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
           <div>
@@ -192,7 +192,7 @@ export default function AdminCompanySettings() {
               type="tel"
               value={form.whatsapp}
               onChange={(e) => handleChange('whatsapp', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function AdminCompanySettings() {
             value={form.address}
             onChange={(e) => handleChange('address', e.target.value)}
             rows={2}
-            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
           />
         </div>
 
@@ -214,7 +214,7 @@ export default function AdminCompanySettings() {
               type="text"
               value={form.businessHours}
               onChange={(e) => handleChange('businessHours', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
           <div>
@@ -223,7 +223,7 @@ export default function AdminCompanySettings() {
               type="url"
               value={form.googleMapsEmbedUrl}
               onChange={(e) => handleChange('googleMapsEmbedUrl', e.target.value)}
-              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-red-400"
+              className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 font-mono focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
             />
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function AdminCompanySettings() {
             value={form.aboutShort}
             onChange={(e) => handleChange('aboutShort', e.target.value)}
             rows={2}
-            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
           />
         </div>
 
@@ -251,7 +251,7 @@ export default function AdminCompanySettings() {
             value={form.aboutFull.intro}
             onChange={(e) => handleAboutChange('intro', e.target.value)}
             rows={3}
-            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
           />
         </div>
 
@@ -261,7 +261,7 @@ export default function AdminCompanySettings() {
             value={form.aboutFull.sourcing}
             onChange={(e) => handleAboutChange('sourcing', e.target.value)}
             rows={3}
-            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
           />
         </div>
 
@@ -271,7 +271,7 @@ export default function AdminCompanySettings() {
             value={form.aboutFull.supplyChain}
             onChange={(e) => handleAboutChange('supplyChain', e.target.value)}
             rows={3}
-            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
           />
         </div>
 
@@ -281,7 +281,7 @@ export default function AdminCompanySettings() {
             value={form.aboutFull.compliance}
             onChange={(e) => handleAboutChange('compliance', e.target.value)}
             rows={3}
-            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-red-400 resize-none"
+            className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs text-brand-gray-900 focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 resize-none"
           />
         </div>
       </div>

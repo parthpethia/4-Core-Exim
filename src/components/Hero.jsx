@@ -14,7 +14,7 @@ const fadeUp = {
 };
 
 export default function Hero({ company }) {
-  const whatsappNumber = (company?.whatsapp || '+919325303018').replace(/[^0-9]/g, '');
+  const whatsappNumber = (company?.whatsapp || '+919146065002').replace(/[^0-9]/g, '');
   const waMessage = encodeURIComponent(
     'Hello 4Core Exim Trade Desk — I would like to request a wholesale export quotation and MOQ details.'
   );
@@ -24,14 +24,14 @@ export default function Hero({ company }) {
     <section className="relative overflow-hidden border-b border-brand-gray-200">
       {/* Full-bleed atmosphere */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-brand-gray-900 via-brand-gray-900 to-brand-gray-800"
+        className="absolute inset-0 bg-gradient-to-b from-brand-gray-950 via-brand-gray-900 to-brand-gray-900"
         aria-hidden="true"
       />
       <div
         className="absolute inset-0 opacity-90"
         style={{
           background:
-            'radial-gradient(ellipse 80% 60% at 70% 20%, rgba(185, 28, 28, 0.35) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 15% 80%, rgba(248, 250, 252, 0.06) 0%, transparent 50%)',
+            'radial-gradient(ellipse 80% 60% at 70% 20%, rgba(3, 139, 73, 0.38) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 15% 80%, rgba(16, 185, 129, 0.12) 0%, transparent 50%)',
         }}
         aria-hidden="true"
       />
@@ -52,14 +52,15 @@ export default function Hero({ company }) {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="flex items-center gap-2.5 mb-6"
+            className="flex items-center gap-3.5 mb-6"
           >
-            <span className="bg-brand-red-600 text-white font-bold text-sm px-2.5 py-1 rounded tracking-wide">
-              4CORE
-            </span>
-            <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Exim
-            </span>
+            <div className="bg-white/95 backdrop-blur-xs p-2 rounded-lg shadow-md inline-flex items-center">
+              <img
+                src="/logo.png"
+                alt="4Core Exim"
+                className="h-11 sm:h-13 w-auto object-contain"
+              />
+            </div>
           </motion.div>
 
           <motion.p
@@ -67,9 +68,10 @@ export default function Hero({ company }) {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red-100/80 mb-3"
+            className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-green-400 mb-3 flex items-center gap-2"
           >
-            By Thakkar Medico Traders
+            <span className="w-2 h-2 rounded-full bg-brand-green-500 animate-pulse" />
+            <span>By 4Core Exim • India</span>
           </motion.p>
 
           <motion.h1

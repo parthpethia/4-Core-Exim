@@ -27,7 +27,7 @@ export default function ConfirmDialog({
 
   const btnClass = confirmStyle === 'danger'
     ? 'bg-red-600 hover:bg-red-700 text-white'
-    : 'bg-brand-red-600 hover:bg-brand-red-700 text-white';
+    : 'bg-brand-green-600 hover:bg-brand-green-700 text-white shadow-sm';
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-gray-950/70">

@@ -56,13 +56,14 @@ export default function Login() {
         
         {/* Brand identity badge */}
         <div className="flex justify-center mb-4">
-          <Link to="/" className="flex items-center gap-2 select-none">
-            <div className="bg-brand-red-600 text-white font-bold text-sm px-2 py-0.5 rounded shadow-sm">
-              4CORE
+          <Link to="/" className="flex items-center gap-2 select-none group">
+            <div className="bg-white p-2 rounded-lg border border-brand-gray-200 shadow-xs">
+              <img
+                src="/logo.png"
+                alt="4Core Exim"
+                className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             </div>
-            <span className="text-xl font-extrabold text-brand-gray-900 tracking-tight">
-              Exim
-            </span>
           </Link>
         </div>
 
@@ -108,7 +109,7 @@ export default function Login() {
               onClick={() => { setActiveTab('user'); setAuthError(null); }}
               className={`flex-1 pb-3 text-xs font-bold transition-all border-b-2 cursor-pointer flex items-center justify-center gap-1.5 ${
                 activeTab === 'user'
-                  ? 'border-brand-red-600 text-brand-red-600'
+                  ? 'border-brand-green-600 text-brand-green-700'
                   : 'border-transparent text-brand-gray-500 hover:text-brand-gray-800'
               }`}
             >
@@ -121,7 +122,7 @@ export default function Login() {
               onClick={() => { setActiveTab('admin'); setAuthError(null); }}
               className={`flex-1 pb-3 text-xs font-bold transition-all border-b-2 cursor-pointer flex items-center justify-center gap-1.5 ${
                 activeTab === 'admin'
-                  ? 'border-brand-red-600 text-brand-red-600'
+                  ? 'border-brand-green-600 text-brand-green-700'
                   : 'border-transparent text-brand-gray-500 hover:text-brand-gray-800'
               }`}
             >
@@ -135,7 +136,7 @@ export default function Login() {
             {activeTab === 'user' ? (
               <div>
                 <span className="font-bold text-brand-gray-900 flex items-center gap-1">
-                  <FiBriefcase className="text-brand-red-600" /> Importer & Procurement Account
+                  <FiBriefcase className="text-brand-green-600" /> Importer & Procurement Account
                 </span>
                 <p className="text-[11px] text-brand-gray-600 mt-1">
                   Access live FOB/CIF quotation tracking, save pharmacopeial formulations (IP/BP/USP), and inspect CoA dossiers.
@@ -144,7 +145,7 @@ export default function Login() {
             ) : (
               <div>
                 <span className="font-bold text-brand-gray-900 flex items-center gap-1">
-                  <FiShield className="text-brand-red-600" /> 4Core Exim Officer Clearance
+                  <FiShield className="text-brand-green-600" /> 4Core Exim Officer Clearance
                 </span>
                 <p className="text-[11px] text-brand-gray-600 mt-1">
                   Authorized access for 4Core Exim trade desk operators. Requires an email whitelisted under administrator clearance.
@@ -191,7 +192,7 @@ export default function Login() {
         <div className="mt-6 text-center">
           <Link
             to="/"
-            className="text-xs font-semibold text-brand-gray-600 hover:text-brand-red-600 transition-colors inline-flex items-center gap-1"
+            className="text-xs font-semibold text-brand-gray-600 hover:text-brand-green-600 transition-colors inline-flex items-center gap-1"
           >
             <span>Return to Public Export Catalog</span>
             <FiArrowRight className="text-xs" />

@@ -37,7 +37,7 @@ Regards`;
   return (
     <button
       onClick={handleInquiry}
-      className="flex items-center justify-center gap-2 w-full px-5 py-2.5 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer text-center"
+      className="flex items-center justify-center gap-2 w-full px-5 py-2.5 bg-brand-green-600 hover:bg-brand-green-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer text-center shadow-sm"
       aria-label={`Enquire about ${productName}`}
     >
       <FiMail className="text-sm" />

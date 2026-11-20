@@ -33,7 +33,7 @@ $$ LANGUAGE plpgsql;
 
 DROP TRIGGER IF EXISTS trg_products_image_meta ON products;
 CREATE TRIGGER trg_products_image_meta
-  BEFORE INSERT OR UPDATE OF images
+   BEFORE INSERT OR UPDATE OF images
   ON products
   FOR EACH ROW EXECUTE FUNCTION products_sync_image_meta();
 

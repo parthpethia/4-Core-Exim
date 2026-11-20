@@ -122,9 +122,9 @@ export default function AdminDashboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Admin Header Banner */}
-        <div className="bg-brand-gray-900 text-white rounded-xl p-6 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-brand-gray-900 text-white rounded-xl p-6 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 border border-brand-gray-800">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 bg-brand-red-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl shadow-sm">
+            <div className="w-14 h-14 bg-brand-green-600 text-white rounded-xl flex items-center justify-center font-bold text-2xl shadow-sm">
               <FiShield />
             </div>
             <div>
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
                 <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight">
                   Trade Desk Control Console
                 </h1>
-                <span className="bg-brand-red-600/30 text-brand-red-400 border border-brand-red-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                <span className="bg-brand-green-500/20 text-brand-green-400 border border-brand-green-500/30 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   Administrator
                 </span>
               </div>
@@ -145,7 +145,7 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-3">
             <Link
               to="/catalog"
-              className="px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-1.5"
+              className="px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-1.5"
             >
               <FiExternalLink className="text-xs" />
               <span>Public Catalog View</span>
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer shrink-0 ${
                   isActive
-                    ? 'bg-brand-red-600 text-white shadow-sm'
+                    ? 'bg-brand-green-600 text-white shadow-sm'
                     : 'bg-white border border-brand-gray-200 text-brand-gray-600 hover:text-brand-gray-900 hover:border-brand-gray-300'
                 }`}
               >
@@ -181,7 +181,7 @@ export default function AdminDashboard() {
                 <span>{tab.label}</span>
                 {badge && (
                   <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full ${
-                    isActive ? 'bg-white text-brand-red-600' : 'bg-brand-red-600 text-white'
+                    isActive ? 'bg-white text-brand-green-700' : 'bg-brand-green-600 text-white'
                   }`}>
                     {badge}
                   </span>
@@ -201,7 +201,7 @@ export default function AdminDashboard() {
               <div className="bg-white border border-brand-gray-200 rounded-xl p-5 shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-bold uppercase text-brand-gray-500">Live Inventory Index</span>
-                  <div className="p-2 bg-brand-red-50 text-brand-red-600 rounded-lg">
+                  <div className="p-2 bg-brand-green-50 text-brand-green-600 rounded-lg">
                     <FiPackage className="text-base" />
                   </div>
                 </div>
@@ -235,7 +235,11 @@ export default function AdminDashboard() {
                   {loading ? '...' : inquiries.length}
                 </div>
                 <span className="text-[11px] text-brand-gray-500 mt-1 block">
-                  {newInquiryCount > 0 ? `${newInquiryCount} new, awaiting response` : 'Total leads received'}
+                  {newInquiryCount > 0 ? (
+                    <span className="text-brand-green-700 font-bold">{newInquiryCount} new, awaiting response</span>
+                  ) : (
+                    'Total leads received'
+                  )}
                 </span>
               </div>
 
@@ -247,8 +251,8 @@ export default function AdminDashboard() {
                   </div>
                 </div>
                 <div className="text-xs font-bold text-brand-gray-800 space-y-0.5">
-                  <div>IP: <span className="font-mono text-brand-red-600">{ipCount}</span></div>
-                  <div>BP: <span className="font-mono text-brand-red-600">{bpCount}</span> | USP: <span className="font-mono text-brand-red-600">{uspCount}</span></div>
+                  <div>IP: <span className="font-mono text-brand-green-700">{ipCount}</span></div>
+                  <div>BP: <span className="font-mono text-brand-green-700">{bpCount}</span> | USP: <span className="font-mono text-brand-green-700">{uspCount}</span></div>
                 </div>
                 <span className="text-[10px] text-brand-gray-500 mt-1 block">Standardized monographs</span>
               </div>
@@ -269,14 +273,14 @@ export default function AdminDashboard() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={handleAddProduct}
-                      className="px-3 py-1.5 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors cursor-pointer inline-flex items-center gap-1"
+                      className="px-3 py-1.5 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors cursor-pointer inline-flex items-center gap-1 shadow-sm"
                     >
                       <FiPlus className="text-xs" />
                       <span>Add Product</span>
                     </button>
                     <button
                       onClick={() => setActiveTab('products')}
-                      className="text-xs font-bold text-brand-red-600 hover:text-brand-red-700 flex items-center gap-1 cursor-pointer"
+                      className="text-xs font-bold text-brand-green-600 hover:text-brand-green-700 flex items-center gap-1 cursor-pointer"
                     >
                       <span>Manage All</span>
                       <FiExternalLink className="text-xs" />
@@ -325,7 +329,7 @@ export default function AdminDashboard() {
                   <span>Showing 8 of {products.length} catalog items</span>
                   <button
                     onClick={() => setActiveTab('products')}
-                    className="font-bold text-brand-red-600 hover:underline cursor-pointer"
+                    className="font-bold text-brand-green-600 hover:underline cursor-pointer"
                   >
                     View all formulations &rarr;
                   </button>
@@ -343,7 +347,7 @@ export default function AdminDashboard() {
                   <div className="space-y-2">
                     <button
                       onClick={handleAddProduct}
-                      className="w-full flex items-center gap-2 px-3 py-2.5 bg-brand-red-50 hover:bg-brand-red-100 text-brand-red-700 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+                      className="w-full flex items-center gap-2 px-3 py-2.5 bg-brand-green-50 hover:bg-brand-green-100 text-brand-green-800 rounded-lg text-xs font-bold transition-colors cursor-pointer"
                     >
                       <FiPlus /> Add New Product
                     </button>
@@ -359,7 +363,7 @@ export default function AdminDashboard() {
                     >
                       <FiInbox /> View Inquiries
                       {newInquiryCount > 0 && (
-                        <span className="bg-brand-red-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full ml-auto">
+                        <span className="bg-brand-green-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full ml-auto">
                           {newInquiryCount}
                         </span>
                       )}
@@ -370,7 +374,7 @@ export default function AdminDashboard() {
                 {/* System Config */}
                 <div className="bg-white border border-brand-gray-200 rounded-xl p-6 shadow-sm">
                   <h2 className="text-sm font-bold text-brand-gray-900 uppercase tracking-wider mb-3 border-b border-brand-gray-150 pb-2 flex items-center gap-2">
-                    <FiSettings className="text-brand-red-600" />
+                    <FiSettings className="text-brand-green-600" />
                     <span>System Status</span>
                   </h2>
                   <div className="space-y-3 text-xs">

@@ -20,7 +20,7 @@ export default function Dashboard() {
         {/* Welcome Header */}
         <div className="bg-white border border-brand-gray-200 rounded-xl p-6 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 bg-brand-red-50 text-brand-red-600 rounded-full flex items-center justify-center font-bold text-xl border border-brand-red-100">
+            <div className="w-14 h-14 bg-brand-green-50 text-brand-green-700 rounded-full flex items-center justify-center font-bold text-xl border border-brand-green-200">
               {userName.charAt(0).toUpperCase()}
             </div>
             <div>
@@ -30,7 +30,7 @@ export default function Dashboard() {
                 </h1>
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase ${
                   isAdmin 
-                    ? 'bg-brand-red-50 text-brand-red-700 border border-brand-red-200' 
+                    ? 'bg-brand-green-100 text-brand-green-800 border border-brand-green-200' 
                     : 'bg-blue-50 text-blue-700 border border-blue-200'
                 }`}>
                   {isAdmin ? 'Administrator' : 'Verified Importer'}
@@ -46,15 +46,15 @@ export default function Dashboard() {
             {isAdmin && (
               <Link
                 to="/admin"
-                className="px-4 py-2 bg-brand-gray-900 hover:bg-black text-white rounded text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-1.5"
+                className="px-4 py-2 bg-brand-gray-900 hover:bg-black text-white rounded text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-1.5 border border-brand-gray-700"
               >
-                <FiShield className="text-brand-red-500 text-xs" />
+                <FiShield className="text-brand-green-400 text-xs" />
                 <span>Trade Desk Admin Console</span>
               </Link>
             )}
             <Link
               to="/catalog"
-              className="px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-1.5"
+              className="px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors shadow-sm inline-flex items-center gap-1.5"
             >
               <FiPackage className="text-xs" />
               <span>Browse Catalog & RFQ</span>
@@ -73,7 +73,7 @@ export default function Dashboard() {
         {isAdmin && (
           <div className="bg-gradient-to-r from-brand-gray-900 via-brand-gray-800 to-brand-gray-900 text-white rounded-xl p-5 mb-6 shadow-sm border border-brand-gray-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
-              <div className="w-10 h-10 bg-brand-red-600 rounded-lg flex items-center justify-center font-bold text-lg text-white shrink-0">
+              <div className="w-10 h-10 bg-brand-green-600 rounded-lg flex items-center justify-center font-bold text-lg text-white shrink-0 shadow-sm">
                 <FiShield />
               </div>
               <div>
@@ -85,7 +85,7 @@ export default function Dashboard() {
             </div>
             <Link
               to="/admin"
-              className="px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors inline-flex items-center gap-1.5 self-start sm:self-auto shrink-0 shadow-sm"
+              className="px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors inline-flex items-center gap-1.5 self-start sm:self-auto shrink-0 shadow-sm"
             >
               <span>Open Admin Console</span>
               <FiArrowRight />
@@ -145,7 +145,7 @@ export default function Dashboard() {
                 </p>
                 <Link
                   to="/catalog"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors shadow-sm"
                 >
                   <span>Explore 140+ Formulations</span>
                   <FiExternalLink className="text-xs" />
@@ -167,18 +167,18 @@ export default function Dashboard() {
 
               <div className="space-y-2.5 text-xs">
                 <a
-                  href={`tel:${(companyData?.phone || '+91 93253 03018').replace(/\s+/g, '')}`}
+                  href={`tel:${(companyData?.phone || '+91 91460 65002').replace(/\s+/g, '')}`}
                   className="flex items-center gap-2 p-2.5 border border-brand-gray-200 rounded-lg hover:bg-brand-gray-50 text-brand-gray-800 font-semibold transition-colors"
                 >
-                  <FiPhone className="text-brand-red-600 text-sm" />
-                  <span>{companyData?.phone || '+91 93253 03018'}</span>
+                  <FiPhone className="text-brand-green-600 text-sm" />
+                  <span>{companyData?.phone || '+91 91460 65002'}</span>
                 </a>
 
                 <a
-                  href={`https://wa.me/${(companyData?.whatsapp || '+919325303018').replace(/[^0-9]/g, '')}`}
+                  href={`https://wa.me/${(companyData?.whatsapp || '+919146065002').replace(/[^0-9]/g, '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 p-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-semibold transition-colors"
+                  className="flex items-center gap-2 p-2.5 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded-lg font-semibold transition-colors shadow-sm"
                 >
                   <FaWhatsapp className="text-base" />
                   <span>WhatsApp Trade Desk</span>
@@ -191,7 +191,7 @@ export default function Dashboard() {
             </div>
 
             <div className="bg-brand-gray-900 text-white rounded-xl p-6 shadow-sm">
-              <span className="text-[10px] uppercase font-bold text-brand-red-400 tracking-wider">
+              <span className="text-[10px] uppercase font-bold text-brand-green-400 tracking-wider">
                 Export Compliance Note
               </span>
               <h3 className="text-sm font-bold text-white mt-1 mb-2">
@@ -202,7 +202,7 @@ export default function Dashboard() {
               </p>
               <Link
                 to="/compliance"
-                className="text-xs font-bold text-brand-red-400 hover:text-brand-red-300 inline-flex items-center gap-1"
+                className="text-xs font-bold text-brand-green-400 hover:text-brand-green-300 inline-flex items-center gap-1"
               >
                 <span>View Regulatory Credentials</span>
                 <FiExternalLink className="text-xs" />

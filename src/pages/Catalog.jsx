@@ -162,7 +162,7 @@ export default function Catalog() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="mb-6 border-b border-brand-gray-200 pb-4">
-          <span className="text-xs font-bold uppercase tracking-wider text-brand-red-600">Export Index</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-green-600">Export Index</span>
           <h1 className="text-2xl sm:text-3xl font-bold text-brand-gray-900 mt-0.5">Pharmaceutical Export Catalog & RFQ</h1>
           <p className="text-xs text-brand-gray-600 mt-1">
             Browse our WHO-GMP certified inventory index. Catalog order and pricing adapt to your destination market
@@ -195,7 +195,7 @@ export default function Catalog() {
           <div className="flex-1 w-full">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 bg-white border border-brand-gray-200 rounded-lg px-4 py-3 shadow-sm text-xs">
               <div className="text-brand-gray-800 font-bold uppercase tracking-wide">
-                Category: <span className="text-brand-red-600">{activeCategoryName}</span>
+                Category: <span className="text-brand-green-600">{activeCategoryName}</span>
                 {activeMarket && (
                   <span className="ml-2 font-medium normal-case text-brand-gray-500">
                     · ranked for {activeMarket.name}
@@ -271,7 +271,7 @@ export default function Catalog() {
                 </p>
                 <button
                   onClick={resetFilters}
-                  className="flex items-center gap-1.5 px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold rounded text-xs transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white font-bold rounded text-xs transition-colors cursor-pointer shadow-sm"
                 >
                   <FiRefreshCw className="text-xs" />
                   <span>Reset All Filters</span>

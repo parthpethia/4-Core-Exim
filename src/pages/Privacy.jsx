@@ -13,7 +13,7 @@ export default function Privacy() {
         
         {/* Header Block */}
         <div className="bg-white border border-brand-gray-200 rounded-lg p-8 mb-8 shadow-sm">
-          <div className="flex items-center gap-2 text-brand-red-600 font-bold text-xs uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-brand-green-600 font-bold text-xs uppercase tracking-wider mb-2">
             <FiLock />
             <span>Commercial Confidentiality & Data Policy</span>
           </div>
@@ -22,7 +22,7 @@ export default function Privacy() {
             Document Reference: 4CE-PRIV-2026 | Effective Date: February 2026
           </p>
           <p className="text-xs text-brand-gray-700 mt-4 leading-relaxed font-medium">
-            At <strong>4Core Exim</strong> (operated under Thakkar Medico Traders), we recognize the critical importance of commercial confidentiality, regulatory privacy, and data security when transacting international pharmaceutical wholesale operations.
+            At <strong>4Core Exim</strong>, we recognize the critical importance of commercial confidentiality, regulatory privacy, and data security when transacting international pharmaceutical wholesale operations.
           </p>
         </div>
 
@@ -107,9 +107,9 @@ export default function Privacy() {
             </p>
             <div className="bg-brand-gray-50 border border-brand-gray-200 rounded-md p-4 space-y-1">
               <p className="font-bold text-brand-gray-900">Compliance & Privacy Desk | 4Core Exim</p>
-              <p className="text-brand-gray-600">Thakkar Medico Traders, Nagpur / Mumbai, Maharashtra, India</p>
-              <p className="text-brand-gray-600">Email: <a href="mailto:privacy@4coreexim.com" className="text-brand-red-600 font-semibold hover:underline">privacy@4coreexim.com</a> / <a href="mailto:exports@4coreexim.com" className="text-brand-red-600 font-semibold hover:underline">exports@4coreexim.com</a></p>
-              <p className="text-brand-gray-600">Phone: +91 93253 03018</p>
+              <p className="text-brand-gray-600">4Core Exim, Nagpur / Mumbai, Maharashtra, India</p>
+              <p className="text-brand-gray-600">Email: <a href="mailto:privacy@4coreexim.com" className="text-brand-green-600 font-semibold hover:underline">privacy@4coreexim.com</a> / <a href="mailto:exports@4coreexim.com" className="text-brand-green-600 font-semibold hover:underline">exports@4coreexim.com</a></p>
+              <p className="text-brand-gray-600">Phone: +91 91460 65002</p>
             </div>
           </section>
 

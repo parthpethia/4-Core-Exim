@@ -28,7 +28,7 @@ export default function ProductGridCard({ product, categoryName, companyEmail, c
   if (name.includes('USP') || (saltComposition && saltComposition.includes('USP'))) pharmacopeia = 'USP';
   else if (name.includes('BP') || (saltComposition && saltComposition.includes('BP'))) pharmacopeia = 'BP';
 
-  const whatsappNumber = (companyWhatsapp || '+919325303018').replace(/[^0-9]/g, '');
+  const whatsappNumber = (companyWhatsapp || '+919146065002').replace(/[^0-9]/g, '');
   const waBody = encodeURIComponent(
     `Hello 4Core Exim Trade Desk,\n\nI would like an export quote and MOQ for:\n\nProduct: ${name}\nBrand: ${brand || 'Standard Formulation'}\nCategory: ${categoryName}\nPacking: ${packagingSize || 'N/A'}\n\nPlease share FOB Mumbai / CIF pricing and batch CoA availability.`
   );
@@ -77,7 +77,7 @@ Regards`;
       <div className="p-3 flex-grow flex flex-col justify-between text-xs">
         <div>
           {brand && (
-            <span className="text-[9px] uppercase font-bold text-brand-red-700 tracking-wider block">
+            <span className="text-[9px] uppercase font-bold text-brand-green-700 tracking-wider block">
               {brand}
             </span>
           )}
@@ -87,7 +87,7 @@ Regards`;
 
           <div className="mt-2 mb-2">
             <div className="flex items-baseline gap-1">
-              <span className="text-sm font-bold text-brand-red-700 font-mono">
+              <span className="text-sm font-bold text-brand-green-700 font-mono">
                 {shownCurrency} {shownPrice}
               </span>
               <span className="text-[10px] text-brand-gray-500">/ unit</span>
@@ -133,7 +133,7 @@ Regards`;
           <button
             type="button"
             onClick={handleInquiry}
-            className="flex items-center justify-center gap-1.5 w-full py-1.5 border border-brand-red-600 text-brand-red-700 hover:bg-brand-red-50 text-[11px] font-bold rounded transition-colors cursor-pointer"
+            className="flex items-center justify-center gap-1.5 w-full py-1.5 border border-brand-green-600 text-brand-green-700 hover:bg-brand-green-50 text-[11px] font-bold rounded transition-colors cursor-pointer"
             aria-label={`Email RFQ for ${name}`}
           >
             <FiMail className="text-xs shrink-0" />

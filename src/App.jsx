@@ -56,7 +56,7 @@ export default function App() {
           <main className="flex-grow">
             <Suspense fallback={
               <div className="min-h-[60vh] flex flex-col items-center justify-center">
-                <div className="w-8 h-8 border-4 border-brand-red-200 border-t-brand-red-600 rounded-full animate-spin" />
+                <div className="w-8 h-8 border-4 border-brand-green-200 border-t-brand-green-600 rounded-full animate-spin" />
               </div>
             }>
             <Routes>

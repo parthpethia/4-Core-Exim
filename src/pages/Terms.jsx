@@ -13,7 +13,7 @@ export default function Terms() {
         
         {/* Header Block */}
         <div className="bg-white border border-brand-gray-200 rounded-lg p-8 mb-8 shadow-sm">
-          <div className="flex items-center gap-2 text-brand-red-600 font-bold text-xs uppercase tracking-wider mb-2">
+          <div className="flex items-center gap-2 text-brand-green-600 font-bold text-xs uppercase tracking-wider mb-2">
             <FiFileText />
             <span>Legal & Export Contractual Terms</span>
           </div>
@@ -22,7 +22,7 @@ export default function Terms() {
             Document Reference: 4CE-TOS-2026 | Last Revised: February 2026
           </p>
           <p className="text-xs text-brand-gray-700 mt-4 leading-relaxed font-medium">
-            These terms govern all wholesale pharmaceutical quotations, proforma invoices, export contracts, and consignments fulfilled by <strong>4Core Exim</strong> (operated under Thakkar Medico Traders), registered in Nagpur and Mumbai, Maharashtra, India.
+            These terms govern all wholesale pharmaceutical quotations, proforma invoices, export contracts, and consignments fulfilled by <strong>4Core Exim</strong>, registered in Nagpur and Mumbai, Maharashtra, India.
           </p>
         </div>
 
@@ -128,11 +128,11 @@ export default function Terms() {
 
           {/* Legal Disclaimers Box */}
           <div className="bg-brand-gray-50 border border-brand-gray-200 rounded-md p-4 flex items-start gap-3">
-            <FiAlertCircle className="text-brand-red-600 text-base shrink-0 mt-0.5" />
+            <FiAlertCircle className="text-brand-green-600 text-base shrink-0 mt-0.5" />
             <div>
               <h5 className="font-bold text-brand-gray-900 mb-1">Corporate Contact for Legal Notices</h5>
               <p className="text-brand-gray-600">
-                Formal commercial inquiries, contract notices, and compliance queries should be addressed to the Trade Legal Desk via email at <a href="mailto:exports@4coreexim.com" className="text-brand-red-600 font-semibold hover:underline">exports@4coreexim.com</a> or delivered to our registered corporate address in Nagpur, Maharashtra, India.
+                Formal commercial inquiries, contract notices, and compliance queries should be addressed to the Trade Legal Desk via email at <a href="mailto:exports@4coreexim.com" className="text-brand-green-600 font-semibold hover:underline">exports@4coreexim.com</a> or delivered to our registered corporate address in Nagpur, Maharashtra, India.
               </p>
             </div>
           </div>

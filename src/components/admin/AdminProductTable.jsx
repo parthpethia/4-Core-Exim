@@ -177,7 +177,7 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
           {/* Add Product */}
           <button
             onClick={onAddProduct}
-            className="flex items-center gap-1.5 px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded transition-colors cursor-pointer shadow-sm"
           >
             <FiPlus className="text-xs" />
             <span>Add Product</span>
@@ -225,7 +225,7 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
                       {p.brand || '—'}
                     </td>
                     <td className="py-2.5 px-3">
-                      <span className="text-[10px] font-bold text-brand-red-700 bg-brand-red-50 px-1.5 py-0.5 rounded uppercase">
+                      <span className="text-[10px] font-bold text-brand-green-700 bg-brand-green-50 border border-brand-green-200 px-1.5 py-0.5 rounded uppercase">
                         {getCategoryName(p.category)}
                       </span>
                     </td>
@@ -312,7 +312,7 @@ export default function AdminProductTable({ onEditProduct, onAddProduct, refresh
                     onClick={() => setCurrentPage(page)}
                     className={`w-7 h-7 rounded text-[11px] font-bold cursor-pointer transition-colors ${
                       currentPage === page
-                        ? 'bg-brand-red-600 text-white'
+                        ? 'bg-brand-green-600 text-white shadow-xs'
                         : 'hover:bg-brand-gray-200 text-brand-gray-700'
                     }`}
                   >

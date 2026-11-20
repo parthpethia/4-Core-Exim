@@ -16,7 +16,7 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
   if (loading) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center bg-brand-gray-50 px-4">
-        <div className="w-10 h-10 border-4 border-brand-red-200 border-t-brand-red-600 rounded-full animate-spin mb-4" />
+        <div className="w-10 h-10 border-4 border-brand-green-200 border-t-brand-green-600 rounded-full animate-spin mb-4" />
         <p className="text-xs font-semibold text-brand-gray-600 tracking-wide uppercase">
           Verifying Trade Desk Clearance...
         </p>
@@ -34,12 +34,12 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
     return (
       <div className="min-h-[75vh] flex items-center justify-center bg-brand-gray-50 px-4 py-12">
         <div className="max-w-lg w-full bg-white border border-brand-gray-200 rounded-xl p-8 shadow-sm">
-          <div className="w-14 h-14 bg-brand-red-50 text-brand-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-14 h-14 bg-brand-green-50 text-brand-green-700 rounded-full flex items-center justify-center mx-auto mb-4 border border-brand-green-200">
             <FiShield className="text-2xl" />
           </div>
 
           <div className="text-center mb-5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-brand-red-600 bg-brand-red-50 px-2.5 py-1 rounded-full inline-block mb-3">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-brand-green-800 bg-brand-green-100 px-2.5 py-1 rounded-full inline-block mb-3 border border-brand-green-200">
               Admin Clearance Required
             </span>
 
@@ -62,7 +62,7 @@ export default function ProtectedRoute({ children, requireAdmin = false }) {
             </p>
             <button
               onClick={() => verifyAdminStatus && verifyAdminStatus()}
-              className="w-full py-2 px-3 bg-brand-red-600 hover:bg-brand-red-700 text-white rounded text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+              className="w-full py-2 px-3 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded text-xs font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-sm"
             >
               <span>🔄 Re-check Database Clearance</span>
             </button>

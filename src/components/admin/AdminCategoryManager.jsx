@@ -132,7 +132,7 @@ export default function AdminCategoryManager() {
         </div>
         <button
           onClick={() => setShowAddForm(!showAddForm)}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded transition-colors cursor-pointer shadow-sm"
         >
           <FiPlus className="text-xs" />
           <span>Add Category</span>
@@ -158,7 +158,7 @@ export default function AdminCategoryManager() {
                 value={newCat.name}
                 onChange={(e) => handleNewNameChange(e.target.value)}
                 placeholder="e.g. Anti Viral Medicines"
-                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
                 required
               />
             </div>
@@ -169,7 +169,7 @@ export default function AdminCategoryManager() {
                 value={newCat.id}
                 onChange={(e) => setNewCat(prev => ({ ...prev, id: e.target.value }))}
                 placeholder="auto-generated"
-                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs font-mono focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs font-mono focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -179,7 +179,7 @@ export default function AdminCategoryManager() {
                 value={newCat.image}
                 onChange={(e) => setNewCat(prev => ({ ...prev, image: e.target.value }))}
                 placeholder="https://..."
-                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
             <div>
@@ -188,7 +188,7 @@ export default function AdminCategoryManager() {
                 type="number"
                 value={newCat.sortOrder}
                 onChange={(e) => setNewCat(prev => ({ ...prev, sortOrder: parseInt(e.target.value) || 0 }))}
-                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs focus:outline-none focus:border-brand-red-400"
+                className="w-full border border-brand-gray-300 rounded px-2.5 py-1.5 text-xs focus:outline-none focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500"
               />
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function AdminCategoryManager() {
             <button
               type="submit"
               disabled={saving}
-              className="px-4 py-1.5 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded cursor-pointer disabled:opacity-50 transition-colors"
+              className="px-4 py-1.5 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded cursor-pointer disabled:opacity-50 transition-colors shadow-sm"
             >
               {saving ? 'Creating...' : 'Create Category'}
             </button>
@@ -244,7 +244,7 @@ export default function AdminCategoryManager() {
                       type="text"
                       value={editCat.name}
                       onChange={(e) => setEditCat(prev => ({ ...prev, name: e.target.value }))}
-                      className="border border-brand-red-300 rounded px-2 py-1 text-xs font-bold focus:outline-none w-full max-w-xs"
+                      className="border border-brand-green-400 rounded px-2 py-1 text-xs font-bold focus:outline-none focus:ring-1 focus:ring-brand-green-500 w-full max-w-xs"
                       autoFocus
                     />
                   ) : (

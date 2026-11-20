@@ -31,7 +31,7 @@ export default function CoaModal({ isOpen, onClose, product, categoryName }) {
         {/* Modal Top Action Bar */}
         <div className="bg-brand-gray-900 text-white px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <FiFileText className="text-brand-red-500 text-lg" />
+            <FiFileText className="text-brand-green-400 text-lg" />
             <div>
               <h3 className="text-sm font-bold tracking-tight">Certificate of Analysis (CoA) Summary</h3>
               <p className="text-[11px] text-brand-gray-300">Official Pharmacopeial Specification Reference</p>
@@ -62,7 +62,7 @@ export default function CoaModal({ isOpen, onClose, product, categoryName }) {
           {/* Header Identity Block */}
           <div className="border border-brand-gray-200 rounded-md p-4 bg-brand-gray-50 flex flex-col sm:flex-row justify-between gap-4">
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red-600 block">Product Item</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green-700 block">Product Item</span>
               <h4 className="text-base font-bold text-brand-gray-900 mt-0.5">{product.name}</h4>
               <p className="text-brand-gray-600 text-xs mt-0.5">Category: <span className="font-semibold text-brand-gray-800">{categoryName}</span></p>
               <p className="text-brand-gray-600 text-xs">Manufacturer: <span className="font-semibold text-brand-gray-800">{product.manufacturer || 'Approved WHO-GMP Facility'}</span></p>
@@ -172,7 +172,7 @@ export default function CoaModal({ isOpen, onClose, product, categoryName }) {
           <div className="flex gap-2 w-full sm:w-auto">
             <a
               href={`mailto:exports@4coreexim.com?subject=${encodeURIComponent(`Dossier Request - ${product.name} (Batch ${batchCode})`)}`}
-              className="flex-1 sm:flex-initial px-4 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs rounded transition-colors text-center cursor-pointer"
+              className="flex-1 sm:flex-initial px-4 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white font-bold text-xs rounded transition-colors text-center cursor-pointer shadow-sm"
             >
               Request Full Regulatory Dossier
             </a>

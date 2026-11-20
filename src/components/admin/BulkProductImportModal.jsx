@@ -364,7 +364,7 @@ export default function BulkProductImportModal({ isOpen, onClose, onComplete, ca
           {STEPS.map((s, i) => (
             <div key={s} className="flex items-center gap-1.5">
               <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold ${
-                step === s ? 'bg-brand-red-600 text-white' :
+                step === s ? 'bg-brand-green-600 text-white' :
                 STEPS.indexOf(step) > i ? 'bg-emerald-500 text-white' :
                 'bg-brand-gray-200 text-brand-gray-500'
               }`}>
@@ -395,7 +395,7 @@ export default function BulkProductImportModal({ isOpen, onClose, onComplete, ca
           {step === 'upload' && (
             <div className="space-y-4">
               <div
-                className="border-2 border-dashed border-brand-gray-300 rounded-xl p-8 text-center hover:border-brand-red-400 transition-colors cursor-pointer"
+                className="border-2 border-dashed border-brand-gray-300 rounded-xl p-8 text-center hover:border-brand-green-500 hover:bg-brand-green-50/20 transition-colors cursor-pointer"
                 onClick={() => fileInputRef.current?.click()}
                 onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
                 onDrop={(e) => {
@@ -528,7 +528,7 @@ export default function BulkProductImportModal({ isOpen, onClose, onComplete, ca
           {/* STEP: Executing */}
           {step === 'executing' && (
             <div className="text-center py-12">
-              <FiLoader className="text-3xl text-brand-red-600 animate-spin mx-auto mb-4" />
+              <FiLoader className="text-3xl text-brand-green-600 animate-spin mx-auto mb-4" />
               <p className="text-sm font-bold text-brand-gray-900">Importing products...</p>
               <p className="text-xs text-brand-gray-500 mt-1">
                 Processing {validRows.length} rows. Please do not close this window.
@@ -579,7 +579,7 @@ export default function BulkProductImportModal({ isOpen, onClose, onComplete, ca
               <button
                 onClick={handleExecute}
                 disabled={executing}
-                className="px-5 py-2 bg-brand-red-600 hover:bg-brand-red-700 text-white text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-1.5"
+                className="px-5 py-2 bg-brand-green-600 hover:bg-brand-green-700 text-white text-xs font-bold rounded transition-colors cursor-pointer disabled:opacity-50 flex items-center gap-1.5 shadow-sm"
               >
                 <FiCheck className="text-xs" />
                 <span>Import {validRows.length} Products</span>

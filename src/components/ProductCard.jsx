@@ -148,7 +148,7 @@ export default function ProductCard({ product: initialProduct, categoryName, com
       <div className="bg-brand-gray-50 px-6 py-3.5 border-b border-brand-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-red-700 bg-brand-red-50 border border-brand-red-100 px-2 py-0.5 rounded">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green-700 bg-brand-green-50 border border-brand-green-200 px-2 py-0.5 rounded">
               {categoryName}
             </span>
             <span className="text-[10px] font-mono font-bold text-brand-gray-700 bg-brand-gray-200/80 border border-brand-gray-300 px-2 py-0.5 rounded">
@@ -160,7 +160,7 @@ export default function ProductCard({ product: initialProduct, categoryName, com
               </span>
             )}
             {isFeatured && (
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green-800 bg-brand-green-100 border border-brand-green-200 px-2 py-0.5 rounded">
                 Market focus
               </span>
             )}
@@ -180,9 +180,9 @@ export default function ProductCard({ product: initialProduct, categoryName, com
             }
             setShowCoaModal(true);
           }}
-          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-gray-400 bg-white text-brand-gray-800 font-bold text-xs rounded transition-colors shrink-0 cursor-pointer self-start sm:self-center"
+          className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 border border-brand-gray-300 hover:border-brand-green-600 bg-white text-brand-gray-800 font-bold text-xs rounded transition-colors shrink-0 cursor-pointer self-start sm:self-center"
         >
-          <FiFileText className="text-brand-red-600 text-xs" />
+          <FiFileText className="text-brand-green-600 text-xs" />
           <span>View Batch CoA Specs</span>
         </button>
       </div>
@@ -212,7 +212,7 @@ export default function ProductCard({ product: initialProduct, categoryName, com
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
                   className={`w-10 h-10 border rounded p-0.5 bg-white transition-colors cursor-pointer ${
-                    activeImageIndex === idx ? 'border-brand-red-600' : 'border-brand-gray-200'
+                    activeImageIndex === idx ? 'border-brand-green-600' : 'border-brand-gray-200'
                   }`}
                   aria-label={`View ${name} image ${idx + 1}`}
                 >
@@ -231,9 +231,9 @@ export default function ProductCard({ product: initialProduct, categoryName, com
           {/* Get Best Quote Button */}
           <button
             onClick={() => setShowInquiryModal(true)}
-            className="mt-3 w-full px-4 py-2 border border-brand-gray-300 hover:bg-brand-gray-50 text-brand-gray-800 text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+            className="mt-3 w-full px-4 py-2 border border-brand-gray-300 hover:border-brand-green-600 hover:bg-brand-green-50 text-brand-gray-800 text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
           >
-            <FiMail className="text-brand-red-600" />
+            <FiMail className="text-brand-green-600" />
             <span>Request Commercial Quote</span>
           </button>
         </div>
@@ -244,7 +244,7 @@ export default function ProductCard({ product: initialProduct, categoryName, com
           {/* Price Block */}
           <div className="flex items-baseline justify-between gap-4 border-b border-brand-gray-200 pb-3">
             <div className="flex items-baseline gap-2">
-              <span className="text-xl font-bold text-brand-red-700 font-mono">
+              <span className="text-xl font-bold text-brand-green-700 font-mono">
                 {shownCurrency} {shownPrice}
               </span>
               <span className="text-xs text-brand-gray-500 font-medium">/ Indicative Export Unit</span>
@@ -340,9 +340,9 @@ export default function ProductCard({ product: initialProduct, categoryName, com
             </div>
             <button
               onClick={() => setShowCoaModal(true)}
-              className="w-full sm:w-auto px-4 py-2.5 border border-brand-gray-300 hover:bg-brand-gray-50 text-brand-gray-800 text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+              className="w-full sm:w-auto px-4 py-2.5 border border-brand-gray-300 hover:border-brand-green-600 hover:bg-brand-green-50 text-brand-gray-800 text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
             >
-              <FiFileText className="text-brand-red-600" />
+              <FiFileText className="text-brand-green-600" />
               <span>Inspect Certificate of Analysis (CoA)</span>
             </button>
           </div>
@@ -385,7 +385,7 @@ export default function ProductCard({ product: initialProduct, categoryName, com
             {!isSubmitted ? (
               <form onSubmit={handleModalSubmit} className="space-y-4 text-xs">
                 <div>
-                  <span className="text-[10px] font-bold text-brand-red-700 uppercase tracking-wider block mb-1">Wholesale Export Desk</span>
+                  <span className="text-[10px] font-bold text-brand-green-700 uppercase tracking-wider block mb-1">Wholesale Export Desk</span>
                   <h3 className="text-base font-bold text-brand-gray-900">
                     Request Quotation for {name}
                   </h3>
@@ -463,7 +463,7 @@ export default function ProductCard({ product: initialProduct, categoryName, com
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-2.5 bg-brand-red-600 hover:bg-brand-red-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer"
+                    className="w-full py-2.5 bg-brand-green-600 hover:bg-brand-green-700 text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer shadow-sm"
                   >
                     Submit Quotation Request
                   </button>
